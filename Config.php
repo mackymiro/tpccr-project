@@ -4,8 +4,8 @@ GLOBAL $conSearchnet,$conWMS;
 $Endpoint = "https://52.220.114.60/WMS.Services/WMS.Services.asmx";
 $Mode="SQLDirect"; //API/SQLDirect
 
-$GGUserName = 'jbello@innodata.com';
-$GGPassword='Inn0d@t@';
+$GGUserName = 'hj1@innodata.com';
+$GGPassword='test@1qaz';
 $GGProductionMode='OFF';//ON or OFF
 $GGTaxonomy = "legal-cases-taxonomy.json";
 $GGTeam="Legal Cases";
