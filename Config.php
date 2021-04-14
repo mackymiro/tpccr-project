@@ -9,6 +9,7 @@ $GGPassword='test@1qaz';
 $GGProductionMode='OFF';//ON or OFF
 $GGTaxonomy = "legal-cases-taxonomy.json";
 $GGTeam="Legal Cases";
+//$GGTeam="TPCCR";
 
 $SourceFilePath = "C:\\XAMPP\\htdocs\\primo\\uploadfiles\\SourceFiles\\";
 

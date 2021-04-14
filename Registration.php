@@ -86,7 +86,7 @@ if ($_SESSION['UserType']=='Admin'){
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $_SESSION['EName'];?></span>
+              <span class="hidden-xs"><?= $_SESSION['EName'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -107,8 +107,8 @@ if ($_SESSION['UserType']=='Admin'){
               ?>
 
                 <p>
-                 <?php echo $_SESSION['EName'];?>
-                  <small><?php echo $_SESSION['UserType'];?></small>
+                 <?= $_SESSION['EName'];?>
+                  <small><?= $_SESSION['UserType'];?></small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -186,8 +186,8 @@ $sql="SELECT * FROM tblUser";
               <!-- /.box-body -->
 
           <div class="box-footer">
-          <input type="hidden" class="form-control" placeholder="" name="BookID" value="<?php echo $BookID;?>">
-          <input type="hidden" class="form-control" placeholder="" name="TransType" value="<?php echo $TransType;?>">
+          <input type="hidden" class="form-control" placeholder="" name="BookID" value="<?= $BookID;?>">
+          <input type="hidden" class="form-control" placeholder="" name="TransType" value="<?= $TransType;?>">
                      
         
           </div>

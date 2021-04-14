@@ -1,4 +1,4 @@
-<?php
+  <?php
 include "conn.php";
 
 error_reporting(0);
@@ -74,7 +74,6 @@ for($i=0; $i<$total; $i++) {
   }
 }
 }
-
 
 
 //  function getAPIKey(){
