@@ -59,7 +59,8 @@ if ($GGStatus=='completed'){
 
     fclose($file);
 
-     exec ('D:\\xampp\\htdocs\\primo\\zonedetection\\ZoneDetection.exe D:\\xampp\\htdocs\\primo\\uploadfiles\\'.$nFilename.'.xml');
+     //exec ('D:\\xampp\\htdocs\\tpccr\\zonedetection\\ZoneDetection.exe D:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml');
+     exec ('C:\\xampp\\htdocs\\tpccr\\zonedetection\\ZoneDetection.exe C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml');
 
 }
 else{
