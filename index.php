@@ -304,37 +304,30 @@ $sql="SELECT * FROM primo_view_Jobs Where ProcessCode='$Task' AND BatchID='$Batc
  </head>
  <?php
  	
-
-if ($Task=='QC'){
-	
-	 
+	if ($Task=='QC'){
 		echo "<body class='hold-transition fixed skin-blue sidebar-mini' vlink='green' onload='GetJobStatus()'>";
-	 
+		
+		// echo "<body class='hold-transition fixed skin-blue sidebar-mini' onload='LoadDataEntryContent(\"".$Filename."\")'>";
+		
+	}elseif($Task=='STYLING'){
+		if ($FileStatus!='Done'&&$FileStatus!=''){
 
+			if (file_exists($sXMLFile)){
+				echo "<body class='hold-transition fixed skin-blue sidebar-mini' vlink='green'>";
+			}
+			else{
+				echo "<body class='hold-transition fixed skin-blue sidebar-mini' onload='GetJobStatus()' vlink='green'>";
+			}
+			
+		}
+		else{
+			echo "<body class='hold-transition fixed skin-blue sidebar-mini' vlink='green'>";
+		}
+		
+	}else{
 
-	// echo "<body class='hold-transition fixed skin-blue sidebar-mini' onload='LoadDataEntryContent(\"".$Filename."\")'>";
-	
-}
-elseif($Task=='STYLING'){
-	 if ($FileStatus!='Done'&&$FileStatus!=''){
-
-	 	if (file_exists($sXMLFile)){
-	 		echo "<body class='hold-transition fixed skin-blue sidebar-mini' vlink='green'>";
-	 	}
-	 	else{
-	 		echo "<body class='hold-transition fixed skin-blue sidebar-mini' onload='GetJobStatus()' vlink='green'>";
-	 	}
-	 	
-	 }
-	 else{
-	 	echo "<body class='hold-transition fixed skin-blue sidebar-mini' vlink='green'>";
-	 }
-	 
-}
-else{
-
- 	echo '<body class="hold-transition fixed skin-blue sidebar-mini" vlink="green" >';
-}
+		echo '<body class="hold-transition fixed skin-blue sidebar-mini" vlink="green" >';
+	}
 ?>
 
 	 <!-- onload="start()" -->
@@ -370,8 +363,8 @@ else{
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                 <?php echo $_SESSION['EName'];?>
-                  <small><?php echo $_SESSION['UserType'];?></small>
+                 <?= $_SESSION['EName'];?>
+                  <small><?= $_SESSION['UserType'];?></small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -547,25 +540,25 @@ function LoadStyles(){
 			
             <div class="box-body no-padding">
               <ul class="nav nav-pills nav-stacked">
-              	<li><a href="#"><i class="fa fa-tasks"></i><b>TASK: <span id="Task1"><?php echo $Task;?></span></b></a></li>
-              	<li><a href="<?php echo $SourceURL;?>" target="_blankk"><i class="fa fa-file-o"></i>FileName: <u><span id="filename"><?php echo $Filename;?></span></u></a></li>
-              <!-- 	<li><a href="<?php echo $SourceURL;?>" target="_blankk"><i class="fa fa-file-o"></i>Source URL: <u><span id="filename"><?php echo $SourceURL;?></span></u></a></li> -->
-			    <li><a href="#"><i class="fa fa-folder"></i>JobName: <u><?php echo $Jobname;?></u></a></li>
-			    <!-- <li><a href="#"><i class="fa fa-folder"></i>Priority Number: <u><?php echo $PrioNumber;?></u></a></li> -->
-			     <li><a href="#"><i class="fa fa-folder"></i>Document Type: <u><span id="DocType"><?php echo $DocumentType;?></span></u></a></li>
+              	<li><a href="#"><i class="fa fa-tasks"></i><b>TASK: <span id="Task1"><?= $Task;?></span></b></a></li>
+              	<li><a href="<?= $SourceURL;?>" target="_blankk"><i class="fa fa-file-o"></i>FileName: <u><span id="filename"><?php echo $Filename;?></span></u></a></li>
+              <!-- 	<li><a href="<?= $SourceURL;?>" target="_blankk"><i class="fa fa-file-o"></i>Source URL: <u><span id="filename"><?php echo $SourceURL;?></span></u></a></li> -->
+			    <li><a href="#"><i class="fa fa-folder"></i>JobName: <u><?= $Jobname;?></u></a></li>
+			    <!-- <li><a href="#"><i class="fa fa-folder"></i>Priority Number: <u><?= $PrioNumber;?></u></a></li> -->
+			     <li><a href="#"><i class="fa fa-folder"></i>Document Type: <u><span id="DocType"><?= $DocumentType;?></span></u></a></li>
 
-			     <li><a href="#"><i class="fa fa-folder"></i>PageNo: <u><span id="PageNo"><?php echo $PageNo;?></span></u></a></li>
-				<li><a href="#"><i class="fa fa-line-chart"></i>Status: <u><span id="Status"><?php echo $StatusString;?></span></u></a></li>
-                <li><a href="#"><i class="fa fa-clock-o"></i>Last Updated: <u><?php echo $LastUpdate;?></u></a></li>
+			     <li><a href="#"><i class="fa fa-folder"></i>PageNo: <u><span id="PageNo"><?= $PageNo;?></span></u></a></li>
+				<li><a href="#"><i class="fa fa-line-chart"></i>Status: <u><span id="Status"><?= $StatusString;?></span></u></a></li>
+                <li><a href="#"><i class="fa fa-clock-o"></i>Last Updated: <u><?= $LastUpdate;?></u></a></li>
                 <?php
                 if ($TreeView==1){
  
 				?>
-				<!-- https://wb.innodatalabs.com/zoning/#/job/<?php echo $GGJobID;?>?token=dXNlci10ZXN0LWZiYWQ5OThmMmYxNzNiNDM3NDE0YjQxOWZkNjhkMzAwMDVkN2QzMDc6 -->
-				<li><a href="https://wb.innodatalabs.com/zoning-review/#/job/<?php echo $GGJobID;?>?token=dXNlci10ZXN0LWFjZWMzNWQ1OWM1OGUyMGEyMDU3NGEzYmJlMTg3ZTBhODhkOWUwN2Q6" target="blank" id='GoldenGateLink1'><i class="fa fa-square"></i> <u>Zoning</u></li>
+				<!-- https://wb.innodatalabs.com/zoning/#/job/<?= $GGJobID;?>?token=dXNlci10ZXN0LWZiYWQ5OThmMmYxNzNiNDM3NDE0YjQxOWZkNjhkMzAwMDVkN2QzMDc6 -->
+				<li><a href="https://wb.innodatalabs.com/zoning-review/#/job/<?= $GGJobID;?>?token=dXNlci10ZXN0LTUzY2FkNzZmYzIzOGUzNTgwNWU5NjgzY2YxNDFlNTE4ZjliZWUzMTA6" target="blank" id='GoldenGateLink1'><i class="fa fa-square"></i> <u>Zoning</u></li>
 				 
 
-				 <li><a href="https://wb.innodatalabs.com/zoning/#/job/<?php echo $GGJobID;?>?token=dXNlci10ZXN0LWFjZWMzNWQ1OWM1OGUyMGEyMDU3NGEzYmJlMTg3ZTBhODhkOWUwN2Q6" target="blank" id='GoldenGateLink'><i class="fa fa-link"></i>Link: <u>Full Screen (Transformation)</u></li>
+				 <li><a href="https://wb.innodatalabs.com/zoning/#/job/<?= $GGJobID;?>?token=dXNlci10ZXN0LTUzY2FkNzZmYzIzOGUzNTgwNWU5NjgzY2YxNDFlNTE4ZjliZWUzMTA6" target="blank" id='GoldenGateLink'><i class="fa fa-link"></i>Link: <u>Full Screen (Transformation)</u></li>
 				 <li><a href="#" onClick="GetJobStatus()"><i class="fa fa-spinner"></i>GG Status: <u><span id="GGStatus"></span></u></a></li>
 				 <!-- <li><a href="#" onClick="TestGetJobStatus()"><i class="fa fa-refresh"></i>Test Status: <u><span id="TestGGStatus"></span></u></a></li> -->
 				<?php
@@ -573,10 +566,10 @@ function LoadStyles(){
 				$innoXML= str_replace(".PDF", "_response.xml", $innoXML)
 				?>
 				 
-				  <li><a href="uploadfiles/<?php echo $innoXML;?>" target="_blank" ><i class="fa fa-file-excel-o"></i><u>Innodom XML</u></a></li>
-				 <input type="hidden" value ="<?php echo $GGJobID;?>" id="GGJobID">
-				 <input type="hidden" value ="<?php echo $Task;?>" id="Task">
-				 <input type="hidden" value ="<?php echo $TokenVAL;?>" id="TokenVal">
+				  <li><a href="uploadfiles/<?= $innoXML;?>" target="_blank" ><i class="fa fa-file-excel-o"></i><u>Innodom XML</u></a></li>
+				 <input type="hidden" value ="<?= $GGJobID;?>" id="GGJobID">
+				 <input type="hidden" value ="<?= $Task;?>" id="Task">
+				 <input type="hidden" value ="<?= $TokenVAL;?>" id="TokenVal">
 				 <input type="hidden" value ="Not Yet Validated" id="ValidateTrigger">
 				<?php
 
@@ -751,15 +744,15 @@ function LoadStyles(){
 				<div class="box-footer with-border">
 				   
 				  <div class="box-tools">
-					 <li style='display: <?php echo $Start;?>' id="Start"><button type="button" class="btn btn-default  pull-right"  data-toggle="modal" data-target="#modal-Start"  onclick="Javascript:SetTextBoxValue1(<?php echo $BatchID;?>)" style='display: <?php echo $Start;?>'><i class="fa fa-hourglass-start" ></i> Start</button></li>
-					 <li style='display:  <?php echo $Completed;?>'  id="Completed"> <button type="button" class="btn btn-default  pull-right"  data-toggle="modal" data-target="#modal-success"  onclick="Javascript:SetTextBoxValue(<?php echo $BatchID;?>)" style="width:150px"  ><i class="fa fa-check"></i> Set as completed</button>
+					 <li style='display: <?= $Start;?>' id="Start"><button type="button" class="btn btn-default  pull-right"  data-toggle="modal" data-target="#modal-Start"  onclick="Javascript:SetTextBoxValue1(<?= $BatchID;?>)" style='display: <?= $Start;?>'><i class="fa fa-hourglass-start" ></i> Start</button></li>
+					 <li style='display:  <?= $Completed;?>'  id="Completed"> <button type="button" class="btn btn-default  pull-right"  data-toggle="modal" data-target="#modal-success"  onclick="Javascript:SetTextBoxValue(<?= $BatchID;?>)" style="width:150px"  ><i class="fa fa-check"></i> Set as completed</button>
 					 </li>
-					  <li style='display:  <?php echo $Hold;?>'  id="Hold"> 
-					 <button type="button" class="btn btn-default  pull-right"  data-toggle="modal" data-target="#modal-Hold"  onclick="Javascript:SetTextBoxValue3(<?php echo $BatchID;?>)"  style="width:150px" ><i class="fa  fa-hand-stop-o"></i> Hold</button>
+					  <li style='display:  <?= $Hold;?>'  id="Hold"> 
+					 <button type="button" class="btn btn-default  pull-right"  data-toggle="modal" data-target="#modal-Hold"  onclick="Javascript:SetTextBoxValue3(<?= $BatchID;?>)"  style="width:150px" ><i class="fa  fa-hand-stop-o"></i> Hold</button>
 					  </li>
-					 <li style='display:  <?php echo $Pending;?>'  id="Pending"><button type="button" class="btn btn-default pull-right"  data-toggle="modal" data-target="#modal-Pending"  onclick="Javascript:SetTextBoxValue2(<?php echo $BatchID;?>)"  style="width:150px"  ><i class="fa fa-hourglass-2" ></i> Pending</button></li>
-					 <li style='display:  <?php echo $Resume;?>'  id="Resume"><button type="button" class="btn btn-default  pull-right"  data-toggle="modal" data-target="#modal-Start"   style="width:150px" onclick="Javascript:SetTextBoxValue1(<?php echo $BatchID;?>)"  ><i class="fa fa-hourglass-start"></i> Resume</button></li>
-					  <li style='display:  <?php echo $GetNextBatch;?>'  id="GetNext"><a class="btn btn-default  pull-right"  href="GetNextBatch.php?page=Enrich&Task=<?php echo $Task;?>&fullscr=1"><i class="fa  fa-hand-grab-o"></i> Get Next Batch</a></li>
+					 <li style='display:  <?= $Pending;?>'  id="Pending"><button type="button" class="btn btn-default pull-right"  data-toggle="modal" data-target="#modal-Pending"  onclick="Javascript:SetTextBoxValue2(<?= $BatchID;?>)"  style="width:150px"  ><i class="fa fa-hourglass-2" ></i> Pending</button></li>
+					 <li style='display:  <?= $Resume;?>'  id="Resume"><button type="button" class="btn btn-default  pull-right"  data-toggle="modal" data-target="#modal-Start"   style="width:150px" onclick="Javascript:SetTextBoxValue1(<?= $BatchID;?>)"  ><i class="fa fa-hourglass-start"></i> Resume</button></li>
+					  <li style='display:  <?= $GetNextBatch;?>'  id="GetNext"><a class="btn btn-default  pull-right"  href="GetNextBatch.php?page=Enrich&Task=<?= $Task;?>&fullscr=1"><i class="fa  fa-hand-grab-o"></i> Get Next Batch</a></li>
 					 </div>
 				</div>
 
@@ -836,15 +829,15 @@ if ($SequenceLabeling==1){
                 <li><a href="#" onclick="myFunctionEdited()"><i class="fa fa-circle text-light-blue"></i> edited</a></li>
               </ul>
             </div>
-<?php
+			<?php
 			   }
 			
 				?>
             <!-- /.box-body -->
           </div>
-<?php
-}
-?>		  
+			<?php
+			}
+			?>		  
 		  <div class="box box-solid" style="display: none" id="myDIV95">
             <div class="box-header with-border">
               <h3 class="box-title">95% and up</h3>
@@ -1377,13 +1370,13 @@ function getSelectionHtml(selection) {
 				    if ($FieldType=='dropdown'){
 				    	?>
 				    	<div class="form-group">
-							<label ><?php echo $FieldCaption;?></label><br>
-							<select class="form-control" name="<?php echo $FieldName;?>" id="<?php echo $FieldName;?>">
+							<label ><?= $FieldCaption;?></label><br>
+							<select class="form-control" name="<?= $FieldName;?>" id="<?= $FieldName;?>">
 								<?php
 								$cats = explode("|",$FieldOption);
 								foreach($cats as $cat) {
 									?>
-									<option value="<?php echo  $cat;?>"><?php echo  $cat;?></option>
+									<option value="<?= $cat;?>"><?= $cat;?></option>
 									<?php
 								 
 								}
@@ -1395,8 +1388,8 @@ function getSelectionHtml(selection) {
 				    elseif($FieldType=='textarea'){
 				    ?>
 				    	<div class="form-group">
-							<label ><?php echo $FieldCaption;?></label><br>
-							<textarea class="form-control" name="<?php echo $FieldName;?>" row=5 id="<?php echo $FieldName;?>"></textarea>
+							<label ><?= $FieldCaption;?></label><br>
+							<textarea class="form-control" name="<?= $FieldName;?>" row=5 id="<?= $FieldName;?>"></textarea>
 						</div>
 
 				   <?php
@@ -1404,8 +1397,8 @@ function getSelectionHtml(selection) {
 				    else{
 				    	?>
 				    	 <div class="form-group">
-							<label><?php echo $FieldCaption;?></label><br>
-							 <input type="<?php echo $FieldType;?>" class="form-control" placeholder="<?php echo $FieldCaption;?>" name="<?php echo $FieldName;?>"  id="<?php echo $FieldName;?>">
+							<label><?= $FieldCaption;?></label><br>
+							 <input type="<?= $FieldType;?>" class="form-control" placeholder="<?= $FieldCaption;?>" name="<?= $FieldName;?>"  id="<?= $FieldName;?>">
 						  </div>
 				    <?php
 				    }
@@ -1414,7 +1407,7 @@ function getSelectionHtml(selection) {
 			}
 			?> 
 					<div class="box-footer">
-		             <input type="hidden" class="form-control" placeholder="" name="UID" value="<?php echo $UID;?>" id="<?php echo $FieldName;?>">
+		             <input type="hidden" class="form-control" placeholder="" name="UID" value="<?= $UID;?>" id="<?= $FieldName;?>">
 		           
 		            <button type="button" class="btn btn-primary" onclick="SaveDataEntry()">Save</button>
 		           	<button type="reset" class="btn btn-danger">Cancel</button>
@@ -1471,12 +1464,12 @@ function getSelectionHtml(selection) {
 				    if ($FieldType=='dropdown'){
 				    	?>
 				    	 <td>
-							<select class="form-control" name="<?php echo $FieldName;?>">
+							<select class="form-control" name="<?= $FieldName;?>">
 								<?php
 								$cats = explode("|",$FieldOption);
 								foreach($cats as $cat) {
 									?>
-									<option value="No"><?php echo  $cat;?></option>
+									<option value="No"><?= $cat;?></option>
 									<?php
 								 
 								}
@@ -1489,7 +1482,7 @@ function getSelectionHtml(selection) {
 				    ?>
 				    	 <td>
 							 
-							<textarea class="form-control" name="<?php echo $FieldName;?>" row=5></textarea>
+							<textarea class="form-control" name="<?= $FieldName;?>" row=5></textarea>
 						 </td>
 
 				   <?php
@@ -1498,7 +1491,7 @@ function getSelectionHtml(selection) {
 				    	?>
 				    	  <td>
 							
-							 <input type="<?php echo $FieldType;?>" class="form-control" placeholder="<?php echo $FieldCaption;?>" name="<?php echo $FieldName;?>"  >
+							 <input type="<?php echo $FieldType;?>" class="form-control" placeholder="<?= $FieldCaption;?>" name="<?php echo $FieldName;?>"  >
 						  </td>
 				    <?php
 				    }
@@ -1967,7 +1960,7 @@ function FormView() {
 				  <div class="box-footer">
 				   
 					<div class="pull-right">
-						<input type="hidden" name="fileVal" value="<?php echo "$file[0].xml";?>">
+						<input type="hidden" name="fileVal" value="<?= "$file[0].xml";?>">
 						<!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-shortcut" ><i class="fa fa-keyboard-o"></i> Shortcut key</button> -->
 						  <?php
 					 	 $dispSave='none';
@@ -2336,7 +2329,7 @@ function FormView() {
           <h4 class="modal-title">Hold Batch</h4>
           </div>
           <div class="modal-body">
-           <input type="hidden" name="BatchID3" value="<?php echo "$BatchID";?>">
+           <input type="hidden" name="BatchID3" value="<?= "$BatchID";?>">
           <p>Are you sure you want to put this batch on hold?</p>
           <p>Remarks: <textarea rows="10" cols="80" class="form-control" name="Remarks"></textarea></p>
           

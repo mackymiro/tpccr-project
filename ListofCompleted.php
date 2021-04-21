@@ -32,7 +32,7 @@ if ($result=mysqli_query($con,$sql))
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>primo</title>
+  <title>Tpccr</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -93,7 +93,7 @@ if ($result=mysqli_query($con,$sql))
       <!-- mini logo for sidebar mini 50x50 pixels -->
      <span class="logo-mini"><img src="innodata.png" class="img-circle"></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg pull-left"><img src="innodata.png" class="img-circle" alt="User Image">&nbsp;<b>p</b>rimo</span>
+      <span class="logo-lg pull-left"><img src="innodata.png" class="img-circle" alt="User Image">&nbsp;<b>T</b>pccr</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -109,7 +109,7 @@ if ($result=mysqli_query($con,$sql))
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $_SESSION['EName'];?></span>
+              <span class="hidden-xs"><?= $_SESSION['EName'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -117,8 +117,8 @@ if ($result=mysqli_query($con,$sql))
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                 <?php echo $_SESSION['EName'];?>
-                  <small><?php echo $_SESSION['UserType'];?></small>
+                 <?= $_SESSION['EName'];?>
+                  <small><?= $_SESSION['UserType'];?></small>
                 </p>
               </li>
               <!-- Menu Body -->

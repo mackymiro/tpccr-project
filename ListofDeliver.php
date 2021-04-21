@@ -32,7 +32,7 @@ if ($result=mysqli_query($con,$sql))
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>primo</title>
+  <title>Tpccr</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -93,7 +93,7 @@ if ($result=mysqli_query($con,$sql))
       <!-- mini logo for sidebar mini 50x50 pixels -->
      <span class="logo-mini"><img src="innodata.png" class="img-circle"></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg pull-left"><img src="innodata.png" class="img-circle" alt="User Image">&nbsp;<b>p</b>rimo</span>
+      <span class="logo-lg pull-left"><img src="innodata.png" class="img-circle" alt="User Image">&nbsp;<b>T</b>pccr</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -283,22 +283,22 @@ include ("sideBar.php");
         }
         ?>
           
-                  <td><a href="index.php?file=<?php echo $filename;?>&BatchID=<?php echo $row["BatchId"];?>&Status=Completed"><?php echo $row["JobName"];?></a></td>
-                  <td><?php echo $row["Jurisdiction"];?></td>
-                  <td><?php echo $row["SourceURL"];?></td>
-                  <td><?php echo $row["SourceTitle"];?></td>
-                  <td><?php echo $row["Filename"];?></td>
-                  <td><?php echo $row["Title"];?></td>
-                  <td><?php echo $row["Register"];?></td>
-                  <td><?php echo $row["Type"];?></td>
-                  <td><?php echo $row["Priority"];?></td>
-                  <td><?php echo $row["Topic"];?></td>
-                  <td><?php echo $row["SubTopics"];?></td>
-                  <td><?php echo $row["OriginatingDate"];?></td>
-                  <td><?php echo $row["StateDate"];?></td>
-                  <td><?php echo $row["Status"];?></td>
-                  <td><?php echo $row["AssignedTo"];?></td> 
-                  <td><?php echo $row["LastUpdate"];?></td> 
+              <td><a href="index.php?file=<?php echo $filename;?>&BatchID=<?php echo $row["BatchId"];?>&Status=Completed"><?php echo $row["JobName"];?></a></td>
+              <td><?php echo $row["Jurisdiction"];?></td>
+              <td><?php echo $row["SourceURL"];?></td>
+              <td><?php echo $row["SourceTitle"];?></td>
+              <td><?php echo $row["Filename"];?></td>
+              <td><?php echo $row["Title"];?></td>
+              <td><?php echo $row["Register"];?></td>
+              <td><?php echo $row["Type"];?></td>
+              <td><?php echo $row["Priority"];?></td>
+              <td><?php echo $row["Topic"];?></td>
+              <td><?php echo $row["SubTopics"];?></td>
+              <td><?php echo $row["OriginatingDate"];?></td>
+              <td><?php echo $row["StateDate"];?></td>
+              <td><?php echo $row["Status"];?></td>
+              <td><?php echo $row["AssignedTo"];?></td> 
+              <td><?php echo $row["LastUpdate"];?></td> 
           </tr>
         <?php
        

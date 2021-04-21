@@ -3,6 +3,10 @@ include "conn.php";
 // error_reporting(0);
 $JobID=$_POST['data'];
 $filename = $_POST['filename'];
+
+$GGUserName = 'hj1@innodata.com';
+$GGPassword='test@1qaz';
+$GGProductionMode='OFF';//ON or OFF
  
 $token = getAPIKey($GGUserName,$GGPassword,$GGProductionMode);
  

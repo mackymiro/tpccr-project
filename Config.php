@@ -7,11 +7,12 @@ $Mode="SQLDirect"; //API/SQLDirect
 $GGUserName = 'hj1@innodata.com';
 $GGPassword='test@1qaz';
 $GGProductionMode='OFF';//ON or OFF
-$GGTaxonomy = "legal-cases-taxonomy.json";
+//$GGTaxonomy = "legal-cases-taxonomy.json";
+$GGTaxonomy = "legal-bu-taxonomy.json";
 //$GGTeam="Legal Cases";
 $GGTeam="TPCCR";
 
-$SourceFilePath = "C:\\XAMPP\\htdocs\\primo\\uploadfiles\\SourceFiles\\";
+$SourceFilePath = "C:\\XAMPP\\htdocs\\tpccr\\uploadfiles\\SourceFiles\\";
 
 $WorkflowID=2;
 
@@ -35,7 +36,7 @@ if ($GGProductionMode=='ON'){
 }
 else{
 	//$TokenVAL ='dXNlci10ZXN0LWFjZWMzNWQ1OWM1OGUyMGEyMDU3NGEzYmJlMTg3ZTBhODhkOWUwN2Q6';	
-	$TokenVAL = 'dXNlci10ZXN0LWFjZWMzNWQ1OWM1OGUyMGEyMDU3NGEzYmJlMTg3ZTBhODhkOWUwN2Q6';
+	$TokenVAL = 'dXNlci10ZXN0LTUzY2FkNzZmYzIzOGUzNTgwNWU5NjgzY2YxNDFlNTE4ZjliZWUzMTA6';
 }
 
 

@@ -19,16 +19,16 @@
     $.ajax({
             type: "POST",
             url: "https://api.innodata.com/v1.1/users/login",
-            data: JSON.stringify({ authentication_method:"password",username:"jbello@innodata.com", password:"Inn0d@t@"}),
+            data: JSON.stringify({ authentication_method:"password",username:"hj1@innodata.com", password:"test@1qaz"}),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(result){  
               console.log("STEP 1");
               // console.log(result)         
-          var stringified = JSON.stringify(result);
-            var parsedObj = JSON.parse(stringified);
-           var token = parsedObj.response.api_keys.test;
-           var Filename="SN_20200813004759.pdf"; 
+              var stringified = JSON.stringify(result);
+              var parsedObj = JSON.parse(stringified);
+              var token = parsedObj.response.api_keys.test;
+              var Filename="SN_20200813004759.pdf"; 
                step2(token,Filename);
 
             },
@@ -48,7 +48,7 @@
     
 
       
-      var data = 'data='+encodeURIComponent(token)+"&filename="+encodeURIComponent(filename);
+          var data = 'data='+encodeURIComponent(token)+"&filename="+encodeURIComponent(filename);
           var xmlhttp = new XMLHttpRequest();
 
           xmlhttp.onreadystatechange=function(){
@@ -75,7 +75,7 @@
           xmlhttp.send(data);
       }
 
-      function step3(ContentURI,taxonomy,token){
+    function step3(ContentURI,taxonomy,token){
         // Post Job
         console.log("STEP 3");
         document.getElementById('response').innerHTML = "";
@@ -110,38 +110,37 @@
       function step4(token, JobID, BatchId,filename){
         console.log("STEP 4");
         document.getElementById('response').innerHTML = "";
-      document.getElementById('response').innerHTML = "Step 4: PDF Generation...";
+        document.getElementById('response').innerHTML = "Step 4: PDF Generation...";
         $.ajax({  
-         method: 'GET', 
-                      
-        //url: 'http://iplcewks03261.noida.innodata.net:4000/icp2-worflow-server/api/getPdfGenerationStatus/'+JobID+'/'+BatchId,
-          url: 'http://virndatyp01.noida.innodata.net:7000/icp2-worflow-server/api/getPdfGenerationStatus/'+JobID+'/'+BatchId,
-          type: "GET",
-                processData: false,
-                contentType: false,
-        beforeSend: function (xhr) {
-          xhr.setRequestHeader('Authorization', 'Bearer '+token);
-        },
-          success:function(result){
-          console.log(result);
-          if(result=="Queued"){
-            setTimeout(function(){ 
-              step4(token, JobID, BatchId,filename); 
-            }, 20000);
-          }else if(result=="Completed"){
-            step5(token, JobID, BatchId,filename);
-          }
-        },
-        failure: function(errMsg) {
-            console.log(errMsg);
-        }
+            method: 'GET', 
+               //url: 'http://iplcewks03261.noida.innodata.net:4000/icp2-worflow-server/api/getPdfGenerationStatus/'+JobID+'/'+BatchId,
+              url: 'http://virndatyp01.noida.innodata.net:7000/icp2-worflow-server/api/getPdfGenerationStatus/'+JobID+'/'+BatchId,
+              type: "GET",
+                    processData: false,
+                    contentType: false,
+            beforeSend: function (xhr) {
+              xhr.setRequestHeader('Authorization', 'Bearer '+token);
+            },
+              success:function(result){
+              console.log(result);
+              if(result=="Queued"){
+                setTimeout(function(){ 
+                  step4(token, JobID, BatchId,filename); 
+                }, 20000);
+              }else if(result=="Completed"){
+                step5(token, JobID, BatchId,filename);
+              }
+            },
+            failure: function(errMsg) {
+                console.log(errMsg);
+            }
       });
       }
 
-      function step5(token, JobID, BatchId,filename){
+    function step5(token, JobID, BatchId,filename){
         console.log("STEP 5");
         document.getElementById('response').innerHTML = "";
-      document.getElementById('response').innerHTML = "Step 5: Displaying PDF Content...";
+        document.getElementById('response').innerHTML = "Step 5: Displaying PDF Content...";
         $.ajax({  
          method: 'GET',           
         //url: 'http://iplcewks03261.noida.innodata.net:4000/icp2-worflow-server/api/getGeneratedPdf/'+JobID+'/'+BatchId,
@@ -171,7 +170,7 @@
                 formData.append('pdf', result);
                 formData.append('filename', filename);
             $.ajax({  
-            method: 'POST',           
+              method: 'POST',           
               url: 'saveblob.php',
               type: "POST",
               data: formData,

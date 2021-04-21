@@ -14,7 +14,8 @@ $JobId= $_SESSION['JobID'];
 $fields = array();
 $_SESSION['token']=$token;
 // files to upload
- $filenames = array("C:\\XAMPP\\htdocs\\primoiDeagen_v2.0\\uploadfiles\\SN_20200813004759.pdf");
+ //$filenames = array("C:\\XAMPP\\htdocs\\primoiDeagen_v2.0\\uploadfiles\\SN_20200813004759.pdf");
+ $filenames = array("C:\\XAMPP\\htdocs\\tpccr\\uploadfiles\\SN_20200813004759.pdf");
 
 $files = array();
 foreach ($filenames as $f){
@@ -117,12 +118,12 @@ curl_setopt($ch, CURLOPT_POST, 1);
 // curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"Ideagen\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"taxonomy\":\"ideagen-taxonomy.json\"}},\"type\":\"data-point-extraction\"}");
 
 if ($isImage=="YES"){
-curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"Ideagen\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[{ \"from\": \"12dd6786-8ae2-4cfe-a851-db5d506efd53\", \"to\": \"1a55360b-b09a-492a-accf-93076ce4d614\" }]},\"taxonomy\":\"ideagen-taxonomy.json\"},\"text-extraction\":{\"ocr\":true},\"zoning\":{\"high_confidence_threshold\":\"0\"}},\"type\":\"data-point-extraction\"}");
+curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"TPCCR\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[{ \"from\": \"12dd6786-8ae2-4cfe-a851-db5d506efd53\", \"to\": \"1a55360b-b09a-492a-accf-93076ce4d614\" }]},\"taxonomy\":\"ideagen-taxonomy.json\"},\"text-extraction\":{\"ocr\":true},\"zoning\":{\"high_confidence_threshold\":\"0\"}},\"type\":\"data-point-extraction\"}");
 
 
 }
 else{
-  curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"Ideagen\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[{ \"from\": \"12dd6786-8ae2-4cfe-a851-db5d506efd53\", \"to\": \"1a55360b-b09a-492a-accf-93076ce4d614\" }]},\"taxonomy\":\"ideagen-taxonomy.json\"},\"text-extraction\":{\"ocr\":false},\"zoning\":{\"high_confidence_threshold\":\"0\"}},\"type\":\"data-point-extraction\"}");
+  curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"TPCCR\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[{ \"from\": \"12dd6786-8ae2-4cfe-a851-db5d506efd53\", \"to\": \"1a55360b-b09a-492a-accf-93076ce4d614\" }]},\"taxonomy\":\"ideagen-taxonomy.json\"},\"text-extraction\":{\"ocr\":false},\"zoning\":{\"high_confidence_threshold\":\"0\"}},\"type\":\"data-point-extraction\"}");
 
 }
 

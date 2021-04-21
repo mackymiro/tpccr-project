@@ -12,7 +12,7 @@ $JobId= $_SESSION['JobID'];
 $fields = array();
 $_SESSION['token']=$token;
 // files to upload
- $filenames = array("C:\\XAMPP\\htdocs\\primoTHUCL\\uploadfiles\\SourceFiles\\".$filename);
+ $filenames = array("C:\\XAMPP\\htdocs\\tpccr\\uploadfiles\\SourceFiles\\".$filename);
 
 $files = array();
 foreach ($filenames as $f){
@@ -114,7 +114,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
 
 // curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"Ideagen\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"taxonomy\":\"ideagen-taxonomy.json\"}},\"type\":\"data-point-extraction\"}");
 
-  curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"THUCL\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"legal-bu-taxonomy.json\"},\"text-extraction\":{\"ocr\":false},\"zoning\":{\"high_confidence_threshold\":\"1\"}},\"type\":\"data-point-extraction\",\"use_for_training\":false}");
+curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"TPPCR\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"legal-bu-taxonomy.json\"},\"text-extraction\":{\"ocr\":false},\"zoning\":{\"high_confidence_threshold\":\"1\"}},\"type\":\"data-point-extraction\",\"use_for_training\":false}");
 
 // if ($isImage=="YES"){
 // curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"Ideagen\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[{ \"from\": \"12dd6786-8ae2-4cfe-a851-db5d506efd53\", \"to\": \"1a55360b-b09a-492a-accf-93076ce4d614\" }]},\"taxonomy\":\"ideagen-taxonomy.json\"},\"text-extraction\":{\"ocr\":true},\"zoning\":{\"high_confidence_threshold\":\"0\"}},\"type\":\"data-point-extraction\",\"use_for_training\":true}");

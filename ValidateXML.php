@@ -67,7 +67,8 @@ if (!empty($post_data)) {
         }
 
         
-     $cmd = 'C:\\xampp\\htdocs\\primoTHUCL\\xmlparser\\parser\\XMLBatchParser.exe "C:\\xampp\\htdocs\\primoLN\\uploadfiles\\'.$nfile.'" "C:\xampp\htdocs\primoTHUCL\xmlparser\parser\schema\judicial.artifact.xsd" C:\\xampp\\htdocs\\primoLN\\uploadfiles\\'.$filename.'.log"';
+     //$cmd = 'C:\\xampp\\htdocs\\primoTHUCL\\xmlparser\\parser\\XMLBatchParser.exe "C:\\xampp\\htdocs\\primoLN\\uploadfiles\\'.$nfile.'" "C:\xampp\htdocs\primoTHUCL\xmlparser\parser\schema\judicial.artifact.xsd" C:\\xampp\\htdocs\\primoLN\\uploadfiles\\'.$filename.'.log"';
+     $cmd = 'C:\\xampp\\htdocs\\tpccr\\xmlparser\\parser\\XMLBatchParser.exe "C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nfile.'" "C:\xampp\htdocs\tpccr\xmlparser\parser\schema\judicial.artifact.xsd" C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$filename.'.log"';
 
     exec($cmd, $out, $ret);
 

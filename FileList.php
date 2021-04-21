@@ -39,7 +39,7 @@ $_SESSION['rows']=$rows;
     <script type="text/javascript">
         $(function(){
             var dg = $('#tt').datagrid({
-            	url: 'datagrid3_getEContent.php?dtFrom=<?php echo $dtFrom;?>&dtTo=<?php echo $dtTo?>&Status=<?php echo $Status;?>&State=<?php echo $State?>', 
+            	url: 'datagrid3_getEContent.php?dtFrom=<?= $dtFrom;?>&dtTo=<?= $dtTo?>&Status=<?= $Status;?>&State=<?= $State?>', 
                 pagination: true,
                 remoteFilter: true,
                 rownumbers: true
@@ -79,7 +79,7 @@ $height = $_COOKIE["size"];
 ?>	
     <div style="margin:20px;"></div>
     <table id="tt" class="easyui-datagrid" style="width:100%;height:500vh"
-     url="datagrid3_getEContent.php?dtFrom=<?php echo $dtFrom;?>&dtTo=<?php echo $dtTo?>&Status=<?php echo $Status;?>&Submit=Go&State=<?php echo $State?>"  
+     url="datagrid3_getEContent.php?dtFrom=<?= $dtFrom;?>&dtTo=<?= $dtTo?>&Status=<?= $Status;?>&Submit=Go&State=<?= $State?>"  
         title="Batch list Report" 
         rownumbers="true" pagination="true"
         data-options="
@@ -109,7 +109,7 @@ $height = $_COOKIE["size"];
     <a href="ExportToexcel2.php" onclick="return theFunction();" target="_blank">Export To Excel</a>
    <script>
     function formatPrice(val,row){
-        return '<a style="color: <?php echo $color;?>"  target="_blank" href="E_ContentDetails.php?DiscrepancyID='+val+'&txtKeyword=<?php echo $_GET[txtKeyword];?>&dateRange=<?php echo $dateRange;?>&Status=<?php echo $Status;?>">'+val+'</a>';
+        return '<a style="color: <?= $color;?>"  target="_blank" href="E_ContentDetails.php?DiscrepancyID='+val+'&txtKeyword=<?= $_GET[txtKeyword];?>&dateRange=<?= $dateRange;?>&Status=<?= $Status;?>">'+val+'</a>';
     }
 	</script>
 	

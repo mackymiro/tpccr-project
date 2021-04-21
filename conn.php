@@ -1,10 +1,11 @@
 <?php
 //CONFIGURATION START HERE//
-include "Config.php";
+require_once "Config.php";
 
 //CONFIGURATION END HERE//
 
-$con=mysqli_connect($mySQLServer,$mySQLUsername,$mySQLPassword,$mySQLDbase);
+//$con=mysqli_connect($mySQLServer,$mySQLUsername,$mySQLPassword,$mySQLDbase);
+$con=mysqli_connect('localhost','root','','primo');
 // Check connection
 if (mysqli_connect_errno())
 {
@@ -13,88 +14,87 @@ if (mysqli_connect_errno())
 
 
 if ($Mode=='SQLDirect'){
-	$conSearchnet=odbc_connect($SearchnetDSN,$SearchnetUsername,$SearchnetPword);
+	//$conSearchnet=odbc_connect($SearchnetDSN,$SearchnetUsername,$SearchnetPword);
+	$conSearchnet=odbc_connect('SearchnetIdeagen','adminsearchnet','admin12345');
 		if (!$conSearchnet)
 		{exit("Connection Failed: " . $conSearchnet);}
 
-	$conWMS=odbc_connect($WMSDSN,$WMSUsername,$WMSPassword);
+	//$conWMS=odbc_connect($WMSDSN,$WMSUsername,$WMSPassword);
+	$conWMS=odbc_connect('WMSprimo','admin','admin12345');
+	//$conWMS=odbc_connect("Driver={SQL Server};Server=.\SQLEXPRESS;Database=WMSDEV_PRIMO_DEMO",$WMSUsername,$WMSPassword);
 		if (!$conWMS)
 		{exit("Connection Failed: " . $conWMS);}
 
 }
 
+
 function getAPIKey($GGUserName,$GGPassword,$GGProductionMode){
-  $ch = curl_init();
+ 	$ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, 'https://api.innodata.com/v1.1/users/login');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"authentication_method\":\"password\",\"password\":\"".$GGPassword."\",\"request_root\":true,\"username\":\"".$GGUserName."\"}");
+	curl_setopt($ch, CURLOPT_URL, 'https://api.innodata.com/v1.1/users/login');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"authentication_method\":\"password\",\"password\":\"".$GGPassword."\",\"request_root\":true,\"username\":\"".$GGUserName."\"}");
 
-$headers = array();
-$headers[] = 'Accept: application/json';
-$headers[] = 'Content-Type: application/json';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	$headers = array();
+	$headers[] = 'Accept: application/json';
+	$headers[] = 'Content-Type: application/json';
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-$result = curl_exec($ch);
-
-
-$jobj = json_decode($result);
-
-// $token = $jobj->response->api_keys->live;
-if ($GGProductionMode=='ON'){
-	$token = $jobj->response->api_keys->live;
-}
-else{
-	$token = $jobj->response->api_keys->test;	
-}
+	$result = curl_exec($ch);
 
 
+	$jobj = json_decode($result);
 
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
-}
-curl_close($ch);
+	// $token = $jobj->response->api_keys->live;
+	if ($GGProductionMode=='ON'){
+		$token = $jobj->response->api_keys->live;
+	}
+	else{
+		$token = $jobj->response->api_keys->test;	
+	}
 
-return $token;
+	if(curl_errno($ch)) {
+		echo 'Error:' . curl_error($ch);
+	}
+	curl_close($ch);
+
+	return $token;
 }
 
 
 
 function GetRecordCount($sql,$conWMS){
+	$rs=odbc_exec($conWMS,$sql);
+	$ctr = odbc_num_rows($rs);
 		 
-					
-		$rs=odbc_exec($conWMS,$sql);
-		$ctr = odbc_num_rows($rs);
-		 
-		return $ctr;
+	return $ctr;
 		
 }
+
 function ExecuteQuery($prSQL,$con){
-	
-		if (!mysqli_query($con,$prSQL))
-		  {
-			 // echo $prSQL;
-			// echo $prSQL;
-		  header("location:../error.html");
-		  die('Error: ' . mysqli_error());
-		  }  
+	if (!mysqli_query($con,$prSQL)){
+		// echo $prSQL;
+		// echo $prSQL;
+		header("location:../error.html");
+		die('Error: ' . mysqli_error());
+	}  
 
 }
+
 function ExecuteQuerySQLSERVER($prSQL,$conWMS){
-		 
-		$res= odbc_exec($conWMS,$prSQL);
-		
-			  if (!$res) {
-			  		echo odbc_error($conWMS);
-				    // print("SQL statement failed with error:\n");
-				    
-			  } else {
-						   // print("One data row inserted.\n");
-			  }  
-	}
+	$res= odbc_exec($conWMS,$prSQL);
 	
-	function GetFieldValue($sql,$fieldVal,$con){
+	if (!$res) {
+		echo odbc_error($conWMS);
+		//print("SQL statement failed with error:\n");
+		
+	} else {
+		// print("One data row inserted.\n");
+	}  
+}
+	
+function GetFieldValue($sql,$fieldVal,$con){
 	 
 	if ($result=mysqli_query($con,$sql))
 	  {
@@ -106,9 +106,9 @@ function ExecuteQuerySQLSERVER($prSQL,$conWMS){
 			 
 		}
 	  }
-	}
+}
 	
-	function GetWMSValue($sql,$fieldVal,$conWMS){
+function GetWMSValue($sql,$fieldVal,$conWMS){
 		  
 		$Val='';	
 		$rs=odbc_exec($conWMS,$sql);
@@ -119,10 +119,10 @@ function ExecuteQuerySQLSERVER($prSQL,$conWMS){
 		}
 		return $Val;
 		
-	}
+}
 
 	
-  function GenerateGraphData($prDateFrom,$prDateTO,$prStatus,$prCode,$conWMS) {
+function GenerateGraphData($prDateFrom,$prDateTO,$prStatus,$prCode,$conWMS) {
 		$prDateFrom = $prDateFrom.' 11:59:59 PM';
 		$prDateTO = $prDateTO.' 12:00:00 AM';
 		if ($prStatus=='On-Going'){
@@ -153,7 +153,7 @@ function ExecuteQuerySQLSERVER($prSQL,$conWMS){
 	  $valAmount = $ADM.','.$DataVault.','.$Dissertations;
 	    
 	  return $valAmount;
-	}
+}
 
 	
 function GenerateBookID($sql,$idVal,$fieldVal,$conWMS){
@@ -179,7 +179,7 @@ function GenerateBookID($sql,$idVal,$fieldVal,$conWMS){
 		
 		return $Val;
 		
-	} 
+} 
 
 	
 
@@ -215,5 +215,6 @@ function formatXmlString($xml) {
   endwhile;
   return $result;
 }
-	?>
+
+?>
   

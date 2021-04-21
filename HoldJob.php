@@ -27,5 +27,5 @@
 
 
 <script language="javascript">
-	window.location = "<?php echo $page;?>";
+	window.location = "<?= $page;?>";
 </script>
