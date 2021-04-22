@@ -1,0 +1,52 @@
+  <?xml version="1.0" encoding="UTF-8"?>
+<inno:dom xmlns:inno="http://innodatalabs.com/innodom"><inno:meta><inno:datapoint key="party.1.party_name.1" confidence="1">Lolo Pinoy Grill Commissary</inno:datapoint><inno:datapoint key="counsel.1.attorney_name.1" confidence="1">Macky</inno:datapoint><inno:datapoint key="counsel.1.address.1" confidence="1" idref="text-1">Dino Compound, 3rd Floor Dino Group Administration Bldg., No.88 Labogon Road, Barangay Labogon, Mandaue City, 6014 Cebu, Philippines</inno:datapoint></inno:meta><inno:content><inno:image id="image-1" type="image"><inno:block page="1" page-height="512" page-width="396" x-max="282.0" x-min="103.0" y-max="123.0" y-min="30.0"/></inno:image><inno:text id="text-1" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="340.0" x-min="55.0" y-max="149.0" y-min="139.0"><inno:font font-name="Times-Roman" font-size="7.50pt">Dino Compound, 3rd Floor Dino Group Administration Bldg., No.88 Labogon Road, Barangay Labogon, Mandaue City, 6014 Cebu, Philippines</inno:font></inno:block></inno:text><inno:text id="text-2" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="261.0" x-min="130.0" y-max="152.9" y-min="149.1"><inno:font font-name="Times-Roman" font-size="7.50pt">Tel. Nos. (63-32) 346-2567; 420-5639 / Fax No. (63-32) 346-034</inno:font></inno:block></inno:text><inno:text id="text-3" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="283.0" x-min="112.0" y-max="162.0" y-min="153.0"><inno:font font-name="Times-Roman" font-size="7.50pt">. . .<inno:br/>Email Address: admin@dnogroup.ph / sales@dnogroup.ph / marketing@dnogroup.ph</inno:font></inno:block></inno:text><inno:text id="text-4" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="338.0" x-min="57.0" y-max="180.0" y-min="168.0"><inno:b><inno:font font-name="Times-Bold" font-size="12.00pt"><inno:u>PAYMENT DETAILS (PAYMENT VOUCHER LOLO PINOY GRILL BRANCH)</inno:u></inno:font></inno:b></inno:block></inno:text><inno:table id="table-1" type="table"><inno:block page="1" page-height="512" page-width="396" x-max="377.0" x-min="18.0" y-max="261.0" y-min="187.0"><inno:tr row="1">
+<inno:td col="1" colspan="2" id="table-1-1-1" x-max="69.5" x-min="18.0" y-max="197.05" y-min="187.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Paid To</inno:font></inno:b></inno:td>
+<inno:td col="2" colspan="2" id="table-1-1-2" x-max="238.0" x-min="69.5" y-max="197.05" y-min="187.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">METROPOLITAN CEBU WATER DISTRICT</inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-1-3" rowspan="4" x-max="322.0" x-min="238.0" y-max="229.0" y-min="187.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Amount Due<inno:br/>Invoice #<inno:br/>Voucher Ref #<inno:br/>Payment Method</inno:font></inno:b></inno:td>
+<inno:td col="4" id="table-1-1-4" x-max="377.0" x-min="322.0" y-max="197.05" y-min="187.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">4,872.42</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="2">
+<inno:td col="1" colspan="2" id="table-1-2-1" x-max="69.5" x-min="18.0" y-max="204.0" y-min="197.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Status</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-2-2" x-max="156.5" x-min="69.5" y-max="204.0" y-min="197.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">FOR APPROVAL</inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-2-3" x-max="238.0" x-min="156.5" y-max="204.0" y-min="197.05"/>
+<inno:td col="4" id="table-1-2-4" rowspan="2" x-max="377.0" x-min="322.0" y-max="213.0" y-min="197.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">MCWD32844757<inno:br/>LPGC-000011</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="3">
+<inno:td col="1" id="table-1-3-1" x-max="37.0" x-min="18.0" y-max="213.0" y-min="204.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Date</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-3-2" x-max="69.5" x-min="37.0" y-max="213.0" y-min="204.0"/>
+<inno:td col="3" id="table-1-3-3" x-max="156.5" x-min="69.5" y-max="213.0" y-min="204.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">05/30/2020</inno:font></inno:b></inno:td>
+<inno:td col="4" id="table-1-3-4" x-max="238.0" x-min="156.5" y-max="213.0" y-min="204.0"/>
+</inno:tr>
+<inno:tr row="4">
+<inno:td col="1" colspan="2" id="table-1-4-1" x-max="69.5" x-min="18.0" y-max="229.0" y-min="213.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Account Name</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-4-2" x-max="156.5" x-min="69.5" y-max="229.0" y-min="213.0"/>
+<inno:td col="3" id="table-1-4-3" x-max="238.0" x-min="156.5" y-max="229.0" y-min="213.0"/>
+<inno:td col="4" id="table-1-4-4" x-max="377.0" x-min="322.0" y-max="229.0" y-min="213.0"/>
+</inno:tr>
+<inno:tr row="5">
+<inno:td col="1" id="table-1-5-1" x-max="37.0" x-min="18.0" y-max="244.5" y-min="229.0"/>
+<inno:td col="2" id="table-1-5-2" x-max="69.5" x-min="37.0" y-max="244.5" y-min="229.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">DATE</inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-5-3" x-max="156.5" x-min="69.5" y-max="244.5" y-min="229.0"/>
+<inno:td col="4" id="table-1-5-4" x-max="238.0" x-min="156.5" y-max="244.5" y-min="229.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">PARTICULARS</inno:font></inno:b></inno:td>
+<inno:td col="5" id="table-1-5-5" x-max="322.0" x-min="238.0" y-max="244.5" y-min="229.0"/>
+<inno:td col="6" id="table-1-5-6" x-max="377.0" x-min="322.0" y-max="244.5" y-min="229.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">AMOUNT</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="6">
+<inno:td col="1" colspan="2" id="table-1-6-1" rowspan="2" x-max="69.5" x-min="18.0" y-max="261.0" y-min="244.5"><inno:font font-name="Times-Roman" font-size="9.00pt">05/30/2020</inno:font></inno:td>
+<inno:td col="2" colspan="3" id="table-1-6-2" x-max="322.0" x-min="69.5" y-max="251.95" y-min="244.5"><inno:font font-name="Times-Roman" font-size="9.00pt">LOLO PINOY GRILL TALAMBAN BRANCH BILLING PERIOD FROM APRIL 17-MAY 19,</inno:font></inno:td>
+<inno:td col="3" id="table-1-6-3" rowspan="2" x-max="377.0" x-min="322.0" y-max="261.0" y-min="244.5"><inno:font font-name="Times-Roman" font-size="13.50pt">4,872.42</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="7">
+<inno:td col="1" id="table-1-7-1" x-max="156.5" x-min="69.5" y-max="261.0" y-min="251.95"/>
+<inno:td col="2" id="table-1-7-2" x-max="238.0" x-min="156.5" y-max="261.0" y-min="251.95"><inno:font font-name="Times-Roman" font-size="9.00pt">2020</inno:font></inno:td>
+<inno:td col="3" id="table-1-7-3" x-max="322.0" x-min="238.0" y-max="261.0" y-min="251.95"/>
+</inno:tr>
+</inno:block></inno:table><inno:table id="table-2" type="table"><inno:block page="1" page-height="512" page-width="396" x-max="377.0" x-min="18.0" y-max="306.0" y-min="287.0"><inno:tr row="1">
+<inno:td col="1" id="table-2-1-1" x-max="202.0" x-min="18.0" y-max="296.05" y-min="287.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">CHEQUE NO ISSUED</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-2-1-2" x-max="377.0" x-min="202.0" y-max="296.05" y-min="287.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">CHEQUE AMOUNT</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="2">
+<inno:td col="1" id="table-2-2-1" x-max="202.0" x-min="18.0" y-max="306.0" y-min="296.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Total</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-2-2-2" x-max="377.0" x-min="202.0" y-max="306.0" y-min="296.05"><inno:font font-name="Times-Roman" font-size="9.00pt">4,872.42</inno:font></inno:td>
+</inno:tr>
+</inno:block></inno:table><inno:text id="text-5" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="53.0" x-min="18.0" y-max="362.0" y-min="351.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Prepared By</inno:font></inno:b></inno:block></inno:text><inno:text id="text-6" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="57.0" x-min="18.0" y-max="382.0" y-min="367.0"><inno:font font-name="Times-Roman" font-size="9.00pt">____________<inno:br/>Charina Bulan</inno:font></inno:block></inno:text><inno:text id="text-7" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="161.0" x-min="126.0" y-max="362.0" y-min="351.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Approved By</inno:font></inno:b></inno:block></inno:text><inno:text id="text-8" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="170.0" x-min="126.0" y-max="382.0" y-min="367.0"><inno:font font-name="Times-Roman" font-size="9.00pt">_______________<inno:br/>Aprilane Maturan<inno:br/>Finance Officer</inno:font></inno:block></inno:text></inno:content></inno:dom>

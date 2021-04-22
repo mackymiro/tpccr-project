@@ -68,7 +68,9 @@ if (!empty($post_data)) {
 
         
      //$cmd = 'C:\\xampp\\htdocs\\primoTHUCL\\xmlparser\\parser\\XMLBatchParser.exe "C:\\xampp\\htdocs\\primoLN\\uploadfiles\\'.$nfile.'" "C:\xampp\htdocs\primoTHUCL\xmlparser\parser\schema\judicial.artifact.xsd" C:\\xampp\\htdocs\\primoLN\\uploadfiles\\'.$filename.'.log"';
-     $cmd = 'C:\\xampp\\htdocs\\tpccr\\xmlparser\\parser\\XMLBatchParser.exe "C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nfile.'" "C:\xampp\htdocs\tpccr\xmlparser\parser\schema\judicial.artifact.xsd" C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$filename.'.log"';
+    //$cmd = 'C:\\xampp\\htdocs\\tpccr\\xmlparser\\parser\\XMLBatchParser.exe "C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nfile.'" "C:\xampp\htdocs\tpccr\xmlparser\parser\schema\judicial.artifact.xsd" C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$filename.'.log"';
+    $cmd = __DIR__.'\xmlparser\\parser\\XMLBatchParser.exe"'.__DIR__.'\tpccr\\uploadfiles\\'.$nfile.'" '.__DIR__.'\xmlparser\parser\schema\judicial.artifact.xsd" '.__DIR__.'\tpccr\\uploadfiles\\'.$filename.'.log"';
+
 
     exec($cmd, $out, $ret);
 
@@ -79,49 +81,47 @@ if (!empty($post_data)) {
     $cats = explode("\r\n", $LogFile);
     $ctr =0;
         
-        foreach($cats as $keyword) {
-            $keyword = trim($keyword);
+    foreach($cats as $keyword) {
+        $keyword = trim($keyword);
 
-            if(trim($keyword)!=""){  
-                $Log= explode(". Line",$keyword);
-               
-                if ($Log[0]!=''){
-                    
-                    $ErrorType = trim($Log[0]);
-                    $lenVal=3;
-                    $ErrorType= str_replace("<", "",$ErrorType);
-                    $ErrorType= str_replace("<", "",$ErrorType);
-                    $ErrorType= str_replace("C:\\xampp\\htdocs\\primoTHUCL\\uploadfiles\\".$nfile.":", "",$ErrorType);
-                    $A1 = explode(":",$ErrorType);
+        if(trim($keyword)!=""){  
+            $Log= explode(". Line",$keyword);
+            
+            if ($Log[0]!=''){
+                
+                $ErrorType = trim($Log[0]);
+                $lenVal=3;
+                $ErrorType= str_replace("<", "",$ErrorType);
+                $ErrorType= str_replace("<", "",$ErrorType);
+                //$ErrorType= str_replace("C:\\xampp\\htdocs\\primoTHUCL\\uploadfiles\\".$nfile.":", "",$ErrorType);
+                $ErrorType= str_replace(__DIR__."\uploadfiles\\".$nfile.":", "",$ErrorType);
+                $A1 = explode(":",$ErrorType);
 
-                    $lineNo = intval(trim($A1[0]));
-                    $ColNo = intval(trim($A1[1]));
-                    
-                    $Color='red';
-                    
-                    if($ErrorType!=''){
-                        $sLog = $sLog."<li><a href='#$nVal' class='myclass' onclick='jumpToLine($lineNo,$ColNo,$lenVal);'><i class='fa fa-circle text-$Color'></i>Parser:$ErrorType</a></li>";
-                        $nVal++;
-                    }
-                    
+                $lineNo = intval(trim($A1[0]));
+                $ColNo = intval(trim($A1[1]));
+                
+                $Color='red';
+                
+                if($ErrorType!=''){
+                    $sLog = $sLog."<li><a href='#$nVal' class='myclass' onclick='jumpToLine($lineNo,$ColNo,$lenVal);'><i class='fa fa-circle text-$Color'></i>Parser:$ErrorType</a></li>";
+                    $nVal++;
                 }
-
+                
             }
-        }
 
+        }
+    }
 
     unlink ("uploadfiles/".$filename.".log");
 
 	echo $sLog;
 
-}
-else{
+}else{
 	echo "No XML FILE";
 }
 
 
-function libxml_display_error($error)
-{
+function libxml_display_error($error){
     $return = "<br/>\n";
     switch ($error->level) {
         case LIBXML_ERR_WARNING:

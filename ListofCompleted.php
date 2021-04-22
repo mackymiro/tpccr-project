@@ -298,7 +298,7 @@ include ("sideBar.php");
 
 				?>
 				  
-                  <td><a href="index.php?file=<?php echo $filename;?>&BatchID=<?php echo $row["BatchId"];?>&Status=Completed"><?php echo $row["JobName"];?></a></td>
+                  <td><a href="index.php?file=<?= $filename;?>&BatchID=<?= $row["BatchId"];?>&Status=Completed"><?= $row["JobName"];?></a></td>
                   <td><?php echo $row["RequestID"];?></td>
                   <td><?php echo $row["Requestor"];?></a></td>
                   <td><?php echo $row["Filename"];?></td>

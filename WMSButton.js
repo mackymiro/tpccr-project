@@ -74,6 +74,7 @@
             xmlhttp.send(data);
     
   }
+  
   function PendingJobAndSave(){
     saveXML();
     PendingJob();
@@ -152,34 +153,34 @@
       xmlhttp.send(data);
       
   }
-function LoadAutomation(){
 
-  
-  var response=document.getElementById("AutomationList");
-  //var jTextArea=document.getElementById("jTextArea").value;
-  var jTextArea = "";
-  var data = 'data='+encodeURIComponent(jTextArea);
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange=function(){
-    if (xmlhttp.readyState==4 && xmlhttp.status==200){
-      response.innerHTML=xmlhttp.responseText;
-         
+function LoadAutomation(){
+    var response=document.getElementById("AutomationList");
+    //var jTextArea=document.getElementById("jTextArea").value;
+    var jTextArea = "";
+    var data = 'data='+encodeURIComponent(jTextArea);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function(){
+      if (xmlhttp.readyState==4 && xmlhttp.status==200){
+        response.innerHTML=xmlhttp.responseText;
+          
+      }
     }
-  }
-  xmlhttp.open("POST","LoadAutomation.php",true);
-        //Must add this request header to XMLHttpRequest request for POST
-  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  
-  xmlhttp.send(data);
+    xmlhttp.open("POST","LoadAutomation.php",true);
+          //Must add this request header to XMLHttpRequest request for POST
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    
+    xmlhttp.send(data);
   
 }
 
-  function DownloadXMLAndComplete(){
+function DownloadXMLAndComplete(){
     GetJobStatus();
     JobCompleted();
 
-  }
-  function saveXMLAndComplete(){
+}
+
+function saveXMLAndComplete(){
 
     // var ValidateTrigger = document.getElementById("ValidateTrigger").value;
     // // ValidateTrigger='';
@@ -191,39 +192,40 @@ function LoadAutomation(){
     //   alert("Please validate or fix the error posted on the Validation Logs.");
     // }
     
-  }
-  function JobCompleted(){
+}
+
+function JobCompleted(){
     
-          var chkStatus=document.getElementById("Status");
-          var jTextArea = document.getElementById("BatchID").value;
-           var Task = document.getElementById("Task").value;
-          var RelevantValue = document.getElementById("RelevantValue").value;
-          var data = 'data='+encodeURIComponent(jTextArea)+"&RelevantValue="+RelevantValue;
-  
-          var xmlhttp = new XMLHttpRequest();
-          xmlhttp.onreadystatechange=function(){
-            if (xmlhttp.readyState==4 && xmlhttp.status==200){
-               document.getElementById("Start").style.display = "none";
-               document.getElementById("Completed").style.display = "none";
-               document.getElementById("Pending").style.display = "none";
-               document.getElementById("Resume").style.display = "none";
-               document.getElementById("GetNext").style.display = "block";
-               document.getElementById("Hold").style.display = "none";
-               alert("Batch is successfully completed");
-               chkStatus.innerHTML="Completed";
-               document.getElementById("SaveButton").style.display = "none";
-              location.reload();
-            }
-          }
-          xmlhttp.open("POST","SetAsCompleted.php",true);
-                //Must add this request header to XMLHttpRequest request for POST
-          xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          
-          xmlhttp.send(data);
+      var chkStatus=document.getElementById("Status");
+      var jTextArea = document.getElementById("BatchID").value;
+        var Task = document.getElementById("Task").value;
+      var RelevantValue = document.getElementById("RelevantValue").value;
+      var data = 'data='+encodeURIComponent(jTextArea)+"&RelevantValue="+RelevantValue;
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            document.getElementById("Start").style.display = "none";
+            document.getElementById("Completed").style.display = "none";
+            document.getElementById("Pending").style.display = "none";
+            document.getElementById("Resume").style.display = "none";
+            document.getElementById("GetNext").style.display = "block";
+            document.getElementById("Hold").style.display = "none";
+            alert("Batch is successfully completed");
+            chkStatus.innerHTML="Completed";
+            document.getElementById("SaveButton").style.display = "none";
+          location.reload();
+        }
       }
+      xmlhttp.open("POST","SetAsCompleted.php",true);
+            //Must add this request header to XMLHttpRequest request for POST
+      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      
+      xmlhttp.send(data);
+}
       
   // }
-  function saveQAResult(BatchName,QAResult){
+function saveQAResult(BatchName,QAResult){
       var data = 'data='+encodeURIComponent(BatchName + "||" + QAResult);
 
       var xmlhttp = new XMLHttpRequest();
@@ -239,8 +241,9 @@ function LoadAutomation(){
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       
       xmlhttp.send(data);
-  }
-  function getChecklist(BatchID){
+}
+
+function getChecklist(BatchID){
     var elements = document.getElementById("frmDataEntry").elements;
       
       for (var i = 0, element; element = elements[i++];) {
@@ -261,27 +264,27 @@ function LoadAutomation(){
       }
   }
 
-  function saveCheckList(BatchID,ElementName,ElementValue){
+function saveCheckList(BatchID,ElementName,ElementValue){
 
-      var data = 'data='+encodeURIComponent(BatchID + "||" + ElementName + "||" + ElementValue);
+    var data = 'data='+encodeURIComponent(BatchID + "||" + ElementName + "||" + ElementValue);
 
-      var xmlhttp = new XMLHttpRequest();
+    var xmlhttp = new XMLHttpRequest();
 
-      xmlhttp.onreadystatechange=function(){
-        if (xmlhttp.readyState==4 && xmlhttp.status==200){
-               
-            // document.getElementById("CheckIN").style.display = "none"; 
-        }
+    xmlhttp.onreadystatechange=function(){
+      if (xmlhttp.readyState==4 && xmlhttp.status==200){
+              
+          // document.getElementById("CheckIN").style.display = "none"; 
       }
-      xmlhttp.open("POST","saveCheckList.php",true);
-            //Must add this request header to XMLHttpRequest request for POST
-      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      
-      xmlhttp.send(data);
-  }
+    }
+    xmlhttp.open("POST","saveCheckList.php",true);
+          //Must add this request header to XMLHttpRequest request for POST
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    
+    xmlhttp.send(data);
+}
 
 
-  function CheckIN(prJobname){
+function CheckIN(prJobname){
 
       // ExecuteConversion(prJobname);
       var data = 'data='+encodeURIComponent(prJobname + "||" + editor_html.getValue());
@@ -300,11 +303,9 @@ function LoadAutomation(){
       
       xmlhttp.send(data);
       
-  }
+}
 
-  function Resume(prFilename,prTask){
-      
-     
+function Resume(prFilename,prTask){
       var chkStatus=document.getElementById("Status");
       var jTextArea = document.getElementById("BatchID1").value;
       var data = 'data='+encodeURIComponent(jTextArea);
@@ -331,9 +332,9 @@ function LoadAutomation(){
       
       xmlhttp.send(data);
       
-  }
+}
 
-  function movePendingFile(prFilename){
+function movePendingFile(prFilename){
        
       // var prFilename=document.getElementById("filename").innerHTML+'.doc';
       var BookID= document.getElementById("BookID").value;
@@ -353,48 +354,51 @@ function LoadAutomation(){
       
       xmlhttp.send(data);
 
-  }
+}
 
-   function saveHTMLFile(){
-        var prFilename=document.getElementById("filename").innerHTML;
-        
+function saveHTMLFile(){
+    var prFilename=document.getElementById("filename").innerHTML;
+    
 
-        var jTextArea = CKEDITOR.instances['editor1'].getData();
-        var data = 'data='+encodeURIComponent(jTextArea) + "&Filename="+prFilename ;
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange=function(){
-              if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                //response.innerHTML=xmlhttp.responseText;
-                 alert(xmlhttp.responseText);
-              }
-            }
-            xmlhttp.open("POST","saveNewHTML.php",true);
-                  //Must add this request header to XMLHttpRequest request for POST
-            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xmlhttp.send(data);
+    var jTextArea = CKEDITOR.instances['editor1'].getData();
+    var data = 'data='+encodeURIComponent(jTextArea) + "&Filename="+prFilename ;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function(){
+      if (xmlhttp.readyState==4 && xmlhttp.status==200){
+        //response.innerHTML=xmlhttp.responseText;
+          alert(xmlhttp.responseText);
       }
+    }
+    xmlhttp.open("POST","saveNewHTML.php",true);
+          //Must add this request header to XMLHttpRequest request for POST
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(data);
+}
+
+
 function ConvertPDFHTML(){
 
-      document.getElementById("HTMLCon").innerHTML="<li>Converting PDF to HTML. Please wait...</li>";
-       
-      var jTextArea = document.getElementById("filename").innerHTML;
-      var data = 'data='+encodeURIComponent(jTextArea);
-      var xmlhttp = new XMLHttpRequest();
-
-      xmlhttp.onreadystatechange=function(){
-        if (xmlhttp.readyState==4 && xmlhttp.status==200){
-             document.getElementById("HTMLCon").innerHTML=xmlhttp.responseText;
-           
-        }
-      }
-      xmlhttp.open("POST","ConvertPDFHTML.php",true);
-            //Must add this request header to XMLHttpRequest request for POST
-      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    document.getElementById("HTMLCon").innerHTML="<li>Converting PDF to HTML. Please wait...</li>";
       
-      xmlhttp.send(data);
+    var jTextArea = document.getElementById("filename").innerHTML;
+    var data = 'data='+encodeURIComponent(jTextArea);
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange=function(){
+      if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            document.getElementById("HTMLCon").innerHTML=xmlhttp.responseText;
+          
+      }
+    }
+    xmlhttp.open("POST","ConvertPDFHTML.php",true);
+          //Must add this request header to XMLHttpRequest request for POST
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    
+    xmlhttp.send(data);
        
-  }
-    function ValidateXML(){
+}
+  
+function ValidateXML(){
        var Filename = document.getElementById("filename").innerHTML;
         $("#modal-validate").modal();
         var response=document.getElementById("ValidationList");
@@ -409,67 +413,66 @@ function ConvertPDFHTML(){
           }
         }
         xmlhttp.open("POST","ValidateXML.php",true);
-              //Must add this request header to XMLHttpRequest request for POST
+        //Must add this request header to XMLHttpRequest request for POST
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send(data);
 
+}
+
+function DisableTag(prToggle){
+      var doc = editor_html.getDoc();
+      var cursor = doc.getCursor();
+      var content =doc.getLine(cursor.line);
+      
+      var n = content.length;
+
+      var startChar;
+      var endChar
+      for (i=0; i<n;i++){
+
+        if (content.substr(i,1)==="<"){
+          startChar = i;
+        }
+
+        if(content.substr(i,1)==="\>"){
+          endChar =i;
+          // alert(startChar);
+          // alert(endChar);
+          // alert(content.substr(startChar,endChar));
+          if (prToggle==1){
+            editor_html.markText({line:cursor.line,ch:startChar},{line:cursor.line,ch:endChar+1},{readOnly:true});  
+          }
+          else{
+            editor_html.markText({line:cursor.line,ch:startChar},{line:cursor.line,ch:endChar+1},{readOnly:false});   
+          }
+          
+
+
+        }
+
+
       }
 
-       function DisableTag(prToggle){
-            var doc = editor_html.getDoc();
-            var cursor = doc.getCursor();
-            var content =doc.getLine(cursor.line);
-            
-            var n = content.length;
-
-            var startChar;
-            var endChar
-            for (i=0; i<n;i++){
-
-              if (content.substr(i,1)==="<"){
-                startChar = i;
-              }
-
-              if(content.substr(i,1)==="\>"){
-                endChar =i;
-                // alert(startChar);
-                // alert(endChar);
-                // alert(content.substr(startChar,endChar));
-                if (prToggle==1){
-                  editor_html.markText({line:cursor.line,ch:startChar},{line:cursor.line,ch:endChar+1},{readOnly:true});  
-                }
-                else{
-                 editor_html.markText({line:cursor.line,ch:startChar},{line:cursor.line,ch:endChar+1},{readOnly:false});   
-                }
-                
-
-
-              }
-
-
-            }
-
 
 
             
-           }
+}
 
-           function SpellCheck(){
-              if (document.getElementById("SpellCheck").value=='SpellCheck'){
-                editor_html.setSize("0","0");
-                document.getElementById("spellcheckText").style.display="block";  
-                document.getElementById("Validate").style.display="none";  
-                document.getElementById("btnSave").style.display="none";  
-                 document.getElementById("spellcheckText").value=editor_html.getValue();
-                document.getElementById("SpellCheck").value="Back To XML View";
-              }
-              else{
-                 editor_html.setSize("100%","65vh");
-                document.getElementById("spellcheckText").style.display="none";  
-                document.getElementById("SpellCheck").value="SpellCheck";
-                editor_html.setValue(document.getElementById("spellcheckText").value);
-                document.getElementById("Validate").style.display="inline";  
-                document.getElementById("btnSave").style.display="inline";  
-              }
-              
-           }
+function SpellCheck(){
+    if (document.getElementById("SpellCheck").value=='SpellCheck'){
+        editor_html.setSize("0","0");
+        document.getElementById("spellcheckText").style.display="block";  
+        document.getElementById("Validate").style.display="none";  
+        document.getElementById("btnSave").style.display="none";  
+        document.getElementById("spellcheckText").value=editor_html.getValue();
+        document.getElementById("SpellCheck").value="Back To XML View";
+    }else{
+        editor_html.setSize("100%","65vh");
+        document.getElementById("spellcheckText").style.display="none";  
+        document.getElementById("SpellCheck").value="SpellCheck";
+        editor_html.setValue(document.getElementById("spellcheckText").value);
+        document.getElementById("Validate").style.display="inline";  
+        document.getElementById("btnSave").style.display="inline";  
+    }
+
+}

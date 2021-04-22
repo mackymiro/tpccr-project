@@ -1,31 +1,33 @@
 ﻿<?php
-include "conn.php";
-error_reporting(0);
-	session_start();
-	$fileVal=$_GET['file'];
-	if ($fileVal==''){
-		$fileVal=$_SESSION['file'];
-	}
-	$_SESSION['file']=$fileVal;
-	$sFileVal =explode('/',$fileVal);
+require_once "conn.php";
+//error_reporting(0);
+
+session_start();
+
+$fileVal=isset($_GET['file']) ? $_GET['file'] : '';
+if ($fileVal==''){
+	$fileVal=$_SESSION['file'];
+}
+$_SESSION['file']=$fileVal;
+$sFileVal =explode('/',$fileVal);
+
+$Task=isset($_GET['Task']) ? $_GET['Task'] : '';
+if ($Task==''){
+	$Task=$_SESSION['Task'];
+}
+$_SESSION['Task']=$Task;
+
+if ($_SESSION['login_user']==''){
+		header("location: login.php");
+}
+
+
+$BatchID=isset($_GET['BatchID']) ? $_GET['BatchID'] : '';
+if ($BatchID==''){
+	$BatchID=$_SESSION['BatchID'];
 	
-	$Task=$_GET['Task'];
-	if ($Task==''){
-		$Task=$_SESSION['Task'];
-	}
-	$_SESSION['Task']=$Task;
-	
-	if ($_SESSION['login_user']==''){
-		 header("location: login.php");
-	}
-	
-	
-	$BatchID=$_GET['BatchID'];
-	if ($BatchID==''){
-		$BatchID=$_SESSION['BatchID'];
-		
-	}
-		$_SESSION['BatchID']=$BatchID;
+}
+$_SESSION['BatchID']=$BatchID;
 	
 $sql="SELECT * FROM tblUserAccess Where UserID=' $_SESSION[UserID]'";
  
@@ -44,7 +46,7 @@ if ($result=mysqli_query($con,$sql))
 		$TRANSMISSION=$row[8];
 	}
 }
-$Status=$_GET['Status'];
+$Status=isset($_GET['Status']) ? $_GET['Status'] : '';
 if(isset($_POST['submit'])){//to run PHP script on submit
 	if(!empty($_POST['Classification'])){
 		$file= explode('.',$sFileVal[1]);
@@ -86,8 +88,9 @@ if ($result=mysqli_query($con,$sql))
 		$TreeView=$row[7];
 	}
 }
-	
+		
 ?>
+
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -278,9 +281,11 @@ function check() {
 	<!--END-->
 	
 	<!--View Current Status-->
-<?php
-$sql="SELECT * FROM primo_view_Jobs Where ProcessCode='$Task' AND BatchID='$BatchID'";	
-		
+	<?php
+		$sql="SELECT * FROM primo_view_Jobs Where ProcessCode='$Task' AND BatchID='$BatchID'";	
+		$JobID = '';	
+		$Filename = '';
+
 		$rs=odbc_exec($conWMS,$sql);
 		$ctr = odbc_num_rows($rs);
 		while(odbc_fetch_row($rs))
@@ -296,8 +301,11 @@ $sql="SELECT * FROM primo_view_Jobs Where ProcessCode='$Task' AND BatchID='$Batc
 
 
 		 $sxfilename = pathinfo($Filename, PATHINFO_FILENAME);
-    $nfile=$sxfilename.".xml";
-	$sXMLFile = "uploadfiles/".$nfile;
+		$nfile=$sxfilename.".xml";
+		$sXMLFile = "uploadfiles/".$nfile;
+
+
+		
 		?>
  
    
@@ -583,15 +591,13 @@ function LoadStyles(){
                 	if (strtoupper($ext)=='PDF'){
 
 
-
-
                 		$PDFImage='display';
 
                 		if (file_exists("uploadfiles/".$JobID."/".pathinfo($Filename,PATHINFO_FILENAME ).".html")){
-?>
+			   ?>
 						<li><a href="<?php echo "uploadfiles/".$JobID."/".pathinfo($Filename,PATHINFO_FILENAME ).".html";?>" target="_blank"><i class="fa fa-gear"></i>View HTML</a></li>  
 
-<?php
+				<?php
 
                 		}
                 		else{
@@ -599,7 +605,7 @@ function LoadStyles(){
                 		?>
 						<li id="HTMLCon"><a href="#" onclick="ConvertPDFHTML()"><i class="fa fa-gear"></i>Convert PDF to HTML </a></li>  
 
-<?php
+				<?php
 					
                 		}
 					}
@@ -654,21 +660,21 @@ function LoadStyles(){
 
 
 				<li><a href="#" onClick="GetJobStatus()"><i class="fa fa-edit"></i><button onclick="SetInfo()">Set Info</button></li>
-<script type="text/javascript">
-	
-	function SetInfo(){
-		var strValue =CKEDITOR.instances['editor1'].getData();
-		var DraftType= document.getElementById("DraftType").value;
-		var Category= document.getElementById("Category").value;
-		strHTML="<p><b>Draft Type:</b> "+ DraftType+"</p>"+"<p><b>Category:</b> "+ Category+"</p>"+strValue;
-		// editor.insertHtml(strHTML);
+				<script type="text/javascript">
+					
+					function SetInfo(){
+						var strValue =CKEDITOR.instances['editor1'].getData();
+						var DraftType= document.getElementById("DraftType").value;
+						var Category= document.getElementById("Category").value;
+						strHTML="<p><b>Draft Type:</b> "+ DraftType+"</p>"+"<p><b>Category:</b> "+ Category+"</p>"+strValue;
+						// editor.insertHtml(strHTML);
 
-		CKEDITOR.instances.editor1.setData(strHTML); 
+						CKEDITOR.instances.editor1.setData(strHTML); 
 
-	}
+					}
 
 
-</script>
+				</script>
 				<?php
 				}
 				?>
@@ -1324,21 +1330,21 @@ function getSelectionHtml(selection) {
 				<div class="row">
 					<div class="col-lg-6">
 
-<?php
+			<?php
 
-	if ($Task=='QC'){
+				if ($Task=='QC'){
 
-?>
+			?>
 						<!-- <iframe src="https://wb.innodatalabs.com/mapping-review/#/job/<?php echo $GGJobID;?>?token=dXNlci1saXZlLTBmMjc3OTVhYzA4NWI5YzhmYWY2NjNiYWE4NjhkZDY3ZWRjOGVkZWY6" id='GoldenGateFrame'  style="width:200%; height:37vw;"  frameBorder="0" scrolling="auto"></iframe> -->
-	<iframe src="https://wb.innodatalabs.com/zoning/#/job/<?php echo $GGJobID;?>?token=dXNlci1saXZlLTBmMjc3OTVhYzA4NWI5YzhmYWY2NjNiYWE4NjhkZDY3ZWRjOGVkZWY6"   style="width:200%; height:37vw;" id='GoldenGateFrame'  frameBorder="0" scrolling="auto"></iframe>
+					<iframe src="https://wb.innodatalabs.com/zoning/#/job/<?php echo $GGJobID;?>?token=dXNlci1saXZlLTBmMjc3OTVhYzA4NWI5YzhmYWY2NjNiYWE4NjhkZDY3ZWRjOGVkZWY6"   style="width:200%; height:37vw;" id='GoldenGateFrame'  frameBorder="0" scrolling="auto"></iframe>
 						<?php
 					}
 					else{
-?>
+			?>
 
-	<iframe src="https://wb.innodatalabs.com/zoning/#/job/<?php echo $GGJobID;?>?token=dXNlci1saXZlLTBmMjc3OTVhYzA4NWI5YzhmYWY2NjNiYWE4NjhkZDY3ZWRjOGVkZWY6"   style="width:200%; height:37vw;" id='GoldenGateFrame'  frameBorder="0" scrolling="auto"></iframe>
+			<iframe src="https://wb.innodatalabs.com/zoning/#/job/<?php echo $GGJobID;?>?token=dXNlci1saXZlLTBmMjc3OTVhYzA4NWI5YzhmYWY2NjNiYWE4NjhkZDY3ZWRjOGVkZWY6"   style="width:200%; height:37vw;" id='GoldenGateFrame'  frameBorder="0" scrolling="auto"></iframe>
 
-<?php
+			<?php
 
 					}
 					?>
@@ -1517,24 +1523,24 @@ function getSelectionHtml(selection) {
               </div>
 
               <script>
-function TableView() {
-    var x = document.getElementById("TableView");
-	var x1 = document.getElementById("fieldedForm");
-	 
-    
-	x.style.display = "block";
-	x1.style.display = "none";
-}
-function FormView() {
-    var x = document.getElementById("TableView");
-	var x1 = document.getElementById("fieldedForm");
-	 
-	x1.style.display = "block";
-	x.style.display = "none";
-	 
-}
+				function TableView() {
+					var x = document.getElementById("TableView");
+					var x1 = document.getElementById("fieldedForm");
+					
+					
+					x.style.display = "block";
+					x1.style.display = "none";
+				}
+				function FormView() {
+					var x = document.getElementById("TableView");
+					var x1 = document.getElementById("fieldedForm");
+					
+					x1.style.display = "block";
+					x.style.display = "none";
+					
+				}
  
-</script>
+			</script>
 
 <?php
  $sXML = file_get_contents($sXMLFile);

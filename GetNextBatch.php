@@ -32,8 +32,14 @@
 		$snFilename ="uploadFiles/".odbc_result($rs,"JobId")."/".odbc_result($rs,"Filename");
 	}
 
+	
+	if($sFilename == ''){
+		header("Location:no-file-found.php");
+	}else{
+		ExecuteQuerySQLSERVER ("Update primo_Integration SET Status='".$Task."' Where Filename='".$sFilename."'",$conWMS);
+	}
 
-	ExecuteQuerySQLSERVER ("Update primo_Integration SET Status='".$Task."' Where Filename='".$sFilename."'",$conWMS);
+
 
 	if ($Task=='CONTENTREVIEW'){
 		if (file_exists($snFilename)){

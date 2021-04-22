@@ -32,7 +32,7 @@ $GGStatus = $jobj->response->status;
 curl_close($ch);
 
 
-if ($GGStatus=='completed'){
+if ($GGStatus == 'completed'){
     $GGProgress='100';
    $URL= $jobj->response->output_content->uri;
    // echo $URL;
@@ -64,7 +64,7 @@ if ($GGStatus=='completed'){
     fclose($file);
 
      //exec ('D:\\xampp\\htdocs\\tpccr\\zonedetection\\ZoneDetection.exe D:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml');
-     exec ('C:\\xampp\\htdocs\\tpccr\\zonedetection\\ZoneDetection.exe C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml');
+     exec (__DIR__.'\zonedetection\\ZoneDetection.exe'.__DIR__.'\\uploadfiles\\'.$nFilename.'.xml');
 
 }
 else{

@@ -1,5 +1,5 @@
 <?php
-	set_time_limit(0);
+set_time_limit(0);
 ini_set('upload_max_filesize', '10M');
 ini_set('post_max_size', '10M');
 ini_set('max_input_time', 300);

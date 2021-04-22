@@ -1,4 +1,4 @@
-  <?php
+<?php
 include "conn.php";
 
 error_reporting(0);
@@ -15,24 +15,24 @@ if ($txtFiles!='') {
 
 
 function MultipleFileUploadEX($prFileName,$TLID,$SubFolder,$conWMS,$GGUserName,$GGPassword,$GGProductionMode){
-ini_set('upload_max_filesize', '50M');
-ini_set('post_max_size', '50M');
-ini_set('max_input_time', 300);
-ini_set('max_execution_time', 300);
+    ini_set('upload_max_filesize', '50M');
+    ini_set('post_max_size', '50M');
+    ini_set('max_input_time', 300);
+    ini_set('max_execution_time', 300);
 
-$total = count($_FILES[$prFileName]['name']);
+    $total = count($_FILES[$prFileName]['name']);
 
-if ($total>0) {
-  // delete_directory($dirname);
-  
-  mkdir("uploadfiles/".$SubFolder);
-}
-// Loop through each file
-for($i=0; $i<$total; $i++) {
-  //Get the temp file path
-  $tmpFilePath = $_FILES[$prFileName]['tmp_name'][$i];
+    if ($total>0) {
+      // delete_directory($dirname);
+      
+      mkdir("uploadfiles/".$SubFolder);
+    }
+    // Loop through each file
+  for($i=0; $i<$total; $i++) {
+    //Get the temp file path
+    $tmpFilePath = $_FILES[$prFileName]['tmp_name'][$i];
 
-  //Make sure we have a filepath
+    //Make sure we have a filepath
   if ($tmpFilePath != ""){
     //Setup our new file path
 
@@ -66,8 +66,6 @@ for($i=0; $i<$total; $i++) {
         $token = getAPIKey($GGUserName,$GGPassword,$GGProductionMode);
 
         UploadToGoldenGate($filename,$JobID,$token,$conWMS,$sFilename);
-
-
 
     } 
     
@@ -108,83 +106,83 @@ for($i=0; $i<$total; $i++) {
 // }
 
 function UploadToGoldenGate($prFilename,$prJobID,$token,$conWMS,$sFilename){
- include 'Config.php';
+  include 'Config.php';
   $fields = array();
-$_SESSION['token']=$token;
-// files to upload
- $filenames = array($SourceFilePath.$prFilename);
+  $_SESSION['token']=$token;
+      // files to upload
+  $filenames = array($SourceFilePath.$prFilename);
 
-$files = array();
-foreach ($filenames as $f){
-   $files[$f] = file_get_contents($f);
-}
- 
- 
+    $files = array();
+    foreach ($filenames as $f){
+      $files[$f] = file_get_contents($f);
+    }
+    
+    
 
-// URL to upload to
-$url = "https://api.innodata.com/v1.1/documents";
-
-
-$curl = curl_init();
-
-$url_data = http_build_query($fields);
-$ext = pathinfo($prFilename, PATHINFO_EXTENSION);
-
-$boundary = uniqid();
-$delimiter = '-------------' . $boundary;
-
-$post_data = build_data_files($boundary, $fields, $files);
-
-if (strtoupper($ext)=='PDF'){
-  $xType='application/pdf';
-}
-else{
-  $xType='text/'.$ext;
-}
+    // URL to upload to
+    $url = "https://api.innodata.com/v1.1/documents";
 
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => $url,
-  CURLOPT_RETURNTRANSFER => 1,
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  //CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POST => 1,
-  CURLOPT_POSTFIELDS => $post_data,
-  CURLOPT_USERPWD => $token.":".$token,
-  // "Authorization: Basic dXNlci1saXZlLTYzMmE1YTYzLWQ2ZDYtNDI0Ni05MWNhLWQ1NDY2MzI2OThkMzo=",
-  CURLOPT_HTTPHEADER => array(
-    "Content-Type: application/octet-stream; boundary=" . $delimiter,
-    "X-Name: " . $prFilename,
-    "X-type: ".$xType ,
-    "Content-Length: " . strlen($post_data)
+    $curl = curl_init();
 
-  ),
+    $url_data = http_build_query($fields);
+    $ext = pathinfo($prFilename, PATHINFO_EXTENSION);
 
-  
-));
+    $boundary = uniqid();
+    $delimiter = '-------------' . $boundary;
+
+    $post_data = build_data_files($boundary, $fields, $files);
+
+    if (strtoupper($ext)=='PDF'){
+      $xType='application/pdf';
+    }
+    else{
+      $xType='text/'.$ext;
+    }
 
 
-//
-$response = curl_exec($curl);
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => $url,
+      CURLOPT_RETURNTRANSFER => 1,
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 30,
+      //CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "POST",
+      CURLOPT_POST => 1,
+      CURLOPT_POSTFIELDS => $post_data,
+      CURLOPT_USERPWD => $token.":".$token,
+      // "Authorization: Basic dXNlci1saXZlLTYzMmE1YTYzLWQ2ZDYtNDI0Ni05MWNhLWQ1NDY2MzI2OThkMzo=",
+      CURLOPT_HTTPHEADER => array(
+        "Content-Type: application/octet-stream; boundary=" . $delimiter,
+        "X-Name: " . $prFilename,
+        "X-type: ".$xType ,
+        "Content-Length: " . strlen($post_data)
 
-$jobj = json_decode($response);
+      ),
 
-$ContentURI = $jobj->response->contents_uri;
-$fSize = $jobj->response->size;
+      
+    ));
 
-ExecuteQuerySQLSERVER("Update PRIMO_integration SET ContentURI='".$ContentURI."' Where JobId='".$prJobID."'",$conWMS);
 
-// POST JOBS
-// echo $ContentURI;
- 
-$info = curl_getinfo($curl);
+    //
+    $response = curl_exec($curl);
 
- 
-curl_close($curl);
+    $jobj = json_decode($response);
 
-PostJob($token,$ContentURI,$prFilename,$fSize,$conWMS,$isImage,$prJobID);
+    $ContentURI = $jobj->response->contents_uri;
+    $fSize = $jobj->response->size;
+
+    ExecuteQuerySQLSERVER("Update PRIMO_integration SET ContentURI='".$ContentURI."' Where JobId='".$prJobID."'",$conWMS);
+
+    // POST JOBS
+    // echo $ContentURI;
+    
+    $info = curl_getinfo($curl);
+
+    
+    curl_close($curl);
+
+    PostJob($token,$ContentURI,$prFilename,$fSize,$conWMS,$isImage,$prJobID);
 
 }
 
@@ -228,7 +226,6 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\
 
     ExecuteQuerySQLSERVER("Update PRIMO_integration SET GGJobID='".$GGJobID."'  Where JobId='".$prJobID."'",$conWMS);
 
-
    
     if (curl_errno($ch)) {
         echo 'Error:' . curl_error($ch);
@@ -256,6 +253,7 @@ function reArrayFiles($file)
     }
     return $file_ary;
 }
+
 function BookFileContent($prFileName,$TLID,$conWMS){
 ini_set('upload_max_filesize', '50M');
 ini_set('post_max_size', '50M');
@@ -293,18 +291,18 @@ for($i=0; $i<$total; $i++) {
 
 
 function MultipleFileUpload($prFileName,$TLID){
-ini_set('upload_max_filesize', '50M');
-ini_set('post_max_size', '50M');
-ini_set('max_input_time', 300);
-ini_set('max_execution_time', 300);
+  ini_set('upload_max_filesize', '50M');
+  ini_set('post_max_size', '50M');
+  ini_set('max_input_time', 300);
+  ini_set('max_execution_time', 300);
 
-$total = count($_FILES[$prFileName]['name']);
+  $total = count($_FILES[$prFileName]['name']);
 
-// if ($total>0) {
-//   delete_directory($dirname);
-// 	mkdir("uploadfiles/".$TLID);
-// }
-// Loop through each file
+  // if ($total>0) {
+  //   delete_directory($dirname);
+  // 	mkdir("uploadfiles/".$TLID);
+  // }
+  // Loop through each file
 for($i=0; $i<$total; $i++) {
   //Get the temp file path
   $tmpFilePath = $_FILES[$prFileName]['tmp_name'][$i];

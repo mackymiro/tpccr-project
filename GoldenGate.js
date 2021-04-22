@@ -30,7 +30,6 @@ const JobRewind = () =>{
 function GetJobStatus(){
   
   //var TokenVAL =document.getElementById("TokenVal").value;
-
   var TokenVAL ='dXNlci10ZXN0LTUzY2FkNzZmYzIzOGUzNTgwNWU5NjgzY2YxNDFlNTE4ZjliZWUzMTA6';
 
 	JobID = document.getElementById("GGJobID").value;

@@ -180,9 +180,7 @@ $Task=$_GET['Task'];
 						echo "<li class='$pagestatus'><a href=ListofDocument.php?page=Enrich&Task=$ProcessCode&lTask=$lCode>".'<i class="fa fa-list-alt"></i>View List of Document</a></li>';
 					}
 					else{
-
-						
-						if ($ctr==0){
+						if ($ctr == 0){
 							echo "<li class='$pagestatus'><a href='GetNextBatch.php?page=Enrich&Task=$ProcessCode'>".'<i class="fa  fa-hand-grab-o"></i>Get Next Batch</a></li>';
 						}
 						
@@ -190,7 +188,7 @@ $Task=$_GET['Task'];
 						while(odbc_fetch_row($rs))
 						{
 							$filename="uploadFiles/".odbc_result($rs,"Filename");;
-						 
+							
 							echo "<li  class='$pagestatus'><a href='index.php?page=Enrich&file=".$filename."&BatchID=".odbc_result($rs,"BatchID")."&Task=$ProcessCode'>".'<i class="fa fa-file-pdf-o"></i>'.odbc_result($rs,"JObname")."</a></li>";
 						}
 					}
