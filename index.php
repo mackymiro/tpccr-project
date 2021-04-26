@@ -65,7 +65,8 @@ if(isset($_POST['submit'])){//to run PHP script on submit
 $sql="SELECT * FROM wms_Processes Where ProcessCode='$Task'";	
 					
 	$rs=odbc_exec($conWMS,$sql);
-	 
+	
+	$TaskID = ''; //added by me
 	while(odbc_fetch_row($rs))
 	{
 		$TaskID=odbc_result($rs,"ProcessID");
@@ -121,15 +122,10 @@ if ($result=mysqli_query($con,$sql))
   <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-	<link rel="stylesheet" href="plugins/iCheck/all.css">
-	
-	<link rel="stylesheet" href="plugins/link.css">
-	
-	
-	 
-	 
-	
+  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="plugins/iCheck/all.css">
+  <link rel="stylesheet" href="plugins/link.css">
+		
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -148,13 +144,15 @@ if ($result=mysqli_query($con,$sql))
 
  
 <?php
-$file= explode('.',$sFileVal[1]);
+//$file= explode('.',$sFileVal[1]);
+$file= explode('.',isset($sFileVal[1]));
 $sXML="";
 if (file_exists("uploadfiles/$file[0].xml")) {   
 	$sXML = file_get_contents("uploadfiles/$file[0].xml");
 	//$sXML=_utf8_decode($sXML);
  
 }
+
 ?>
  <script src="js/jquery-3.4.1.min.js"></script>
   
@@ -574,7 +572,8 @@ function LoadStyles(){
 				$innoXML= str_replace(".PDF", "_response.xml", $innoXML)
 				?>
 				 
-				  <li><a href="uploadfiles/<?= $innoXML;?>" target="_blank" ><i class="fa fa-file-excel-o"></i><u>Innodom XML</u></a></li>
+				<!-- <li><a href="uploadfiles/<?php //echo  $innoXML;?>" target="_blank" ><i class="fa fa-file-excel-o"></i><u>Innodom XML</u></a></li>-->
+				 <li><a href="checkInnoDom.php?page=uploadfiles/<?= $innoXML; ?>" target="_blank" ><i class="fa fa-file-excel-o"></i><u>Innodom XML</u></a></li>
 				 <input type="hidden" value ="<?= $GGJobID;?>" id="GGJobID">
 				 <input type="hidden" value ="<?= $Task;?>" id="Task">
 				 <input type="hidden" value ="<?= $TokenVAL;?>" id="TokenVal">
@@ -614,8 +613,6 @@ function LoadStyles(){
                 }
                
 				?>
-
-
 					<!-- <li style="display: block" id="isPDFImage"><a><i class="fa fa-question-circle"></i><input type="checkbox" id="PDFImage"> PDF Image?</a></li> -->
  
 					<li style="display: block" id="JobRepost"><a><i class="fa fa-question-circle"></i><button onclick="JobRewind()">Rewind</button></li>
@@ -672,7 +669,6 @@ function LoadStyles(){
 						CKEDITOR.instances.editor1.setData(strHTML); 
 
 					}
-
 
 				</script>
 				<?php
@@ -771,10 +767,10 @@ function LoadStyles(){
           	</div>
       	</div>
         
-<?php
-if ($SequenceLabeling==1){
-	
-?>		 
+			<?php
+			if ($SequenceLabeling==1){
+				
+			?>		 
           <div class="box box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Sequence Labelling-<small>Confidence Level Filter</small></h3>
@@ -858,7 +854,7 @@ if ($SequenceLabeling==1){
 			  <?php
 			  
 							 
-				if (file_exists("uploadfiles/$file[0].htm")) {   
+				if (file_exists("uploadfiles/$file[0].htm")){   
 				 
 					$sTxt =  file_get_contents("uploadfiles/$file[0].htm"); 
 					$arrLine= explode("<div ", $sTxt);
@@ -1013,17 +1009,17 @@ if ($SequenceLabeling==1){
     }
     return html;
 }
-/**
-    Get HTML of a selection.
-*/
-function getSelectionHtml(selection) {
-    var ranges = selection.getRanges();
-    var html = '';
-    for (var i = 0; i < ranges.length; i++) {
-        html += getRangeHtml(ranges[i]);
-    }
-    return html;
-}
+	/**
+		Get HTML of a selection.
+	*/
+	function getSelectionHtml(selection) {
+		var ranges = selection.getRanges();
+		var html = '';
+		for (var i = 0; i < ranges.length; i++) {
+			html += getRangeHtml(ranges[i]);
+		}
+		return html;
+	}
 	function FindNext (prPosition) {
 		var value = CKEDITOR.instances['editor1'].getData();
 	
@@ -1676,27 +1672,27 @@ function getSelectionHtml(selection) {
 			$ctr=1;
 			$lineNo="";
 
-				  $cats = explode("\t", $keyword);
-				 foreach($cats as $cat) {
-					$cat = trim($cat);
-					if ($ctr==1){
-						?>
-						<td style="width: 300px;"><?php echo $cat;?></td>
-					<?php	
-					}
-					elseif($ctr==2){
-						$lineNo=$cat;
-						?>
-						<td style="width: 100px;">   <?php echo $cat;?></td>
-						<?php
-					}
-					else{
-						?>
-						<td style="width: 100px;"><a href="#" onClick="jumpToLine(<?php echo $lineNo;?> ,<?php echo $cat;?>);" >Check</a></td>
-						<?php
-					}
-					$ctr++;
+			$cats = explode("\t", $keyword);
+			foreach($cats as $cat) {
+				$cat = trim($cat);
+				if ($ctr==1){
+					?>
+					<td style="width: 300px;"><?= $cat;?></td>
+				<?php	
 				}
+				elseif($ctr==2){
+					$lineNo=$cat;
+					?>
+					<td style="width: 100px;"> <?= $cat;?></td>
+					<?php
+				}
+				else{
+					?>
+					<td style="width: 100px;"><a href="#" onClick="jumpToLine(<?= $lineNo;?> ,<?= $cat;?>);" >Check</a></td>
+					<?php
+				}
+			$ctr++;
+		}
 	?>
 	
   </tr>
@@ -1771,44 +1767,40 @@ function getSelectionHtml(selection) {
 								//echo readfile("uploadfiles/$file[0].htm"); 
 							}
 							else{
-
-
-
-								 
-									$sql="SELECT * FROM primo_view_Record Where Filename='$Filename'";	
+								$sql="SELECT * FROM primo_view_Record Where Filename='$Filename'";	
 									 
-										$rs=odbc_exec($conWMS,$sql);
-										$ctr = odbc_num_rows($rs);
-										 
-										while(odbc_fetch_row($rs))
-										{
-											 
-											$Title=odbc_result($rs,"Title");
-											$Jurisdiction=odbc_result($rs,"Jurisdiction");
-											$Register=odbc_result($rs,"Register");
-											$Type=odbc_result($rs,"Type");
-											$Priority=odbc_result($rs,"Priority");
-											$SourceURL=odbc_result($rs,"SourceURL");
-											$Topic=odbc_result($rs,"Topic");
-											$OriginatingDate=odbc_result($rs,"OriginatingDate");
-											$StateDate=odbc_result($rs,"StateDate");
-											$Status=odbc_result($rs,"Status");
-											$Remarks=odbc_result($rs,"Remarks");
+								$rs=odbc_exec($conWMS,$sql);
+								$ctr = odbc_num_rows($rs);
+									
+								while(odbc_fetch_row($rs))
+								{
+										
+									$Title=odbc_result($rs,"Title");
+									$Jurisdiction=odbc_result($rs,"Jurisdiction");
+									$Register=odbc_result($rs,"Register");
+									$Type=odbc_result($rs,"Type");
+									$Priority=odbc_result($rs,"Priority");
+									$SourceURL=odbc_result($rs,"SourceURL");
+									$Topic=odbc_result($rs,"Topic");
+									$OriginatingDate=odbc_result($rs,"OriginatingDate");
+									$StateDate=odbc_result($rs,"StateDate");
+									$Status=odbc_result($rs,"Status");
+									$Remarks=odbc_result($rs,"Remarks");
 
-											
-											
-										}
-										$sContent="";
-										// $sContent="<p><b>Draft Type:</b> </p>";
-										// $sContent=$sContent."<p><b>Category:</b> </p>";
-										$sContent=$sContent."<p><b>Originating Date:</b> ".$OriginatingDate."</p>";
-										$sContent=$sContent."<p><b>State Date:</b> ".$StateDate."</p>";
-										$sContent=$sContent."<p><b>Jurisdiction:</b> ".$Jurisdiction."</p>";
-										$sContent=$sContent."<p><b>Title:</b> ".$Title."</p>";
-										$sContent=$sContent."<p><b>Link to full text:</b> ".$SourceURL."</p>";
-										$sContent=$sContent."<p><b>Synopsis:</b></p>";
-										$sContent=$sContent."<p></p>";
-										$sFile = $sContent;
+									
+									
+								}
+								$sContent="";
+								// $sContent="<p><b>Draft Type:</b> </p>";
+								// $sContent=$sContent."<p><b>Category:</b> </p>";
+								$sContent=$sContent."<p><b>Originating Date:</b> ".$OriginatingDate."</p>";
+								$sContent=$sContent."<p><b>State Date:</b> ".$StateDate."</p>";
+								$sContent=$sContent."<p><b>Jurisdiction:</b> ".$Jurisdiction."</p>";
+								$sContent=$sContent."<p><b>Title:</b> ".$Title."</p>";
+								$sContent=$sContent."<p><b>Link to full text:</b> ".$SourceURL."</p>";
+								$sContent=$sContent."<p><b>Synopsis:</b></p>";
+								$sContent=$sContent."<p></p>";
+								$sFile = $sContent;
 
 								 
 

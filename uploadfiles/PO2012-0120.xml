@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inno:dom xmlns:inno="http://innodatalabs.com/innodom"><inno:meta><inno:datapoint key="party.1.party_name.1" confidence="1">Bladegrass</inno:datapoint><inno:datapoint key="counsel.1.address.1" confidence="1" idref="text-7">Revery Digital Technologies Inc. Level 25 IBP Tower, Julia Vagas Avenue, Ortigas Center 1605 Pasig City TIN - 111111111111</inno:datapoint></inno:meta><inno:content><inno:text id="text-1" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="379.0" x-min="258.0" y-max="35.0" y-min="14.0"><inno:b><inno:color rgb="#00003b"><inno:font font-name="Helvetica-Bold" font-size="13.00pt">Purchase order PO2012-0120</inno:font><inno:br/><inno:font font-name="Helvetica-Bold" font-size="10.00pt">Ref. vendor : 0001</inno:font></inno:color></inno:b></inno:block></inno:text><inno:text id="text-2" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="379.0" x-min="330.0" y-max="42.9" y-min="37.0"><inno:color rgb="#ff0000"><inno:font font-name="Helvetica" font-size="9.00pt">Order to rocess</inno:font></inno:color></inno:block></inno:text><inno:text id="text-3" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="379.0" x-min="275.0" y-max="62.0" y-min="43.0"><inno:color rgb="#ff0000"><inno:font font-name="Helvetica" font-size="9.00pt">p</inno:font></inno:color><inno:br/><inno:color rgb="#00003b"><inno:font font-name="Helvetica" font-size="9.00pt">Planned date of delivery : 12/31/2020<inno:br/>Vendor Code : SU2012-00143</inno:font></inno:color></inno:block></inno:text><inno:text id="text-4" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="207.0" x-min="198.0" y-max="73.0" y-min="65.0"><inno:font font-name="Helvetica" font-size="8.00pt">To:</inno:font></inno:block></inno:text><inno:text id="text-5" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="266.0" x-min="198.0" y-max="120.0" y-min="83.0"><inno:b><inno:font font-name="Helvetica-Bold" font-size="10.00pt">Coca Cola</inno:font></inno:b><inno:br/><inno:font font-name="Helvetica" font-size="9.00pt">Manila Philippines<inno:br/>Phone: 09424570066<inno:br/>Email: coke@cokde.com<inno:br/>Web: coca-cola.com</inno:font></inno:block></inno:text><inno:image id="image-1" type="image"><inno:block page="1" page-height="512" page-width="396" x-max="136.0" x-min="14.0" y-max="54.0" y-min="14.0"/></inno:image><inno:text id="text-6" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="33.0" x-min="14.0" y-max="73.0" y-min="65.0"><inno:font font-name="Helvetica" font-size="8.00pt">From:</inno:font></inno:block></inno:text><inno:text id="text-7" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="153.0" x-min="22.0" y-max="119.0" y-min="82.0"><inno:b><inno:color rgb="#00003b"><inno:font font-name="Helvetica-Bold" font-size="10.00pt">Revery Digital Technologies Inc.</inno:font></inno:color></inno:b><inno:br/><inno:color rgb="#00003b"><inno:font font-name="Helvetica" font-size="9.00pt">Level 25 IBP Tower, Julia Vagas Avenue, Ortigas<inno:br/>Center<inno:br/>1605 Pasig City<inno:br/>TIN - 111111111111</inno:font></inno:color></inno:block></inno:text><inno:text id="text-8" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="96.0" x-min="21.0" y-max="152.0" y-min="126.0"><inno:color rgb="#00003b"><inno:font font-name="Helvetica" font-size="9.00pt">Phone: +63 917 888 2210<inno:br/>Email: support@revery.tech<inno:br/>Web: www.revery.tech</inno:font></inno:color></inno:block></inno:text><inno:text id="text-9" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="379.0" x-min="288.0" y-max="163.0" y-min="155.0"><inno:font font-name="Helvetica" font-size="8.00pt">Amount in Philippines Peso currency</inno:font></inno:block></inno:text><inno:table id="table-1" type="table"><inno:block page="1" page-height="512" page-width="396" x-max="378.0" x-min="14.0" y-max="403.0" y-min="163.0"><inno:tr row="1">
+<inno:td col="1" colspan="3" id="table-1-1-1" x-max="60.95" x-min="14.0" y-max="175.5" y-min="163.0"><inno:font font-name="Helvetica" font-size="9.00pt">Description</inno:font></inno:td>
+<inno:td col="2" id="table-1-1-2" x-max="76.95" x-min="60.95" y-max="175.5" y-min="163.0"/>
+<inno:td col="3" id="table-1-1-3" x-max="84.05" x-min="76.95" y-max="175.5" y-min="163.0"/>
+<inno:td col="4" id="table-1-1-4" x-max="95.0" x-min="84.05" y-max="175.5" y-min="163.0"/>
+<inno:td col="5" id="table-1-1-5" x-max="99.05" x-min="95.0" y-max="175.5" y-min="163.0"/>
+<inno:td col="6" id="table-1-1-6" x-max="114.05" x-min="99.05" y-max="175.5" y-min="163.0"/>
+<inno:td col="7" id="table-1-1-7" x-max="117.05" x-min="114.05" y-max="175.5" y-min="163.0"/>
+<inno:td col="8" id="table-1-1-8" x-max="196.5" x-min="117.05" y-max="175.5" y-min="163.0"/>
+<inno:td col="9" id="table-1-1-9" x-max="253.0" x-min="196.5" y-max="175.5" y-min="163.0"><inno:font font-name="Helvetica" font-size="9.00pt">Sales tax</inno:font></inno:td>
+<inno:td col="10" colspan="2" id="table-1-1-10" x-max="291.5" x-min="253.0" y-max="175.5" y-min="163.0"><inno:font font-name="Helvetica" font-size="9.00pt">U.P. (net)</inno:font></inno:td>
+<inno:td col="11" id="table-1-1-11" x-max="322.5" x-min="291.5" y-max="175.5" y-min="163.0"><inno:font font-name="Helvetica" font-size="9.00pt">Qty</inno:font></inno:td>
+<inno:td col="12" id="table-1-1-12" x-max="378.0" x-min="322.5" y-max="175.5" y-min="163.0"><inno:font font-name="Helvetica" font-size="9.00pt">Total (excl.)</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="2">
+<inno:td col="1" colspan="6" id="table-1-2-1" x-max="95.0" x-min="14.0" y-max="182.95" y-min="175.5"><inno:font font-name="Helvetica" font-size="9.00pt">USB 3.0 to VGA - Adapter</inno:font></inno:td>
+<inno:td col="2" id="table-1-2-2" x-max="99.05" x-min="95.0" y-max="182.95" y-min="175.5"/>
+<inno:td col="3" id="table-1-2-3" x-max="114.05" x-min="99.05" y-max="182.95" y-min="175.5"/>
+<inno:td col="4" id="table-1-2-4" x-max="117.05" x-min="114.05" y-max="182.95" y-min="175.5"/>
+<inno:td col="5" id="table-1-2-5" x-max="196.5" x-min="117.05" y-max="182.95" y-min="175.5"/>
+<inno:td col="6" id="table-1-2-6" rowspan="3" x-max="253.0" x-min="196.5" y-max="192.05" y-min="175.5"><inno:font font-name="Helvetica" font-size="9.00pt">12%</inno:font></inno:td>
+<inno:td col="7" id="table-1-2-7" x-max="268.0" x-min="253.0" y-max="182.95" y-min="175.5"/>
+<inno:td col="8" id="table-1-2-8" rowspan="3" x-max="291.5" x-min="268.0" y-max="192.05" y-min="175.5"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+<inno:td col="9" id="table-1-2-9" rowspan="2" x-max="322.5" x-min="291.5" y-max="184.05" y-min="175.5"><inno:font font-name="Helvetica" font-size="9.00pt">12</inno:font></inno:td>
+<inno:td col="10" id="table-1-2-10" rowspan="3" x-max="378.0" x-min="322.5" y-max="192.05" y-min="175.5"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="3">
+<inno:td col="1" id="table-1-3-1" rowspan="2" x-max="36.05" x-min="14.0" y-max="192.05" y-min="182.95"><inno:font font-name="Helvetica" font-size="9.00pt">_<inno:br/>High S</inno:font></inno:td>
+<inno:td col="2" id="table-1-3-2" x-max="42.05" x-min="36.05" y-max="184.05" y-min="182.95"><inno:font font-name="Helvetica" font-size="9.00pt">.</inno:font></inno:td>
+<inno:td col="3" id="table-1-3-3" x-max="60.95" x-min="42.05" y-max="184.05" y-min="182.95"/>
+<inno:td col="4" id="table-1-3-4" x-max="76.95" x-min="60.95" y-max="184.05" y-min="182.95"/>
+<inno:td col="5" id="table-1-3-5" x-max="84.05" x-min="76.95" y-max="184.05" y-min="182.95"/>
+<inno:td col="6" id="table-1-3-6" x-max="95.0" x-min="84.05" y-max="184.05" y-min="182.95"/>
+<inno:td col="7" id="table-1-3-7" x-max="99.05" x-min="95.0" y-max="184.05" y-min="182.95"/>
+<inno:td col="8" id="table-1-3-8" x-max="114.05" x-min="99.05" y-max="184.05" y-min="182.95"/>
+<inno:td col="9" id="table-1-3-9" x-max="117.05" x-min="114.05" y-max="184.05" y-min="182.95"/>
+<inno:td col="10" id="table-1-3-10" rowspan="2" x-max="196.5" x-min="117.05" y-max="192.05" y-min="182.95"><inno:font font-name="Helvetica" font-size="9.00pt">Converter</inno:font></inno:td>
+<inno:td col="11" id="table-1-3-11" x-max="268.0" x-min="253.0" y-max="184.05" y-min="182.95"/>
+</inno:tr>
+<inno:tr row="4">
+<inno:td col="1" colspan="2" id="table-1-4-1" x-max="60.95" x-min="36.05" y-max="192.05" y-min="184.05"><inno:font font-name="Helvetica" font-size="9.00pt">_ _<inno:br/>peed US</inno:font></inno:td>
+<inno:td col="2" colspan="2" id="table-1-4-2" x-max="84.05" x-min="60.95" y-max="192.05" y-min="184.05"><inno:font font-name="Helvetica" font-size="9.00pt">B 3.0 to V</inno:font></inno:td>
+<inno:td col="3" colspan="2" id="table-1-4-3" x-max="99.05" x-min="84.05" y-max="192.05" y-min="184.05"><inno:font font-name="Helvetica" font-size="9.00pt">VGA A</inno:font></inno:td>
+<inno:td col="4" colspan="2" id="table-1-4-4" x-max="117.05" x-min="99.05" y-max="192.05" y-min="184.05"><inno:font font-name="Helvetica" font-size="9.00pt">dapter</inno:font></inno:td>
+<inno:td col="5" id="table-1-4-5" x-max="268.0" x-min="253.0" y-max="192.05" y-min="184.05"/>
+<inno:td col="6" id="table-1-4-6" x-max="322.5" x-min="291.5" y-max="192.05" y-min="184.05"/>
+</inno:tr>
+<inno:tr row="5">
+<inno:td col="1" colspan="10" id="table-1-5-1" x-max="196.5" x-min="14.0" y-max="199.5" y-min="192.05"><inno:font font-name="Helvetica" font-size="9.00pt">Support Max Resolution 1080p for Windows 7/8/8.1/10</inno:font></inno:td>
+<inno:td col="2" id="table-1-5-2" x-max="253.0" x-min="196.5" y-max="199.5" y-min="192.05"/>
+<inno:td col="3" id="table-1-5-3" x-max="268.0" x-min="253.0" y-max="199.5" y-min="192.05"/>
+<inno:td col="4" id="table-1-5-4" x-max="291.5" x-min="268.0" y-max="199.5" y-min="192.05"/>
+<inno:td col="5" id="table-1-5-5" x-max="322.5" x-min="291.5" y-max="199.5" y-min="192.05"/>
+<inno:td col="6" id="table-1-5-6" x-max="378.0" x-min="322.5" y-max="199.5" y-min="192.05"/>
+</inno:tr>
+<inno:tr row="6">
+<inno:td col="1" colspan="10" id="table-1-6-1" x-max="196.5" x-min="14.0" y-max="208.5" y-min="199.5"><inno:font font-name="Helvetica" font-size="9.00pt">Desktop Laptop PC Monitor Projector HDTV</inno:font></inno:td>
+<inno:td col="2" id="table-1-6-2" x-max="253.0" x-min="196.5" y-max="208.5" y-min="199.5"/>
+<inno:td col="3" id="table-1-6-3" x-max="268.0" x-min="253.0" y-max="208.5" y-min="199.5"/>
+<inno:td col="4" id="table-1-6-4" x-max="291.5" x-min="268.0" y-max="208.5" y-min="199.5"/>
+<inno:td col="5" id="table-1-6-5" x-max="322.5" x-min="291.5" y-max="208.5" y-min="199.5"/>
+<inno:td col="6" id="table-1-6-6" x-max="378.0" x-min="322.5" y-max="208.5" y-min="199.5"/>
+</inno:tr>
+<inno:tr row="7">
+<inno:td col="1" colspan="8" id="table-1-7-1" x-max="114.05" x-min="14.0" y-max="219.0" y-min="208.5"><inno:font font-name="Helvetica" font-size="9.00pt">Dell_E5480 - Replacement Battery</inno:font></inno:td>
+<inno:td col="2" id="table-1-7-2" x-max="117.05" x-min="114.05" y-max="219.0" y-min="208.5"/>
+<inno:td col="3" id="table-1-7-3" x-max="196.5" x-min="117.05" y-max="219.0" y-min="208.5"/>
+<inno:td col="4" id="table-1-7-4" x-max="253.0" x-min="196.5" y-max="219.0" y-min="208.5"><inno:font font-name="Helvetica" font-size="9.00pt">0%</inno:font></inno:td>
+<inno:td col="5" id="table-1-7-5" x-max="268.0" x-min="253.0" y-max="219.0" y-min="208.5"/>
+<inno:td col="6" id="table-1-7-6" x-max="291.5" x-min="268.0" y-max="219.0" y-min="208.5"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+<inno:td col="7" id="table-1-7-7" x-max="322.5" x-min="291.5" y-max="219.0" y-min="208.5"><inno:font font-name="Helvetica" font-size="9.00pt">12</inno:font></inno:td>
+<inno:td col="8" id="table-1-7-8" x-max="378.0" x-min="322.5" y-max="219.0" y-min="208.5"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="8">
+<inno:td col="1" colspan="3" id="table-1-8-1" x-max="60.95" x-min="14.0" y-max="225.5" y-min="219.0"><inno:font font-name="Helvetica" font-size="9.00pt">Limited stocks</inno:font></inno:td>
+<inno:td col="2" id="table-1-8-2" x-max="76.95" x-min="60.95" y-max="225.5" y-min="219.0"/>
+<inno:td col="3" id="table-1-8-3" x-max="84.05" x-min="76.95" y-max="225.5" y-min="219.0"/>
+<inno:td col="4" id="table-1-8-4" x-max="95.0" x-min="84.05" y-max="225.5" y-min="219.0"/>
+<inno:td col="5" id="table-1-8-5" x-max="99.05" x-min="95.0" y-max="225.5" y-min="219.0"/>
+<inno:td col="6" id="table-1-8-6" x-max="114.05" x-min="99.05" y-max="225.5" y-min="219.0"/>
+<inno:td col="7" id="table-1-8-7" x-max="117.05" x-min="114.05" y-max="225.5" y-min="219.0"/>
+<inno:td col="8" id="table-1-8-8" x-max="196.5" x-min="117.05" y-max="225.5" y-min="219.0"/>
+<inno:td col="9" id="table-1-8-9" x-max="253.0" x-min="196.5" y-max="225.5" y-min="219.0"/>
+<inno:td col="10" id="table-1-8-10" x-max="268.0" x-min="253.0" y-max="225.5" y-min="219.0"/>
+<inno:td col="11" id="table-1-8-11" x-max="291.5" x-min="268.0" y-max="225.5" y-min="219.0"/>
+<inno:td col="12" id="table-1-8-12" x-max="322.5" x-min="291.5" y-max="225.5" y-min="219.0"/>
+<inno:td col="13" id="table-1-8-13" x-max="378.0" x-min="322.5" y-max="225.5" y-min="219.0"/>
+</inno:tr>
+<inno:tr row="9">
+<inno:td col="1" colspan="4" id="table-1-9-1" x-max="76.95" x-min="14.0" y-max="232.5" y-min="225.5"><inno:font font-name="Helvetica" font-size="9.00pt">3 months warranty</inno:font></inno:td>
+<inno:td col="2" id="table-1-9-2" x-max="84.05" x-min="76.95" y-max="232.5" y-min="225.5"/>
+<inno:td col="3" id="table-1-9-3" x-max="95.0" x-min="84.05" y-max="232.5" y-min="225.5"/>
+<inno:td col="4" id="table-1-9-4" x-max="99.05" x-min="95.0" y-max="232.5" y-min="225.5"/>
+<inno:td col="5" id="table-1-9-5" x-max="114.05" x-min="99.05" y-max="232.5" y-min="225.5"/>
+<inno:td col="6" id="table-1-9-6" x-max="117.05" x-min="114.05" y-max="232.5" y-min="225.5"/>
+<inno:td col="7" id="table-1-9-7" x-max="196.5" x-min="117.05" y-max="232.5" y-min="225.5"/>
+<inno:td col="8" id="table-1-9-8" x-max="253.0" x-min="196.5" y-max="232.5" y-min="225.5"/>
+<inno:td col="9" id="table-1-9-9" x-max="268.0" x-min="253.0" y-max="232.5" y-min="225.5"/>
+<inno:td col="10" id="table-1-9-10" x-max="291.5" x-min="268.0" y-max="232.5" y-min="225.5"/>
+<inno:td col="11" id="table-1-9-11" x-max="322.5" x-min="291.5" y-max="232.5" y-min="225.5"/>
+<inno:td col="12" id="table-1-9-12" x-max="378.0" x-min="322.5" y-max="232.5" y-min="225.5"/>
+</inno:tr>
+<inno:tr row="10">
+<inno:td col="1" colspan="2" id="table-1-10-1" x-max="42.05" x-min="14.0" y-max="240.5" y-min="232.5"><inno:font font-name="Helvetica" font-size="9.00pt">TP link</inno:font></inno:td>
+<inno:td col="2" id="table-1-10-2" x-max="60.95" x-min="42.05" y-max="240.5" y-min="232.5"/>
+<inno:td col="3" id="table-1-10-3" x-max="76.95" x-min="60.95" y-max="240.5" y-min="232.5"/>
+<inno:td col="4" id="table-1-10-4" x-max="84.05" x-min="76.95" y-max="240.5" y-min="232.5"/>
+<inno:td col="5" id="table-1-10-5" x-max="95.0" x-min="84.05" y-max="240.5" y-min="232.5"/>
+<inno:td col="6" id="table-1-10-6" x-max="99.05" x-min="95.0" y-max="240.5" y-min="232.5"/>
+<inno:td col="7" id="table-1-10-7" x-max="114.05" x-min="99.05" y-max="240.5" y-min="232.5"/>
+<inno:td col="8" id="table-1-10-8" x-max="117.05" x-min="114.05" y-max="240.5" y-min="232.5"/>
+<inno:td col="9" id="table-1-10-9" x-max="196.5" x-min="117.05" y-max="240.5" y-min="232.5"/>
+<inno:td col="10" id="table-1-10-10" x-max="253.0" x-min="196.5" y-max="240.5" y-min="232.5"/>
+<inno:td col="11" id="table-1-10-11" x-max="268.0" x-min="253.0" y-max="240.5" y-min="232.5"/>
+<inno:td col="12" id="table-1-10-12" x-max="291.5" x-min="268.0" y-max="240.5" y-min="232.5"/>
+<inno:td col="13" id="table-1-10-13" x-max="322.5" x-min="291.5" y-max="240.5" y-min="232.5"/>
+<inno:td col="14" id="table-1-10-14" x-max="378.0" x-min="322.5" y-max="240.5" y-min="232.5"/>
+</inno:tr>
+<inno:tr row="11">
+<inno:td col="1" colspan="4" id="table-1-11-1" x-max="76.95" x-min="14.0" y-max="251.0" y-min="240.5"><inno:font font-name="Helvetica" font-size="9.00pt">A4Tech_2 - HS19-1</inno:font></inno:td>
+<inno:td col="2" id="table-1-11-2" x-max="84.05" x-min="76.95" y-max="251.0" y-min="240.5"/>
+<inno:td col="3" id="table-1-11-3" x-max="95.0" x-min="84.05" y-max="251.0" y-min="240.5"/>
+<inno:td col="4" id="table-1-11-4" x-max="99.05" x-min="95.0" y-max="251.0" y-min="240.5"/>
+<inno:td col="5" id="table-1-11-5" x-max="114.05" x-min="99.05" y-max="251.0" y-min="240.5"/>
+<inno:td col="6" id="table-1-11-6" x-max="117.05" x-min="114.05" y-max="251.0" y-min="240.5"/>
+<inno:td col="7" id="table-1-11-7" x-max="196.5" x-min="117.05" y-max="251.0" y-min="240.5"/>
+<inno:td col="8" id="table-1-11-8" x-max="253.0" x-min="196.5" y-max="251.0" y-min="240.5"><inno:font font-name="Helvetica" font-size="9.00pt">12%</inno:font></inno:td>
+<inno:td col="9" id="table-1-11-9" x-max="268.0" x-min="253.0" y-max="251.0" y-min="240.5"/>
+<inno:td col="10" id="table-1-11-10" x-max="291.5" x-min="268.0" y-max="251.0" y-min="240.5"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+<inno:td col="11" id="table-1-11-11" x-max="322.5" x-min="291.5" y-max="251.0" y-min="240.5"><inno:font font-name="Helvetica" font-size="9.00pt">12</inno:font></inno:td>
+<inno:td col="12" id="table-1-11-12" x-max="378.0" x-min="322.5" y-max="251.0" y-min="240.5"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="12">
+<inno:td col="1" colspan="4" id="table-1-12-1" x-max="76.95" x-min="14.0" y-max="258.0" y-min="251.0"><inno:font font-name="Helvetica" font-size="9.00pt">_<inno:br/>Style: On-the-Head</inno:font></inno:td>
+<inno:td col="2" id="table-1-12-2" x-max="84.05" x-min="76.95" y-max="258.0" y-min="251.0"/>
+<inno:td col="3" id="table-1-12-3" x-max="95.0" x-min="84.05" y-max="258.0" y-min="251.0"/>
+<inno:td col="4" id="table-1-12-4" x-max="99.05" x-min="95.0" y-max="258.0" y-min="251.0"/>
+<inno:td col="5" id="table-1-12-5" x-max="114.05" x-min="99.05" y-max="258.0" y-min="251.0"/>
+<inno:td col="6" id="table-1-12-6" x-max="117.05" x-min="114.05" y-max="258.0" y-min="251.0"/>
+<inno:td col="7" id="table-1-12-7" x-max="196.5" x-min="117.05" y-max="258.0" y-min="251.0"/>
+<inno:td col="8" id="table-1-12-8" x-max="253.0" x-min="196.5" y-max="258.0" y-min="251.0"/>
+<inno:td col="9" id="table-1-12-9" x-max="268.0" x-min="253.0" y-max="258.0" y-min="251.0"/>
+<inno:td col="10" id="table-1-12-10" x-max="291.5" x-min="268.0" y-max="258.0" y-min="251.0"/>
+<inno:td col="11" id="table-1-12-11" x-max="322.5" x-min="291.5" y-max="258.0" y-min="251.0"/>
+<inno:td col="12" id="table-1-12-12" x-max="378.0" x-min="322.5" y-max="258.0" y-min="251.0"/>
+</inno:tr>
+<inno:tr row="13">
+<inno:td col="1" colspan="4" id="table-1-13-1" x-max="76.95" x-min="14.0" y-max="264.5" y-min="258.0"><inno:font font-name="Helvetica" font-size="9.00pt">Speaker: 40 mm</inno:font></inno:td>
+<inno:td col="2" id="table-1-13-2" x-max="84.05" x-min="76.95" y-max="264.5" y-min="258.0"/>
+<inno:td col="3" id="table-1-13-3" x-max="95.0" x-min="84.05" y-max="264.5" y-min="258.0"/>
+<inno:td col="4" id="table-1-13-4" x-max="99.05" x-min="95.0" y-max="264.5" y-min="258.0"/>
+<inno:td col="5" id="table-1-13-5" x-max="114.05" x-min="99.05" y-max="264.5" y-min="258.0"/>
+<inno:td col="6" id="table-1-13-6" x-max="117.05" x-min="114.05" y-max="264.5" y-min="258.0"/>
+<inno:td col="7" id="table-1-13-7" x-max="196.5" x-min="117.05" y-max="264.5" y-min="258.0"/>
+<inno:td col="8" id="table-1-13-8" x-max="253.0" x-min="196.5" y-max="264.5" y-min="258.0"/>
+<inno:td col="9" id="table-1-13-9" x-max="268.0" x-min="253.0" y-max="264.5" y-min="258.0"/>
+<inno:td col="10" id="table-1-13-10" x-max="291.5" x-min="268.0" y-max="264.5" y-min="258.0"/>
+<inno:td col="11" id="table-1-13-11" x-max="322.5" x-min="291.5" y-max="264.5" y-min="258.0"/>
+<inno:td col="12" id="table-1-13-12" x-max="378.0" x-min="322.5" y-max="264.5" y-min="258.0"/>
+</inno:tr>
+<inno:tr row="14">
+<inno:td col="1" colspan="8" id="table-1-14-1" x-max="114.05" x-min="14.0" y-max="272.5" y-min="264.5"><inno:font font-name="Helvetica" font-size="9.00pt">Frequency range: 20 Hz-20 KHz</inno:font></inno:td>
+<inno:td col="2" id="table-1-14-2" x-max="117.05" x-min="114.05" y-max="272.5" y-min="264.5"/>
+<inno:td col="3" id="table-1-14-3" x-max="196.5" x-min="117.05" y-max="272.5" y-min="264.5"/>
+<inno:td col="4" id="table-1-14-4" x-max="253.0" x-min="196.5" y-max="272.5" y-min="264.5"/>
+<inno:td col="5" id="table-1-14-5" x-max="268.0" x-min="253.0" y-max="272.5" y-min="264.5"/>
+<inno:td col="6" id="table-1-14-6" x-max="291.5" x-min="268.0" y-max="272.5" y-min="264.5"/>
+<inno:td col="7" id="table-1-14-7" x-max="322.5" x-min="291.5" y-max="272.5" y-min="264.5"/>
+<inno:td col="8" id="table-1-14-8" x-max="378.0" x-min="322.5" y-max="272.5" y-min="264.5"/>
+</inno:tr>
+<inno:tr row="15">
+<inno:td col="1" colspan="4" id="table-1-15-1" x-max="76.95" x-min="14.0" y-max="279.5" y-min="272.5"><inno:font font-name="Helvetica" font-size="9.00pt">Impedance: 32 Ohm</inno:font></inno:td>
+<inno:td col="2" id="table-1-15-2" x-max="84.05" x-min="76.95" y-max="279.5" y-min="272.5"/>
+<inno:td col="3" id="table-1-15-3" x-max="95.0" x-min="84.05" y-max="279.5" y-min="272.5"/>
+<inno:td col="4" id="table-1-15-4" x-max="99.05" x-min="95.0" y-max="279.5" y-min="272.5"/>
+<inno:td col="5" id="table-1-15-5" x-max="114.05" x-min="99.05" y-max="279.5" y-min="272.5"/>
+<inno:td col="6" id="table-1-15-6" x-max="117.05" x-min="114.05" y-max="279.5" y-min="272.5"/>
+<inno:td col="7" id="table-1-15-7" x-max="196.5" x-min="117.05" y-max="279.5" y-min="272.5"/>
+<inno:td col="8" id="table-1-15-8" x-max="253.0" x-min="196.5" y-max="279.5" y-min="272.5"/>
+<inno:td col="9" id="table-1-15-9" x-max="268.0" x-min="253.0" y-max="279.5" y-min="272.5"/>
+<inno:td col="10" id="table-1-15-10" x-max="291.5" x-min="268.0" y-max="279.5" y-min="272.5"/>
+<inno:td col="11" id="table-1-15-11" x-max="322.5" x-min="291.5" y-max="279.5" y-min="272.5"/>
+<inno:td col="12" id="table-1-15-12" x-max="378.0" x-min="322.5" y-max="279.5" y-min="272.5"/>
+</inno:tr>
+<inno:tr row="16">
+<inno:td col="1" colspan="3" id="table-1-16-1" x-max="60.95" x-min="14.0" y-max="286.5" y-min="279.5"><inno:font font-name="Helvetica" font-size="9.00pt">RMS: 50 mW</inno:font></inno:td>
+<inno:td col="2" id="table-1-16-2" x-max="76.95" x-min="60.95" y-max="286.5" y-min="279.5"/>
+<inno:td col="3" id="table-1-16-3" x-max="84.05" x-min="76.95" y-max="286.5" y-min="279.5"/>
+<inno:td col="4" id="table-1-16-4" x-max="95.0" x-min="84.05" y-max="286.5" y-min="279.5"/>
+<inno:td col="5" id="table-1-16-5" x-max="99.05" x-min="95.0" y-max="286.5" y-min="279.5"/>
+<inno:td col="6" id="table-1-16-6" x-max="114.05" x-min="99.05" y-max="286.5" y-min="279.5"/>
+<inno:td col="7" id="table-1-16-7" x-max="117.05" x-min="114.05" y-max="286.5" y-min="279.5"/>
+<inno:td col="8" id="table-1-16-8" x-max="196.5" x-min="117.05" y-max="286.5" y-min="279.5"/>
+<inno:td col="9" id="table-1-16-9" x-max="253.0" x-min="196.5" y-max="286.5" y-min="279.5"/>
+<inno:td col="10" id="table-1-16-10" x-max="268.0" x-min="253.0" y-max="286.5" y-min="279.5"/>
+<inno:td col="11" id="table-1-16-11" x-max="291.5" x-min="268.0" y-max="286.5" y-min="279.5"/>
+<inno:td col="12" id="table-1-16-12" x-max="322.5" x-min="291.5" y-max="286.5" y-min="279.5"/>
+<inno:td col="13" id="table-1-16-13" x-max="378.0" x-min="322.5" y-max="286.5" y-min="279.5"/>
+</inno:tr>
+<inno:tr row="17">
+<inno:td col="1" colspan="4" id="table-1-17-1" x-max="76.95" x-min="14.0" y-max="294.5" y-min="286.5"><inno:font font-name="Helvetica" font-size="9.00pt">Sensitivity: 102 dB</inno:font></inno:td>
+<inno:td col="2" id="table-1-17-2" x-max="84.05" x-min="76.95" y-max="294.5" y-min="286.5"/>
+<inno:td col="3" id="table-1-17-3" x-max="95.0" x-min="84.05" y-max="294.5" y-min="286.5"/>
+<inno:td col="4" id="table-1-17-4" x-max="99.05" x-min="95.0" y-max="294.5" y-min="286.5"/>
+<inno:td col="5" id="table-1-17-5" x-max="114.05" x-min="99.05" y-max="294.5" y-min="286.5"/>
+<inno:td col="6" id="table-1-17-6" x-max="117.05" x-min="114.05" y-max="294.5" y-min="286.5"/>
+<inno:td col="7" id="table-1-17-7" x-max="196.5" x-min="117.05" y-max="294.5" y-min="286.5"/>
+<inno:td col="8" id="table-1-17-8" x-max="253.0" x-min="196.5" y-max="294.5" y-min="286.5"/>
+<inno:td col="9" id="table-1-17-9" x-max="268.0" x-min="253.0" y-max="294.5" y-min="286.5"/>
+<inno:td col="10" id="table-1-17-10" x-max="291.5" x-min="268.0" y-max="294.5" y-min="286.5"/>
+<inno:td col="11" id="table-1-17-11" x-max="322.5" x-min="291.5" y-max="294.5" y-min="286.5"/>
+<inno:td col="12" id="table-1-17-12" x-max="378.0" x-min="322.5" y-max="294.5" y-min="286.5"/>
+</inno:tr>
+<inno:tr row="18">
+<inno:td col="1" colspan="5" id="table-1-18-1" x-max="84.05" x-min="14.0" y-max="301.5" y-min="294.5"><inno:font font-name="Helvetica" font-size="9.00pt">MIC sensitivity: - 50 dB</inno:font></inno:td>
+<inno:td col="2" id="table-1-18-2" x-max="95.0" x-min="84.05" y-max="301.5" y-min="294.5"/>
+<inno:td col="3" id="table-1-18-3" x-max="99.05" x-min="95.0" y-max="301.5" y-min="294.5"/>
+<inno:td col="4" id="table-1-18-4" x-max="114.05" x-min="99.05" y-max="301.5" y-min="294.5"/>
+<inno:td col="5" id="table-1-18-5" x-max="117.05" x-min="114.05" y-max="301.5" y-min="294.5"/>
+<inno:td col="6" id="table-1-18-6" x-max="196.5" x-min="117.05" y-max="301.5" y-min="294.5"/>
+<inno:td col="7" id="table-1-18-7" x-max="253.0" x-min="196.5" y-max="301.5" y-min="294.5"/>
+<inno:td col="8" id="table-1-18-8" x-max="268.0" x-min="253.0" y-max="301.5" y-min="294.5"/>
+<inno:td col="9" id="table-1-18-9" x-max="291.5" x-min="268.0" y-max="301.5" y-min="294.5"/>
+<inno:td col="10" id="table-1-18-10" x-max="322.5" x-min="291.5" y-max="301.5" y-min="294.5"/>
+<inno:td col="11" id="table-1-18-11" x-max="378.0" x-min="322.5" y-max="301.5" y-min="294.5"/>
+</inno:tr>
+<inno:tr row="19">
+<inno:td col="1" colspan="4" id="table-1-19-1" x-max="76.95" x-min="14.0" y-max="308.05" y-min="301.5"><inno:font font-name="Helvetica" font-size="9.00pt">Cable length: 2 m</inno:font></inno:td>
+<inno:td col="2" id="table-1-19-2" x-max="84.05" x-min="76.95" y-max="308.05" y-min="301.5"/>
+<inno:td col="3" id="table-1-19-3" x-max="95.0" x-min="84.05" y-max="308.05" y-min="301.5"/>
+<inno:td col="4" id="table-1-19-4" x-max="99.05" x-min="95.0" y-max="308.05" y-min="301.5"/>
+<inno:td col="5" id="table-1-19-5" x-max="114.05" x-min="99.05" y-max="308.05" y-min="301.5"/>
+<inno:td col="6" id="table-1-19-6" x-max="117.05" x-min="114.05" y-max="308.05" y-min="301.5"/>
+<inno:td col="7" id="table-1-19-7" x-max="196.5" x-min="117.05" y-max="308.05" y-min="301.5"/>
+<inno:td col="8" id="table-1-19-8" x-max="253.0" x-min="196.5" y-max="308.05" y-min="301.5"/>
+<inno:td col="9" id="table-1-19-9" x-max="268.0" x-min="253.0" y-max="308.05" y-min="301.5"/>
+<inno:td col="10" id="table-1-19-10" x-max="291.5" x-min="268.0" y-max="308.05" y-min="301.5"/>
+<inno:td col="11" id="table-1-19-11" x-max="322.5" x-min="291.5" y-max="308.05" y-min="301.5"/>
+<inno:td col="12" id="table-1-19-12" x-max="378.0" x-min="322.5" y-max="308.05" y-min="301.5"/>
+</inno:tr>
+<inno:tr row="20">
+<inno:td col="1" colspan="3" id="table-1-20-1" x-max="60.95" x-min="14.0" y-max="316.05" y-min="308.05"><inno:font font-name="Helvetica" font-size="9.00pt">Plug: 3.5 mm</inno:font></inno:td>
+<inno:td col="2" id="table-1-20-2" x-max="76.95" x-min="60.95" y-max="316.05" y-min="308.05"/>
+<inno:td col="3" id="table-1-20-3" x-max="84.05" x-min="76.95" y-max="316.05" y-min="308.05"/>
+<inno:td col="4" id="table-1-20-4" x-max="95.0" x-min="84.05" y-max="316.05" y-min="308.05"/>
+<inno:td col="5" id="table-1-20-5" x-max="99.05" x-min="95.0" y-max="316.05" y-min="308.05"/>
+<inno:td col="6" id="table-1-20-6" x-max="114.05" x-min="99.05" y-max="316.05" y-min="308.05"/>
+<inno:td col="7" id="table-1-20-7" x-max="117.05" x-min="114.05" y-max="316.05" y-min="308.05"/>
+<inno:td col="8" id="table-1-20-8" x-max="196.5" x-min="117.05" y-max="316.05" y-min="308.05"/>
+<inno:td col="9" id="table-1-20-9" x-max="253.0" x-min="196.5" y-max="316.05" y-min="308.05"/>
+<inno:td col="10" id="table-1-20-10" x-max="268.0" x-min="253.0" y-max="316.05" y-min="308.05"/>
+<inno:td col="11" id="table-1-20-11" x-max="291.5" x-min="268.0" y-max="316.05" y-min="308.05"/>
+<inno:td col="12" id="table-1-20-12" x-max="322.5" x-min="291.5" y-max="316.05" y-min="308.05"/>
+<inno:td col="13" id="table-1-20-13" x-max="378.0" x-min="322.5" y-max="316.05" y-min="308.05"/>
+</inno:tr>
+<inno:tr row="21">
+<inno:td col="1" colspan="10" id="table-1-21-1" x-max="196.5" x-min="14.0" y-max="321.95" y-min="316.05"><inno:font font-name="Helvetica" font-size="9.00pt">Controller: Volume knob on the headset</inno:font></inno:td>
+<inno:td col="2" id="table-1-21-2" x-max="253.0" x-min="196.5" y-max="321.95" y-min="316.05"/>
+<inno:td col="3" id="table-1-21-3" x-max="268.0" x-min="253.0" y-max="321.95" y-min="316.05"/>
+<inno:td col="4" id="table-1-21-4" x-max="291.5" x-min="268.0" y-max="321.95" y-min="316.05"/>
+<inno:td col="5" id="table-1-21-5" x-max="322.5" x-min="291.5" y-max="321.95" y-min="316.05"/>
+<inno:td col="6" id="table-1-21-6" x-max="378.0" x-min="322.5" y-max="321.95" y-min="316.05"/>
+</inno:tr>
+<inno:tr row="22">
+<inno:td col="1" colspan="2" id="table-1-22-1" x-max="42.05" x-min="14.0" y-max="330.5" y-min="321.95"><inno:font font-name="Helvetica" font-size="9.00pt">System</inno:font></inno:td>
+<inno:td col="2" colspan="2" id="table-1-22-2" x-max="76.95" x-min="42.05" y-max="330.5" y-min="321.95"><inno:font font-name="Helvetica" font-size="9.00pt">Requirements</inno:font></inno:td>
+<inno:td col="3" colspan="4" id="table-1-22-3" x-max="114.05" x-min="76.95" y-max="330.5" y-min="321.95"><inno:font font-name="Helvetica" font-size="9.00pt">: WindowsXP /</inno:font></inno:td>
+<inno:td col="4" colspan="2" id="table-1-22-4" x-max="196.5" x-min="114.05" y-max="330.5" y-min="321.95"><inno:font font-name="Helvetica" font-size="9.00pt">/ Vista / 7 / 8 / 8.1 / 10</inno:font></inno:td>
+<inno:td col="5" id="table-1-22-5" x-max="253.0" x-min="196.5" y-max="330.5" y-min="321.95"/>
+<inno:td col="6" id="table-1-22-6" x-max="268.0" x-min="253.0" y-max="330.5" y-min="321.95"/>
+<inno:td col="7" id="table-1-22-7" x-max="291.5" x-min="268.0" y-max="330.5" y-min="321.95"/>
+<inno:td col="8" id="table-1-22-8" x-max="322.5" x-min="291.5" y-max="330.5" y-min="321.95"/>
+<inno:td col="9" id="table-1-22-9" x-max="378.0" x-min="322.5" y-max="330.5" y-min="321.95"/>
+</inno:tr>
+<inno:tr row="23">
+<inno:td col="1" id="table-1-23-1" x-max="36.05" x-min="14.0" y-max="340.0" y-min="330.5"><inno:font font-name="Helvetica" font-size="9.00pt">1</inno:font></inno:td>
+<inno:td col="2" id="table-1-23-2" x-max="42.05" x-min="36.05" y-max="340.0" y-min="330.5"/>
+<inno:td col="3" id="table-1-23-3" x-max="60.95" x-min="42.05" y-max="340.0" y-min="330.5"/>
+<inno:td col="4" id="table-1-23-4" x-max="76.95" x-min="60.95" y-max="340.0" y-min="330.5"/>
+<inno:td col="5" id="table-1-23-5" x-max="84.05" x-min="76.95" y-max="340.0" y-min="330.5"/>
+<inno:td col="6" id="table-1-23-6" x-max="95.0" x-min="84.05" y-max="340.0" y-min="330.5"/>
+<inno:td col="7" id="table-1-23-7" x-max="99.05" x-min="95.0" y-max="340.0" y-min="330.5"/>
+<inno:td col="8" id="table-1-23-8" x-max="114.05" x-min="99.05" y-max="340.0" y-min="330.5"/>
+<inno:td col="9" id="table-1-23-9" x-max="117.05" x-min="114.05" y-max="340.0" y-min="330.5"/>
+<inno:td col="10" id="table-1-23-10" x-max="196.5" x-min="117.05" y-max="340.0" y-min="330.5"/>
+<inno:td col="11" id="table-1-23-11" x-max="253.0" x-min="196.5" y-max="340.0" y-min="330.5"/>
+<inno:td col="12" id="table-1-23-12" x-max="268.0" x-min="253.0" y-max="340.0" y-min="330.5"/>
+<inno:td col="13" id="table-1-23-13" x-max="291.5" x-min="268.0" y-max="340.0" y-min="330.5"/>
+<inno:td col="14" id="table-1-23-14" x-max="322.5" x-min="291.5" y-max="340.0" y-min="330.5"/>
+<inno:td col="15" id="table-1-23-15" x-max="378.0" x-min="322.5" y-max="340.0" y-min="330.5"/>
+</inno:tr>
+<inno:tr row="24">
+<inno:td col="1" colspan="4" id="table-1-24-1" x-max="76.95" x-min="14.0" y-max="371.0" y-min="340.0"><inno:font font-name="Helvetica" font-size="9.00pt">Mouse - A4 Tech<inno:br/>G3-200NS<inno:br/>1</inno:font></inno:td>
+<inno:td col="2" id="table-1-24-2" x-max="84.05" x-min="76.95" y-max="371.0" y-min="340.0"/>
+<inno:td col="3" id="table-1-24-3" x-max="95.0" x-min="84.05" y-max="371.0" y-min="340.0"/>
+<inno:td col="4" id="table-1-24-4" x-max="99.05" x-min="95.0" y-max="371.0" y-min="340.0"/>
+<inno:td col="5" id="table-1-24-5" x-max="114.05" x-min="99.05" y-max="371.0" y-min="340.0"/>
+<inno:td col="6" id="table-1-24-6" x-max="117.05" x-min="114.05" y-max="371.0" y-min="340.0"/>
+<inno:td col="7" id="table-1-24-7" x-max="196.5" x-min="117.05" y-max="371.0" y-min="340.0"/>
+<inno:td col="8" id="table-1-24-8" x-max="253.0" x-min="196.5" y-max="371.0" y-min="340.0"><inno:font font-name="Helvetica" font-size="9.00pt">12%</inno:font></inno:td>
+<inno:td col="9" id="table-1-24-9" x-max="268.0" x-min="253.0" y-max="371.0" y-min="340.0"/>
+<inno:td col="10" id="table-1-24-10" x-max="291.5" x-min="268.0" y-max="371.0" y-min="340.0"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+<inno:td col="11" id="table-1-24-11" x-max="322.5" x-min="291.5" y-max="371.0" y-min="340.0"><inno:font font-name="Helvetica" font-size="9.00pt">2</inno:font></inno:td>
+<inno:td col="12" id="table-1-24-12" x-max="378.0" x-min="322.5" y-max="371.0" y-min="340.0"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="25">
+<inno:td col="1" colspan="4" id="table-1-25-1" rowspan="2" x-max="76.95" x-min="14.0" y-max="389.5" y-min="371.0"><inno:b><inno:font font-name="Helvetica-Bold" font-size="8.00pt">Payment Terms:</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-25-2" x-max="84.05" x-min="76.95" y-max="386.05" y-min="371.0"/>
+<inno:td col="3" id="table-1-25-3" x-max="95.0" x-min="84.05" y-max="386.05" y-min="371.0"/>
+<inno:td col="4" colspan="3" id="table-1-25-4" rowspan="2" x-max="117.05" x-min="95.0" y-max="389.5" y-min="371.0"><inno:font font-name="Helvetica" font-size="8.00pt">30 days</inno:font></inno:td>
+<inno:td col="5" id="table-1-25-5" x-max="196.5" x-min="117.05" y-max="386.05" y-min="371.0"/>
+<inno:td col="6" colspan="2" id="table-1-25-6" rowspan="3" x-max="268.0" x-min="196.5" y-max="396.0" y-min="371.0"><inno:font font-name="Helvetica" font-size="9.00pt">Total (excl. tax)<inno:br/>Total tax 12%</inno:font></inno:td>
+<inno:td col="7" id="table-1-25-7" x-max="291.5" x-min="268.0" y-max="386.05" y-min="371.0"/>
+<inno:td col="8" id="table-1-25-8" x-max="322.5" x-min="291.5" y-max="386.05" y-min="371.0"/>
+<inno:td col="9" id="table-1-25-9" x-max="378.0" x-min="322.5" y-max="386.05" y-min="371.0"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="26">
+<inno:td col="1" id="table-1-26-1" x-max="84.05" x-min="76.95" y-max="389.5" y-min="386.05"/>
+<inno:td col="2" id="table-1-26-2" x-max="95.0" x-min="84.05" y-max="389.5" y-min="386.05"/>
+<inno:td col="3" id="table-1-26-3" x-max="196.5" x-min="117.05" y-max="389.5" y-min="386.05"/>
+<inno:td col="4" id="table-1-26-4" x-max="291.5" x-min="268.0" y-max="389.5" y-min="386.05"/>
+<inno:td col="5" id="table-1-26-5" x-max="322.5" x-min="291.5" y-max="389.5" y-min="386.05"/>
+<inno:td col="6" id="table-1-26-6" rowspan="2" x-max="378.0" x-min="322.5" y-max="396.0" y-min="386.05"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="27">
+<inno:td col="1" colspan="3" id="table-1-27-1" rowspan="2" x-max="60.95" x-min="14.0" y-max="403.0" y-min="389.5"><inno:b><inno:font font-name="Helvetica-Bold" font-size="8.00pt">Payment Type:</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-27-2" x-max="76.95" x-min="60.95" y-max="396.0" y-min="389.5"/>
+<inno:td col="3" id="table-1-27-3" x-max="84.05" x-min="76.95" y-max="396.0" y-min="389.5"/>
+<inno:td col="4" id="table-1-27-4" x-max="95.0" x-min="84.05" y-max="396.0" y-min="389.5"/>
+<inno:td col="5" colspan="2" id="table-1-27-5" rowspan="2" x-max="114.05" x-min="95.0" y-max="403.0" y-min="389.5"><inno:font font-name="Helvetica" font-size="8.00pt">Cash</inno:font></inno:td>
+<inno:td col="6" id="table-1-27-6" x-max="117.05" x-min="114.05" y-max="396.0" y-min="389.5"/>
+<inno:td col="7" id="table-1-27-7" x-max="196.5" x-min="117.05" y-max="396.0" y-min="389.5"/>
+<inno:td col="8" id="table-1-27-8" x-max="291.5" x-min="268.0" y-max="396.0" y-min="389.5"/>
+<inno:td col="9" id="table-1-27-9" x-max="322.5" x-min="291.5" y-max="396.0" y-min="389.5"/>
+</inno:tr>
+<inno:tr row="28">
+<inno:td col="1" id="table-1-28-1" x-max="76.95" x-min="60.95" y-max="403.0" y-min="396.0"/>
+<inno:td col="2" id="table-1-28-2" x-max="84.05" x-min="76.95" y-max="403.0" y-min="396.0"/>
+<inno:td col="3" id="table-1-28-3" x-max="95.0" x-min="84.05" y-max="403.0" y-min="396.0"/>
+<inno:td col="4" id="table-1-28-4" x-max="117.05" x-min="114.05" y-max="403.0" y-min="396.0"/>
+<inno:td col="5" id="table-1-28-5" x-max="196.5" x-min="117.05" y-max="403.0" y-min="396.0"/>
+<inno:td col="6" colspan="2" id="table-1-28-6" x-max="268.0" x-min="196.5" y-max="403.0" y-min="396.0"><inno:color rgb="#00003b"><inno:font font-name="Helvetica" font-size="9.00pt">Total (inc. tax)</inno:font></inno:color></inno:td>
+<inno:td col="7" id="table-1-28-7" x-max="291.5" x-min="268.0" y-max="403.0" y-min="396.0"/>
+<inno:td col="8" id="table-1-28-8" x-max="322.5" x-min="291.5" y-max="403.0" y-min="396.0"/>
+<inno:td col="9" id="table-1-28-9" x-max="378.0" x-min="322.5" y-max="403.0" y-min="396.0"><inno:color rgb="#00003b"><inno:font font-name="Helvetica" font-size="9.00pt">0.00</inno:font></inno:color></inno:td>
+</inno:tr>
+</inno:block></inno:table><inno:text id="text-10" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="367.0" x-min="359.0" y-max="502.0" y-min="492.0"><inno:font font-name="Helvetica" font-size="7.00pt">1/1</inno:font></inno:block></inno:text></inno:content></inno:dom>

@@ -117,8 +117,6 @@ function UploadToGoldenGate($prFilename,$prJobID,$token,$conWMS,$sFilename){
       $files[$f] = file_get_contents($f);
     }
     
-    
-
     // URL to upload to
     $url = "https://api.innodata.com/v1.1/documents";
 
@@ -145,7 +143,8 @@ function UploadToGoldenGate($prFilename,$prJobID,$token,$conWMS,$sFilename){
       CURLOPT_URL => $url,
       CURLOPT_RETURNTRANSFER => 1,
       CURLOPT_MAXREDIRS => 10,
-      CURLOPT_TIMEOUT => 30,
+      //CURLOPT_TIMEOUT => 30,
+      CURLOPT_TIMEOUT => 0,
       //CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "POST",
       CURLOPT_POST => 1,

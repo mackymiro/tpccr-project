@@ -1,0 +1,59 @@
+  <?xml version="1.0" encoding="UTF-8"?>
+<inno:dom xmlns:inno="http://innodatalabs.com/innodom"><inno:meta><inno:datapoint key="party.1.party_name.1" confidence="1" idref="text-1">Prepared By</inno:datapoint><inno:datapoint key="party.1.party_role.1" confidence="1" idref="text-2">macky miro</inno:datapoint><inno:datapoint key="counsel.1.address.1" confidence="1" idref="text-4">Dino Compound, 3rd Floor Dino Group Administration Bldg., No.88 Labogon Road, Barangay Labogon, Mandaue City, 6014 Cebu, Philippines Tel. Nos. (63-32) 346-2567; 420-5639 / Fax No. (63-32) 346-0341</inno:datapoint></inno:meta><inno:content><inno:text id="text-1" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="54.0" x-min="18.0" y-max="282.0" y-min="270.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Prepared By</inno:font></inno:b></inno:block></inno:text><inno:text id="text-2" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="51.0" x-min="18.0" y-max="300.0" y-min="285.0"><inno:font font-name="Times-Roman" font-size="9.00pt"><inno:i>__________<inno:br/>macky miro</inno:i></inno:font></inno:block></inno:text><inno:text id="text-3" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="52.0" x-min="18.0" y-max="324.0" y-min="316.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Received By</inno:font></inno:b></inno:block></inno:text><inno:image id="image-1" type="image"><inno:block page="1" page-height="512" page-width="396" x-max="65.0" x-min="29.0" y-max="43.0" y-min="23.0"/></inno:image><inno:text id="text-4" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="358.0" x-min="73.0" y-max="37.9" y-min="25.0"><inno:font font-name="Times-Roman" font-size="7.50pt"><inno:i>Dino Compound, 3rd Floor Dino Group Administration Bldg., No.88 Labogon Road, Barangay Labogon, Mandaue City, 6014 Cebu, Philippines<inno:br/>Tel. Nos. (63-32) 346-2567; 420-5639 / Fax No. (63-32) 346-0341</inno:i></inno:font></inno:block></inno:text><inno:text id="text-5" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="245.0" x-min="141.0" y-max="46.0" y-min="38.0"><inno:font font-name="Times-Roman" font-size="7.50pt"><inno:i>p.ph / sales@dnogroup.ph / marketing@dnogroup.ph</inno:i></inno:font></inno:block></inno:text><inno:text id="text-6" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="253.0" x-min="141.0" y-max="64.0" y-min="52.0"><inno:b><inno:font font-name="Times-Bold" font-size="12.00pt"><inno:u>PAYMENT CHECK VOUCHER</inno:u></inno:font></inno:b></inno:block></inno:text><inno:table id="table-1" type="table"><inno:block page="1" page-height="512" page-width="396" x-max="360.0" x-min="18.0" y-max="109.0" y-min="71.0"><inno:tr row="1">
+<inno:td col="1" id="table-1-1-1" x-max="75.0" x-min="18.0" y-max="81.05" y-min="71.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Paid To</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-1-2" rowspan="3" x-max="199.5" x-min="75.0" y-max="89.0" y-min="71.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">HP Foundation<inno:br/>FOR APPROVAL</inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-1-3" x-max="316.5" x-min="199.5" y-max="81.05" y-min="71.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Amount Due</inno:font></inno:b></inno:td>
+<inno:td col="4" id="table-1-1-4" x-max="360.0" x-min="316.5" y-max="81.05" y-min="71.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">65,000.00</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="2">
+<inno:td col="1" id="table-1-2-1" rowspan="2" x-max="75.0" x-min="18.0" y-max="89.0" y-min="81.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Status</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-2-2" x-max="316.5" x-min="199.5" y-max="87.95" y-min="81.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Invoice #</inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-2-3" rowspan="2" x-max="360.0" x-min="316.5" y-max="89.0" y-min="81.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">1233445</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="3">
+<inno:td col="1" id="table-1-3-1" rowspan="2" x-max="316.5" x-min="199.5" y-max="95.95" y-min="87.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">PV No</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="4">
+<inno:td col="1" id="table-1-4-1" rowspan="2" x-max="75.0" x-min="18.0" y-max="97.0" y-min="89.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Date</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-4-2" x-max="199.5" x-min="75.0" y-max="95.95" y-min="89.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">09/23/2020</inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-4-3" rowspan="2" x-max="360.0" x-min="316.5" y-max="97.0" y-min="89.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">PV-000004</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="5">
+<inno:td col="1" id="table-1-5-1" rowspan="2" x-max="199.5" x-min="75.0" y-max="109.0" y-min="95.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">HP Foundation</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-5-2" rowspan="2" x-max="316.5" x-min="199.5" y-max="109.0" y-min="95.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Payment Method</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="6">
+<inno:td col="1" id="table-1-6-1" x-max="75.0" x-min="18.0" y-max="109.0" y-min="97.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Account Name</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-6-2" x-max="360.0" x-min="316.5" y-max="109.0" y-min="97.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">CHECK</inno:font></inno:b></inno:td>
+</inno:tr>
+</inno:block></inno:table><inno:table id="table-2" type="table"><inno:block page="1" page-height="512" page-width="396" x-max="375.0" x-min="18.0" y-max="132.0" y-min="109.0"><inno:tr row="1">
+<inno:td col="1" id="table-2-1-1" x-max="121.5" x-min="18.0" y-max="118.5" y-min="109.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">DATE</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-2-1-2" x-max="252.5" x-min="121.5" y-max="118.5" y-min="109.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">PARTICULARS</inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-2-1-3" x-max="375.0" x-min="252.5" y-max="118.5" y-min="109.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">AMOUNT</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="2">
+<inno:td col="1" id="table-2-2-1" x-max="121.5" x-min="18.0" y-max="132.0" y-min="118.5"><inno:font font-name="Times-Roman" font-size="9.00pt"><inno:i>09/23/2020</inno:i></inno:font></inno:td>
+<inno:td col="2" id="table-2-2-2" x-max="252.5" x-min="121.5" y-max="132.0" y-min="118.5"><inno:font font-name="Times-Roman" font-size="9.00pt"><inno:i>bills foundation</inno:i></inno:font></inno:td>
+<inno:td col="3" id="table-2-2-3" x-max="375.0" x-min="252.5" y-max="132.0" y-min="118.5"><inno:font font-name="Times-Roman" font-size="13.50pt"><inno:i>65,000.00</inno:i></inno:font></inno:td>
+</inno:tr>
+</inno:block></inno:table><inno:table id="table-3" type="table"><inno:block page="1" page-height="512" page-width="396" x-max="375.0" x-min="18.0" y-max="248.0" y-min="167.0"><inno:tr row="1">
+<inno:td col="1" id="table-3-1-1" x-max="202.0" x-min="18.0" y-max="177.5" y-min="167.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">CHECK NO ISSUED</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-3-1-2" x-max="375.0" x-min="202.0" y-max="177.5" y-min="167.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">CHECK AMOUNT</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="2">
+<inno:td col="1" id="table-3-2-1" x-max="202.0" x-min="18.0" y-max="198.5" y-min="177.5"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Total</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-3-2-2" x-max="375.0" x-min="202.0" y-max="198.5" y-min="177.5"><inno:font font-name="Times-Roman" font-size="13.50pt"><inno:i>65,000.00</inno:i></inno:font></inno:td>
+</inno:tr>
+<inno:tr row="3">
+<inno:td col="1" id="table-3-3-1" x-max="202.0" x-min="18.0" y-max="225.0" y-min="198.5"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Total Remaining Balance</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-3-3-2" x-max="375.0" x-min="202.0" y-max="225.0" y-min="198.5"><inno:font font-name="Times-Roman" font-size="13.50pt"><inno:i>65,000.00</inno:i></inno:font></inno:td>
+</inno:tr>
+<inno:tr row="4">
+<inno:td col="1" id="table-3-4-1" x-max="202.0" x-min="18.0" y-max="238.5" y-min="225.0"><inno:font font-name="Times-Roman" font-size="9.00pt"><inno:i>Bank Name/Branch:</inno:i></inno:font></inno:td>
+<inno:td col="2" id="table-3-4-2" x-max="375.0" x-min="202.0" y-max="238.5" y-min="225.0"/>
+</inno:tr>
+<inno:tr row="5">
+<inno:td col="1" id="table-3-5-1" x-max="202.0" x-min="18.0" y-max="248.0" y-min="238.5"><inno:font font-name="Times-Roman" font-size="9.00pt"><inno:i>Check No</inno:i></inno:font></inno:td>
+<inno:td col="2" id="table-3-5-2" x-max="375.0" x-min="202.0" y-max="248.0" y-min="238.5"/>
+</inno:tr>
+</inno:block></inno:table><inno:text id="text-7" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="158.0" x-min="127.0" y-max="282.0" y-min="270.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Checked By</inno:font></inno:b></inno:block></inno:text><inno:text id="text-8" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="177.0" x-min="125.0" y-max="300.0" y-min="285.0"><inno:font font-name="Times-Roman" font-size="9.00pt"><inno:i>_________________<inno:br/>Aprilane Q Maturan<inno:br/>Finance Officer</inno:i></inno:font></inno:block></inno:text><inno:text id="text-9" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="244.0" x-min="207.0" y-max="282.0" y-min="270.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Approved By</inno:font></inno:b></inno:block></inno:text><inno:text id="text-10" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="304.0" x-min="290.0" y-max="282.0" y-min="270.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Date</inno:font></inno:b></inno:block></inno:text></inno:content></inno:dom>

@@ -4,8 +4,19 @@
 	if ($_SESSION['login_user']==''){
 		 header("location: login.php");
 	}
-	
+    
+    $getPage = $_GET['page'];
+    
+    $pageExp = explode("/", $getPage);
+   
+    $filePointer = "uploadfiles/$pageExp[1]";
+
+    if (file_exists($filePointer)) {
+        header("location: $filePointer"); 
+    }
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -132,7 +143,7 @@
       <br/>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">No Batch File Found</li>
+        <li class="active">No Innodom XML found</li>
       </ol>
     </section>
 
@@ -144,11 +155,8 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-                <h1>No Batch File Found</h1>
-                <a href="Registration.php?page=Acquire">Registration for file</a>
+                <h1>No Innodom XML found</h1>
             </div>
-          
-           
             <!-- /.box-footer -->
           </div>
           <!-- /. box -->

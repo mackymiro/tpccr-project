@@ -2,7 +2,7 @@ function saveXML(){
      alert("The file is successfully saved!");
 }
 
-const JobRewind = () =>{
+function JobRewind(){
     JobID = document.getElementById("GGJobID").value;
     Filename = document.getElementById("filename").innerHTML;
 
@@ -25,7 +25,7 @@ const JobRewind = () =>{
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xmlhttp.send(data);
-};
+}
 
 function GetJobStatus(){
   

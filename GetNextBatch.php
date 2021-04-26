@@ -1,15 +1,13 @@
 <?php
 	//error_reporting(0);
-
- 	session_start();
+	
+	session_start();
   	require_once "conn.php";
  
 	$Task=$_GET['Task'];
 	$page=$_GET['page'];
 	//$fullscr=$_GET['fullscr'];
 	$WorkFlowID=2;
-
-
 	 
 	$sqls="EXEC usp_PRIMO_AUTOALLOCATE  @UserName='".$_SESSION['login_user']."', @ProcessCode='".$Task."',@WorkflowId='".$WorkFlowID."'";
 	  
