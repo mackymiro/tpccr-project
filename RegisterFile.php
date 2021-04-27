@@ -199,37 +199,37 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
  
 
- // curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"WKLI\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[{ \"from\": \"8e651b35-074e-4d44-a306-5be24baac8e7\", \"to\": \"764bc3b8-94d0-4228-a218-b83f6078ea8a\" }]},\"taxonomy\":\"wkli-taxonomy.json\"},\"text-extraction\":{\"ocr\":true},\"zoning\":{\"high_confidence_threshold\":\"0\"}},\"type\":\"data-point-extraction\",\"use_for_training\":true}");
+// curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"WKLI\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[{ \"from\": \"8e651b35-074e-4d44-a306-5be24baac8e7\", \"to\": \"764bc3b8-94d0-4228-a218-b83f6078ea8a\" }]},\"taxonomy\":\"wkli-taxonomy.json\"},\"text-extraction\":{\"ocr\":true},\"zoning\":{\"high_confidence_threshold\":\"0\"}},\"type\":\"data-point-extraction\",\"use_for_training\":true}");
+//curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"".$GGTeam."\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"".$GGTaxonomy."\"},\"zoning\":{\"high_confidence_threshold\":\"1.0\"}},\"type\":\"data-point-extraction\",\"use_for_training\":false}");
+//curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"TPCCR\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"legal-bu-taxonomy-test-v2.json\"},\"zoning\":{\"high_confidence_threshold\":\"1.0\",\"taxonomy\":\"19-zones-taxonomy.json\"},\"reading\":{\"high_confidence_threshold\":\"1.0\"}},\"type\":\"data-point-extraction\",\"use_for_training\":true}"); doc2xml
+  curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"TPCCR\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"legal-bu-taxonomy-test-v2.json\"},\"zoning\":{\"high_confidence_threshold\":\"1.0\",\"taxonomy\":\"19-zones-taxonomy.json\"},\"reading\":{\"high_confidence_threshold\":\"1.0\"}},\"type\":\"doc2xml\",\"use_for_training\":true}"); 
+  curl_setopt($ch, CURLOPT_USERPWD, $token . ":" . $token);  
+  $headers = array();
+  $headers[] = 'Accept: application/json';
+  $headers[] = 'Content-Type: application/json';
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"".$GGTeam."\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"".$GGTaxonomy."\"},\"zoning\":{\"high_confidence_threshold\":\"1.0\"}},\"type\":\"data-point-extraction\",\"use_for_training\":false}");
- 
-    curl_setopt($ch, CURLOPT_USERPWD, $token . ":" . $token);  
-    $headers = array();
-    $headers[] = 'Accept: application/json';
-    $headers[] = 'Content-Type: application/json';
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-    $result = curl_exec($ch);
-
-
-    $jobj = json_decode($result);
+  $result = curl_exec($ch);
 
 
-    // $A1=explode('"id":"',$result);
-    // $A2=explode('"', $A1[1]);
+  $jobj = json_decode($result);
 
-    // $GGJobID = $A2[0];
-     
-    $GGJobID = $jobj->response->id;
+
+  // $A1=explode('"id":"',$result);
+  // $A2=explode('"', $A1[1]);
+
+  // $GGJobID = $A2[0];
     
+  $GGJobID = $jobj->response->id;
 
-    ExecuteQuerySQLSERVER("Update PRIMO_integration SET GGJobID='".$GGJobID."'  Where JobId='".$prJobID."'",$conWMS);
 
-   
-    if (curl_errno($ch)) {
-        echo 'Error:' . curl_error($ch);
-    }
-    curl_close($ch);
+  ExecuteQuerySQLSERVER("Update PRIMO_integration SET GGJobID='".$GGJobID."'  Where JobId='".$prJobID."'",$conWMS);
+
+
+  if (curl_errno($ch)) {
+      echo 'Error:' . curl_error($ch);
+  }
+  curl_close($ch);
 
 
 }
@@ -412,7 +412,9 @@ function build_data_files($boundary, $fields, $files){
     return $data;
 }
 ?>
-
+<?php 
+   $_SESSION['message'] = "File Successfully Uploaded.";
+?>
 <script language="javascript">
   window.location = "Registration.php?page=Acquire";
 </script>

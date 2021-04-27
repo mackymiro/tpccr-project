@@ -561,10 +561,10 @@ function LoadStyles(){
  
 				?>
 				<!-- https://wb.innodatalabs.com/zoning/#/job/<?= $GGJobID;?>?token=dXNlci10ZXN0LWZiYWQ5OThmMmYxNzNiNDM3NDE0YjQxOWZkNjhkMzAwMDVkN2QzMDc6 -->
-				<li><a href="https://wb.innodatalabs.com/zoning-review/#/job/<?= $GGJobID;?>?token=dXNlci10ZXN0LTUzY2FkNzZmYzIzOGUzNTgwNWU5NjgzY2YxNDFlNTE4ZjliZWUzMTA6" target="blank" id='GoldenGateLink1'><i class="fa fa-square"></i> <u>Zoning</u></li>
+				<li><a href="https://wb.innodatalabs.com/zoning-review/#/job/<?= $GGJobID;?>?token=<?= $TokenVAL; ?>" target="blank" id='GoldenGateLink1'><i class="fa fa-square"></i> <u>Zoning</u></li>
 				 
 
-				 <li><a href="https://wb.innodatalabs.com/zoning/#/job/<?= $GGJobID;?>?token=dXNlci10ZXN0LTUzY2FkNzZmYzIzOGUzNTgwNWU5NjgzY2YxNDFlNTE4ZjliZWUzMTA6" target="blank" id='GoldenGateLink'><i class="fa fa-link"></i>Link: <u>Full Screen (Transformation)</u></li>
+				 <li><a href="https://wb.innodatalabs.com/zoning/#/job/<?= $GGJobID;?>?token=<?= $TokenVAL; ?>" target="blank" id='GoldenGateLink'><i class="fa fa-link"></i>Link: <u>Full Screen (Transformation)</u></li>
 				 <li><a href="#" onClick="GetJobStatus()"><i class="fa fa-spinner"></i>GG Status: <u><span id="GGStatus"></span></u></a></li>
 				 <!-- <li><a href="#" onClick="TestGetJobStatus()"><i class="fa fa-refresh"></i>Test Status: <u><span id="TestGGStatus"></span></u></a></li> -->
 				<?php

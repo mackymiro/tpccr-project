@@ -1,6 +1,6 @@
 <?php
 include ("../conn.php");
-	session_start();
+session_start();
 set_time_limit(0);
 error_reporting(0);
 $fileURL = $_GET['FileURL'];
@@ -122,6 +122,6 @@ function _utf8_decode($string)
 ?>
 
 <script language="javascript">
-	window.location = "<?php echo $RedirectURL;?>";
+	window.location = "<?= $RedirectURL;?>";
 </script>
  

@@ -29,8 +29,8 @@ function JobRewind(){
 
 function GetJobStatus(){
   
-  //var TokenVAL =document.getElementById("TokenVal").value;
-  var TokenVAL ='dXNlci10ZXN0LTUzY2FkNzZmYzIzOGUzNTgwNWU5NjgzY2YxNDFlNTE4ZjliZWUzMTA6';
+  var TokenVAL =document.getElementById("TokenVal").value;
+  //var TokenVAL ='dXNlci10ZXN0LTUzY2FkNzZmYzIzOGUzNTgwNWU5NjgzY2YxNDFlNTE4ZjliZWUzMTA6';
 
 	JobID = document.getElementById("GGJobID").value;
 
@@ -62,6 +62,10 @@ function GetJobStatus(){
       else if(response.innerHTML.trim()=='blocked(59%)'){
         document.getElementById("GoldenGateLink").href="https://wb.innodatalabs.com/zoning/#/job/" + JobID + "?token=" + TokenVAL;
         document.getElementById("GoldenGateFrame").src="https://wb.innodatalabs.com/zoning/#/job/" + JobID + "?token=" + TokenVAL;
+      }
+      else if(response.innerHTML.trim()=='blocked(80%)'){
+        document.getElementById("GoldenGateLink").href="https://wb.innodatalabs.com/reading/#/job/" + JobID + "?token=" + TokenVAL;
+        document.getElementById("GoldenGateFrame").src="https://wb.innodatalabs.com/reading/#/job/" + JobID + "?token=" + TokenVAL;
       }
       else if(response.innerHTML.trim()=='blocked(95%)'){
         document.getElementById("GoldenGateLink").href="https://wb.innodatalabs.com/mapping/#/job/" + JobID + "?token=" + TokenVAL;

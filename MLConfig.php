@@ -91,7 +91,7 @@ if ($result=mysqli_query($con,$sql))
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $_SESSION['EName'];?></span>
+              <span class="hidden-xs"><?= $_SESSION['EName'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -99,8 +99,8 @@ if ($result=mysqli_query($con,$sql))
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                 <?php echo $_SESSION['EName'];?>
-                  <small><?php echo $_SESSION['UserType'];?></small>
+                 <?= $_SESSION['EName'];?>
+                  <small><?= $_SESSION['UserType'];?></small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -149,12 +149,10 @@ include ("sideBar.php");
     <section class="content">
       <div class="row">
   
-   <?php
+          <?php
+              $sql="SELECT * FROM tblmlconfig";
 
-
-$sql="SELECT * FROM tblmlconfig";
-
-?>
+          ?>
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -170,34 +168,34 @@ $sql="SELECT * FROM tblmlconfig";
                   <th>End Point</th>
                   <th>API Key</th>
                   <th>Default Key</th>
-				 <th>Page</th>
-				  <th>AutoLoad</th>
+                  <th>Page</th>
+                  <th>AutoLoad</th>
                 </tr>
                 </thead>
                 <tbody>
-				<?php
-				if ($result=mysqli_query($con,$sql))
-  {
-  // Fetch one and one row
-  while ($row=mysqli_fetch_row($result))
-    {
-    
- 
-?>
+              <?php
+              if ($result=mysqli_query($con,$sql))
+              {
+              // Fetch one and one row
+              while ($row=mysqli_fetch_row($result))
+                {
+          
+      
+               ?>
                 <tr>
-                  <td><?php echo $row[0];?></td>
-                  <td><?php echo $row[1];?></td>
-                  <td><?php echo $row[6];?></td>
-                  <td><?php echo $row[3];?></td>
-                  <td><?php echo $row[4];?></td>
-			      <td><?php echo $row[2];?></td>
-				  <td><?php echo $row[5];?></td>
+                  <td><?= $row[0];?></td>
+                  <td><?= $row[1];?></td>
+                  <td><?= $row[6];?></td>
+                  <td><?= $row[3];?></td>
+                  <td><?= $row[4];?></td>
+			            <td><?= $row[2];?></td>
+				          <td><?= $row[5];?></td>
                 </tr>
-      <?php
-	}
-	 
-}
-?>	  
+                    <?php
+                }
+                
+              }
+              ?>	  
                 </tbody>
                 <tfoot>
                 <tr>
@@ -206,7 +204,7 @@ $sql="SELECT * FROM tblmlconfig";
                   <th>End Point</th>
                   <th>API Key</th>
                   <th>Default Key</th>
-				  <th>AutoLoad</th>
+				          <th>AutoLoad</th>
                 </tr>
                 </tfoot>
               </table>
@@ -254,7 +252,7 @@ $sql="SELECT * FROM tblmlconfig";
 	  <div class="modal-footer">
 		<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
 		<input type="submit" class="btn btn-primary" id="Button" value="Change Password">
-		<input type="hidden" class="btn btn-primary" name="UserName" value="<?php echo $_SESSION['login_user'];?>">
+		<input type="hidden" class="btn btn-primary" name="UserName" value="<?= $_SESSION['login_user'];?>">
 		<input type="hidden" class="btn btn-primary" name="RedirectPage" value="index.php">
 	  </div>
 	  </form>

@@ -6,7 +6,6 @@ session_start();
      header("location: login.php");
   }
   ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -157,9 +156,9 @@ include ("sideBar.php");
     <section class="content">
       <div class="row">
   
-<?php
-$sql="SELECT * FROM tblUser";
-?>
+        <?php
+            $sql="SELECT * FROM tblUser";
+        ?>
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -171,6 +170,7 @@ $sql="SELECT * FROM tblUser";
                   <div class="col-lg-6">
                       
                       <div class="form-group">
+                       <?= $_SESSION['message']; ?>
                         <label>Source Files</label>
                         <input type="file" class="form-control" name="txtFiles[]" multiple="multiple" >
                       </div>
