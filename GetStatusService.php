@@ -33,7 +33,7 @@ curl_close($ch);
 
 
 if ($GGStatus == 'completed'){
-    $GGProgress='100';
+   $GGProgress='100';
    $URL= $jobj->response->output_content->uri;
    // echo $URL;
    $path_parts = pathinfo($filename);

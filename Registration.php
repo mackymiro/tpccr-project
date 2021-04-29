@@ -47,6 +47,7 @@ session_start();
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <link rel="icon" href="innodata.png">
+ 
 </head>
 <body class="hold-transition fixed skin-blue sidebar-mini">
 <div class="wrapper">
@@ -170,15 +171,17 @@ include ("sideBar.php");
                   <div class="col-lg-6">
                       
                       <div class="form-group">
-                       <?= $_SESSION['message']; ?>
+                        <?= "<p style='color:green; font-size:18px; font-weight:bold;'>".$_SESSION['message']."</p>"; ?>
+                        <br/>
                         <label>Source Files</label>
-                        <input type="file" class="form-control" name="txtFiles[]" multiple="multiple" >
+                        <input type="file" class="form-control" name="txtFiles[]" multiple="multiple" required >
                       </div>
                       
                       <div class="form-group pull-right">
                           <button type="submit" class="btn btn-primary">Save</button>
                           <button type="reset" class="btn btn-danger" >Cancel</button>
                       </div>
+                      <?php unset($_SESSION['message']); ?>
                   </div>
                
               </div>

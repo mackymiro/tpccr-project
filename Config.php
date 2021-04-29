@@ -6,11 +6,13 @@ $Mode="SQLDirect"; //API/SQLDirect
 
 $GGUserName = 'hj1@innodata.com';
 $GGPassword='test@1qaz';
-$GGProductionMode='OFF';//ON or OFF
-//$GGTaxonomy = "legal-cases-taxonomy.json";
-$GGTaxonomy = "legal-bu-taxonomy.json";
-//$GGTeam="Legal Cases";
+$GGProductionMode='OFF';//ON or OFF;
+$GGTaxonomyZoning = "legal-bu-zoning-taxonomy-test-v2.json";
+$GGTaxonomyMapping = "legal-bu-taxonomy-test-v2.json";
+//job type: data-point-extraction or doc2xml
+$GGJobType = "data-point-extraction";
 $GGTeam="TPCCR";
+
 
 $SourceFilePath = "C:\\XAMPP\\htdocs\\tpccr\\uploadfiles\\SourceFiles\\";
 
