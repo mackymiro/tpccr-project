@@ -20,7 +20,7 @@ if ($Mode=='SQLDirect'){
 		{exit("Connection Failed: " . $conSearchnet);}
 
 	//$conWMS=odbc_connect($WMSDSN,$WMSUsername,$WMSPassword);
-	$conWMS=odbc_connect('WMSprimo','admin','admin12345');
+	$conWMS=odbc_connect('WMSprimotpccr','admin','admin12345');
 	//$conWMS=odbc_connect("Driver={SQL Server};Server=.\SQLEXPRESS;Database=WMSDEV_PRIMO_DEMO",$WMSUsername,$WMSPassword);
 		if (!$conWMS)
 		{exit("Connection Failed: " . $conWMS);}

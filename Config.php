@@ -24,7 +24,7 @@ $mySQLPassword ="";
 $mySQLDbase="primo";
 
 
-$WMSDSN="WMSprimo";
+$WMSDSN="WMSprimotpccr";
 $WMSUsername="admin";
 $WMSPassword="admin12345";
 
