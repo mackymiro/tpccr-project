@@ -15,12 +15,12 @@ if (mysqli_connect_errno())
 
 if ($Mode=='SQLDirect'){
 	//$conSearchnet=odbc_connect($SearchnetDSN,$SearchnetUsername,$SearchnetPword);
-	$conSearchnet=odbc_connect('SearchnetIdeagen','adminsearchnet','admin12345');
+	$conSearchnet=odbc_connect('SearchnetIdeagen','oos','it-oos');
 		if (!$conSearchnet)
 		{exit("Connection Failed: " . $conSearchnet);}
 
 	//$conWMS=odbc_connect($WMSDSN,$WMSUsername,$WMSPassword);
-	$conWMS=odbc_connect('WMSprimo','admin','admin12345');
+	$conWMS=odbc_connect('WMSprimo','oos','it-oos');
 	//$conWMS=odbc_connect("Driver={SQL Server};Server=.\SQLEXPRESS;Database=WMSDEV_PRIMO_DEMO",$WMSUsername,$WMSPassword);
 		if (!$conWMS)
 		{exit("Connection Failed: " . $conWMS);}

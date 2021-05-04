@@ -14,7 +14,7 @@ $GGJobType = "data-point-extraction";
 $GGTeam="TPCCR";
 
 
-$SourceFilePath = "C:\\XAMPP\\htdocs\\tpccr\\uploadfiles\\SourceFiles\\";
+$SourceFilePath = "C:\\XAMPP\\htdocs\\primoTPCCR\\uploadfiles\\SourceFiles\\";
 
 $WorkflowID=2;
 
@@ -25,12 +25,12 @@ $mySQLDbase="primo";
 
 
 $WMSDSN="WMSprimo";
-$WMSUsername="admin";
-$WMSPassword="admin12345";
+$WMSUsername="oos";
+$WMSPassword="it-oos";
 
 $SearchnetDSN="SearchnetIdeagen";
-$SearchnetUsername="adminsearchnet";
-$SearchnetPword="admin12345";
+$SearchnetUsername="oos";
+$SearchnetPword="it-oos";
 
  
 if ($GGProductionMode=='ON'){
