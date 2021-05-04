@@ -7,6 +7,21 @@ session_start();
 
 $txtFiles=$_FILES['txtFiles']['name'];
 
+/*$path = "uploadfiles/SourceFiles/CFLQ-39.1.pdf";
+$totalPages = countPages($path);
+
+function countPages($path) {
+
+  $pdftext = file_get_contents($path);
+  $num = preg_match_all("/\/Page\W/", $pdftext, $dummy);
+
+  if($num > 10){
+    echo "BATCHING PROCESS";
+  }else{
+    echo "not more than 10 pages";
+  }
+}*/
+
 if ($txtFiles!='') {
   $dirname="uploadfiles/SourceFiles";
   MultipleFileUploadEX('txtFiles',$BookID,'SourceFiles',$conWMS,$GGUserName,$GGPassword,$GGProductionMode);
@@ -44,7 +59,8 @@ function MultipleFileUploadEX($prFileName,$TLID,$SubFolder,$conWMS,$GGUserName,$
  
         $filename=pathinfo($newFilePath, PATHINFO_FILENAME).".".$ext;
 
-        $sqls="EXEC USP_PRIMO_INTEGRATE_old @ExecutionId=1,  @mainUrl='www.example.com',  @SourceUrl='www.example.com?filename=".$filename."',@Filename='".$filename."',@Jobid=''";
+        //$sqls="EXEC USP_PRIMO_INTEGRATE_old @ExecutionId=1,  @mainUrl='www.example.com',  @SourceUrl='www.example.com?filename=".$filename."',@Filename='".$filename."',@Jobid=''";
+        $sqls="EXEC USP_PRIMO_INTEGRATE @Filename='".$filename."',@Jobid=''";
       
         ExecuteQuerySQLSERVER ($sqls,$conWMS);
 

@@ -1,6 +1,5 @@
 <?php
 	//error_reporting(0);
-	
 	session_start();
   	require_once "conn.php";
  
@@ -31,11 +30,11 @@
 	}
 
 	
-	if($sFilename == ''){
-		header("Location:no-file-found.php");
-	}else{
+	//if($sFilename == ''){
+	//	header("Location:no-file-found.php");
+	//}else{
 		ExecuteQuerySQLSERVER ("Update primo_Integration SET Status='".$Task."' Where Filename='".$sFilename."'",$conWMS);
-	}
+	//}
 
 
 

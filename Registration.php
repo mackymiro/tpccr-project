@@ -48,12 +48,14 @@ session_start();
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <link rel="icon" href="innodata.png">
  
+ 
 </head>
 <body class="hold-transition fixed skin-blue sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">
     <!-- Logo -->
+  
      
 <?php
 if ($_SESSION['UserType']=='Admin'){
@@ -198,9 +200,13 @@ include ("sideBar.php");
         </div>
               
               </form>
+
         
             </div>
-            
+            <br/> 
+
+            <br/> 
+            <br/> 
             <!-- /.box-body -->
            
             <!-- /.box-footer -->
@@ -270,6 +276,8 @@ include ("sideBar.php");
       'autoWidth'   : false
     })
   })
+
+
 </script>
 </body>
 </html>

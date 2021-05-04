@@ -176,7 +176,7 @@ $sql="SELECT * FROM tblmlconfig";
             <div class="box-header with-border">
                
               <form method="post" action="">
-                       From:<input type="Month" Name="From" value="<?php echo $pFrom;?>"> To: <input type="Month" Name="To" value="<?php echo $pTo;?>"> <button type="submit" class="btn btn-primary small"><i class="fa  fa-search"></i> Search</button>
+                       From:<input type="Month" Name="From" value="<?= $pFrom;?>"> To: <input type="Month" Name="To" value="<?php echo $pTo;?>"> <button type="submit" class="btn btn-primary small"><i class="fa  fa-search"></i> Search</button>
               </form>
              
             <div class="box-body">
