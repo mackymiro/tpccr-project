@@ -12,7 +12,7 @@
 	  
 	ExecuteQuerySQLSERVER($sqls,$conWMS);
 	
-	$sql="SELECT * FROM primo_view_Jobs Where ProcessCode='$Task' AND statusstring in('Allocated','Pending','Ongoing', 'New')  AND AssignedTo='$_SESSION[login_user]'";	
+	$sql="SELECT * FROM primo_view_Jobs Where ProcessCode='$Task' AND statusstring in('Allocated','Pending','Ongoing', 'New') AND AssignedTo='$_SESSION[login_user]'";	
 	
 
 	$rs=odbc_exec($conWMS,$sql);
@@ -24,19 +24,17 @@
 	while(odbc_fetch_row($rs))
 	{	
 		$sFilename=odbc_result($rs,"Filename");
-		$filename="uploadFiles/".odbc_result($rs,"Filename");
-		$Batchname=odbc_result($rs,"BatchID");
-		$snFilename ="uploadFiles/".odbc_result($rs,"JobId")."/".odbc_result($rs,"Filename");
+		$filename="uploadfiles/".odbc_result($rs,"Filename");
+		$Batchname=odbc_result($rs,"BatchId");
+		$snFilename ="uploadfiles/".odbc_result($rs,"JobId")."/".odbc_result($rs,"Filename");
 	}
 
 	
-	//if($sFilename == ''){
-	//	header("Location:no-file-found.php");
-	//}else{
+	if($sFilename == ''){
+		header("Location:no-file-found.php");
+	}else{
 		ExecuteQuerySQLSERVER ("Update primo_Integration SET Status='".$Task."' Where Filename='".$sFilename."'",$conWMS);
-	//}
-
-
+	}
 
 	if ($Task=='CONTENTREVIEW'){
 		if (file_exists($snFilename)){

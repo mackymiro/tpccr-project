@@ -296,17 +296,12 @@ function check() {
 			
 		}
 		$_SESSION['JobID']=$JobID;
-
-
-		 $sxfilename = pathinfo($Filename, PATHINFO_FILENAME);
+		$sxfilename = pathinfo($Filename, PATHINFO_FILENAME);
 		$nfile=$sxfilename.".xml";
 		$sXMLFile = "uploadfiles/".$nfile;
-
-
 		
 		?>
- 
-   
+
  </head>
  <?php
  	
@@ -452,6 +447,7 @@ function LoadStyles(){
               <li  class="active"><a href="#allocationDetails" data-toggle="tab">Allocation Details</a></li>
 			  
               <li><a href="#JobQueue" data-toggle="tab" >Validation</a></li>
+			  <li><a href="#styles" data-toggle="tab" >Styles</a></li>
               <li><a href="#AutomationPanel" onclick="LoadAutomation()" data-toggle="tab" >Automation Panel</a></li>
               <!-- onclick="LoadStyles();" -->
             
@@ -469,6 +465,11 @@ function LoadStyles(){
           	 		<ul class="nav nav-pills nav-stacked">
 	         			<div id="ValidationList" >
 	         			</div>
+	         		</ul>
+				</div>
+				<div class="tab-pane" id="styles"  style="overflow-y: scroll; height:35vw;">
+          	 		<ul class="nav nav-pills nav-stacked">
+	         			<li>test styles 123</li>
 	         		</ul>
 				</div>
 				
@@ -565,7 +566,8 @@ function LoadStyles(){
 				 
 
 				 <li><a href="https://wb.innodatalabs.com/zoning/#/job/<?= $GGJobID;?>?token=<?= $TokenVAL; ?>" target="blank" id='GoldenGateLink'><i class="fa fa-link"></i>Link: <u>Full Screen (Transformation)</u></li>
-				 <li><a href="#" onClick="GetJobStatus()"><i class="fa fa-spinner"></i>GG Status: <u><span id="GGStatus"></span></u></a></li>
+				 <li><a href="#" onClick="GetJobStatus()"><i id="spinner" class="fa fa-spinner"></i>GG Status:<u><span id="GGStatus"></span></u></a></li>
+		
 				 <!-- <li><a href="#" onClick="TestGetJobStatus()"><i class="fa fa-refresh"></i>Test Status: <u><span id="TestGGStatus"></span></u></a></li> -->
 				<?php
 				$innoXML= str_replace(".pdf", "_response.xml", $Filename);
@@ -1332,13 +1334,13 @@ function LoadStyles(){
 
 			?>
 						<!-- <iframe src="https://wb.innodatalabs.com/mapping-review/#/job/<?php echo $GGJobID;?>?token=dXNlci1saXZlLTBmMjc3OTVhYzA4NWI5YzhmYWY2NjNiYWE4NjhkZDY3ZWRjOGVkZWY6" id='GoldenGateFrame'  style="width:200%; height:37vw;"  frameBorder="0" scrolling="auto"></iframe> -->
-					<iframe src="https://wb.innodatalabs.com/zoning/#/job/<?php echo $GGJobID;?>?token=dXNlci1saXZlLTBmMjc3OTVhYzA4NWI5YzhmYWY2NjNiYWE4NjhkZDY3ZWRjOGVkZWY6"   style="width:200%; height:37vw;" id='GoldenGateFrame'  frameBorder="0" scrolling="auto"></iframe>
+					<iframe src="https://wb.innodatalabs.com/zoning/#/job/<?= $GGJobID;?>?token=dXNlci1saXZlLTBmMjc3OTVhYzA4NWI5YzhmYWY2NjNiYWE4NjhkZDY3ZWRjOGVkZWY6"   style="width:200%; height:37vw;" id='GoldenGateFrame'  frameBorder="0" scrolling="auto"></iframe>
 						<?php
 					}
 					else{
 			?>
 
-			<iframe src="https://wb.innodatalabs.com/zoning/#/job/<?php echo $GGJobID;?>?token=dXNlci1saXZlLTBmMjc3OTVhYzA4NWI5YzhmYWY2NjNiYWE4NjhkZDY3ZWRjOGVkZWY6"   style="width:200%; height:37vw;" id='GoldenGateFrame'  frameBorder="0" scrolling="auto"></iframe>
+			<iframe src="https://wb.innodatalabs.com/zoning/#/job/<?= $GGJobID;?>?token=<?= $TokenVAL; ?>"   style="width:200%; height:37vw;" id='GoldenGateFrame'  frameBorder="0" scrolling="auto"></iframe>
 
 			<?php
 
@@ -1627,13 +1629,9 @@ function LoadStyles(){
 						<input type="button" class="btn btn-info .btn-sm" onclick="SpellCheck()" value="SpellCheck" id="SpellCheck">
 						<button type="button" class="btn btn-danger .btn-sm" id="Validate" onclick="ValidateXML()">Validate</button>
 						<button type="button" class="btn btn-success .btn-sm" id="btnSave" onclick="saveXML()">Save</button>
-						
-
 						 
 					</div>
-					
-					
-					
+										
 					</div>
 					</fieldset>
 					<?php
@@ -1751,17 +1749,12 @@ function LoadStyles(){
 			    <form method ="post" action="API/saveFile.php">
                 <div class="box-body pad">
 					<textarea id="editor1" name="editor1" rows="100" cols="80">
-							<?php
+						<?php
 
 						if ($FileStatus!='Done'){
-					 
 							//Read TXT FILE AND LOAD IT ON EDITOR
-						 
- 
- 
 							$info = pathinfo($Filename);
 						 
-					
 							if (file_exists("uploadfiles/".$JobID."/".$info["filename"].".wrt")) {   
 								$sFile= file_get_contents("uploadfiles/".$JobID."/".$info["filename"].".wrt");
 								//echo readfile("uploadfiles/$file[0].htm"); 
@@ -1973,7 +1966,7 @@ function LoadStyles(){
 						 }
 
 						 ?>
-						<button onclick="saveHTMLFile()" id="SaveButton" style="display: <?=$dispSave;?>">Save</button>
+						<button class="btn btn-success btn-lg" onclick="saveHTMLFile()" id="SaveButton" style="display: <?=$dispSave;?>">Save</button>
 						 </form>
 					</div>
 					 </div>
@@ -1998,7 +1991,7 @@ function LoadStyles(){
 				if ($info["extension"] == "pdf"||$info["extension"] == "PDF") {
 				?>
 			  
-				 <embed src="<?php echo $fileVal;?>" style="width:100%; height:37vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+				 <embed src="<?= $fileVal;?>" style="width:100%; height:37vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 				 <?php
 					}
 
@@ -2006,7 +1999,7 @@ function LoadStyles(){
 						$nfilename="uploadfiles/SourceFiles/".pathinfo($fileVal, PATHINFO_FILENAME).".txt";
 					?>
 
-				 	<iframe src="<?php echo $nfilename;?>" style="width:100%; height:37vw;" frameborder="none" ></iframe>
+				 	<iframe src="<?= $nfilename;?>" style="width:100%; height:37vw;" frameborder="none" ></iframe>
 						
 					 
 					 <?php
@@ -2439,7 +2432,11 @@ function LoadStyles(){
 <script src="dist/js/demo.js"></script>
 <!-- CK Editor -->
  <script src="plugins/iCheck/icheck.min.js"></script>
- 
+<script>
+window.setInterval(function(){
+	//GetJobStatus();
+}, 6000); 
+</script>
 <script type="text/javascript" language="JavaScript">
 
         function SetTextBoxValue($prVal) {

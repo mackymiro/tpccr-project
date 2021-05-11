@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inno:dom xmlns:inno="http://innodatalabs.com/innodom"><inno:meta/><inno:content><inno:image id="image-1" type="image"><inno:block page="1" page-height="512" page-width="396" x-max="71.0" x-min="18.0" y-max="38.0" y-min="11.0"/></inno:image><inno:text id="text-1" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="364.0" x-min="72.0" y-max="23.9" y-min="11.0"><inno:font font-name="Times-Roman" font-size="7.50pt">Dino Compound Ground &amp; 3rd Floors, Dino Group Administration Building, No. 88 Labogon Road, Barangay Labogon, Mandaue City, Cebu 6014<inno:br/>Philippines</inno:font></inno:block></inno:text><inno:text id="text-2" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="245.0" x-min="71.1" y-max="40.0" y-min="24.0"><inno:font font-name="Times-Roman" font-size="7.50pt">pp<inno:br/>Tel. Nos. (63-32) 346-2567; 420-5639 / Fax No. (63-32) 346-0341<inno:br/>Email Address: admin@dnogroup.ph / sales@dnogroup.ph / marketing@dnogroup.ph</inno:font></inno:block></inno:text><inno:text id="text-3" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="222.0" x-min="173.0" y-max="58.0" y-min="46.0"><inno:b><inno:font font-name="Times-Bold" font-size="12.00pt"><inno:u>PETTY CASH</inno:u></inno:font></inno:b></inno:block></inno:text><inno:table id="table-1" type="table"><inno:block page="1" page-height="512" page-width="396" x-max="375.0" x-min="18.0" y-max="288.0" y-min="65.0"><inno:tr row="1">
+<inno:td col="1" id="table-1-1-1" x-max="69.5" x-min="18.0" y-max="84.05" y-min="65.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Petty Cash No<inno:br/>Date</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-1-2" x-max="108.5" x-min="69.5" y-max="84.05" y-min="65.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">PC-000592<inno:br/>04/13/2021</inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-1-3" x-max="131.0" x-min="108.5" y-max="84.05" y-min="65.0"/>
+<inno:td col="4" id="table-1-1-4" x-max="209.0" x-min="131.0" y-max="84.05" y-min="65.0"/>
+<inno:td col="5" id="table-1-1-5" x-max="279.0" x-min="209.0" y-max="84.05" y-min="65.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Petty Cash Name<inno:br/>Petty Cash Summary</inno:font></inno:b></inno:td>
+<inno:td col="6" colspan="2" id="table-1-1-6" x-max="375.0" x-min="279.0" y-max="84.05" y-min="65.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">PETTYCASH<inno:br/>MARCH 24 TO APRIL 12, 2021</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="2">
+<inno:td col="1" id="table-1-2-1" x-max="69.5" x-min="18.0" y-max="93.5" y-min="84.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">DATE</inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-2-2" x-max="108.5" x-min="69.5" y-max="93.5" y-min="84.05"/>
+<inno:td col="3" id="table-1-2-3" x-max="131.0" x-min="108.5" y-max="93.5" y-min="84.05"/>
+<inno:td col="4" colspan="2" id="table-1-2-4" x-max="279.0" x-min="131.0" y-max="93.5" y-min="84.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">ITEM DESCRIPTION</inno:font></inno:b></inno:td>
+<inno:td col="5" id="table-1-2-5" x-max="321.5" x-min="279.0" y-max="93.5" y-min="84.05"/>
+<inno:td col="6" id="table-1-2-6" x-max="375.0" x-min="321.5" y-max="93.5" y-min="84.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">AMOUNT</inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="3">
+<inno:td col="1" id="table-1-3-1" x-max="69.5" x-min="18.0" y-max="102.5" y-min="93.5"><inno:font font-name="Times-Roman" font-size="9.00pt">03/24/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-3-2" x-max="108.5" x-min="69.5" y-max="102.5" y-min="93.5"/>
+<inno:td col="3" colspan="3" id="table-1-3-3" x-max="279.0" x-min="108.5" y-max="102.5" y-min="93.5"><inno:font font-name="Times-Roman" font-size="9.00pt">LOAD ALLOWANCE FOR THE MONTH OF MARCH 2021</inno:font></inno:td>
+<inno:td col="4" id="table-1-3-4" x-max="321.5" x-min="279.0" y-max="102.5" y-min="93.5"/>
+<inno:td col="5" id="table-1-3-5" x-max="375.0" x-min="321.5" y-max="102.5" y-min="93.5"><inno:font font-name="Times-Roman" font-size="9.00pt">350.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="4">
+<inno:td col="1" id="table-1-4-1" x-max="69.5" x-min="18.0" y-max="110.5" y-min="102.5"><inno:font font-name="Times-Roman" font-size="9.00pt">03/26/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-4-2" x-max="108.5" x-min="69.5" y-max="110.5" y-min="102.5"/>
+<inno:td col="3" id="table-1-4-3" x-max="131.0" x-min="108.5" y-max="110.5" y-min="102.5"/>
+<inno:td col="4" id="table-1-4-4" x-max="209.0" x-min="131.0" y-max="110.5" y-min="102.5"><inno:font font-name="Times-Roman" font-size="9.00pt">FEEDS</inno:font></inno:td>
+<inno:td col="5" id="table-1-4-5" x-max="279.0" x-min="209.0" y-max="110.5" y-min="102.5"/>
+<inno:td col="6" id="table-1-4-6" x-max="321.5" x-min="279.0" y-max="110.5" y-min="102.5"/>
+<inno:td col="7" id="table-1-4-7" x-max="375.0" x-min="321.5" y-max="110.5" y-min="102.5"><inno:font font-name="Times-Roman" font-size="9.00pt">1,195.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="5">
+<inno:td col="1" id="table-1-5-1" x-max="69.5" x-min="18.0" y-max="119.0" y-min="110.5"><inno:font font-name="Times-Roman" font-size="9.00pt">03/27/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-5-2" x-max="108.5" x-min="69.5" y-max="119.0" y-min="110.5"/>
+<inno:td col="3" id="table-1-5-3" x-max="131.0" x-min="108.5" y-max="119.0" y-min="110.5"/>
+<inno:td col="4" colspan="2" id="table-1-5-4" x-max="279.0" x-min="131.0" y-max="119.0" y-min="110.5"><inno:font font-name="Times-Roman" font-size="9.00pt">gasoline for Hi-Ace</inno:font></inno:td>
+<inno:td col="5" id="table-1-5-5" x-max="321.5" x-min="279.0" y-max="119.0" y-min="110.5"/>
+<inno:td col="6" id="table-1-5-6" x-max="375.0" x-min="321.5" y-max="119.0" y-min="110.5"><inno:font font-name="Times-Roman" font-size="9.00pt">500.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="6">
+<inno:td col="1" id="table-1-6-1" x-max="69.5" x-min="18.0" y-max="126.0" y-min="119.0"><inno:font font-name="Times-Roman" font-size="9.00pt">03/27/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-6-2" x-max="108.5" x-min="69.5" y-max="126.0" y-min="119.0"/>
+<inno:td col="3" id="table-1-6-3" x-max="131.0" x-min="108.5" y-max="126.0" y-min="119.0"/>
+<inno:td col="4" colspan="2" id="table-1-6-4" x-max="279.0" x-min="131.0" y-max="126.0" y-min="119.0"><inno:font font-name="Times-Roman" font-size="9.00pt">3PACK WATER CELLOPHANE</inno:font></inno:td>
+<inno:td col="5" id="table-1-6-5" x-max="321.5" x-min="279.0" y-max="126.0" y-min="119.0"/>
+<inno:td col="6" id="table-1-6-6" x-max="375.0" x-min="321.5" y-max="126.0" y-min="119.0"><inno:font font-name="Times-Roman" font-size="9.00pt">36.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="7">
+<inno:td col="1" id="table-1-7-1" x-max="69.5" x-min="18.0" y-max="135.5" y-min="126.0"><inno:font font-name="Times-Roman" font-size="9.00pt">03/27/2021</inno:font></inno:td>
+<inno:td col="2" colspan="2" id="table-1-7-2" x-max="131.0" x-min="69.5" y-max="135.5" y-min="126.0"><inno:font font-name="Times-Roman" font-size="9.00pt">PURCHASE 18</inno:font></inno:td>
+<inno:td col="3" colspan="3" id="table-1-7-3" x-max="321.5" x-min="131.0" y-max="135.5" y-min="126.0"><inno:font font-name="Times-Roman" font-size="9.00pt">8PCS PORK REGULAR FOR MR. CARL JOHN (COMPLIMENTARY)</inno:font></inno:td>
+<inno:td col="4" id="table-1-7-4" x-max="375.0" x-min="321.5" y-max="135.5" y-min="126.0"><inno:font font-name="Times-Roman" font-size="9.00pt">666.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="8">
+<inno:td col="1" id="table-1-8-1" x-max="69.5" x-min="18.0" y-max="144.5" y-min="135.5"><inno:font font-name="Times-Roman" font-size="9.00pt">03/29/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-8-2" x-max="108.5" x-min="69.5" y-max="144.5" y-min="135.5"/>
+<inno:td col="3" id="table-1-8-3" x-max="131.0" x-min="108.5" y-max="144.5" y-min="135.5"/>
+<inno:td col="4" colspan="2" id="table-1-8-4" x-max="279.0" x-min="131.0" y-max="144.5" y-min="135.5"><inno:font font-name="Times-Roman" font-size="9.00pt">GASOLINE (RAYMUND) TO ATTY, ZOSA)</inno:font></inno:td>
+<inno:td col="5" id="table-1-8-5" x-max="321.5" x-min="279.0" y-max="144.5" y-min="135.5"/>
+<inno:td col="6" id="table-1-8-6" x-max="375.0" x-min="321.5" y-max="144.5" y-min="135.5"><inno:font font-name="Times-Roman" font-size="9.00pt">100.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="9">
+<inno:td col="1" id="table-1-9-1" x-max="69.5" x-min="18.0" y-max="152.5" y-min="144.5"><inno:font font-name="Times-Roman" font-size="9.00pt">03/30/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-9-2" x-max="108.5" x-min="69.5" y-max="152.5" y-min="144.5"/>
+<inno:td col="3" id="table-1-9-3" x-max="131.0" x-min="108.5" y-max="152.5" y-min="144.5"/>
+<inno:td col="4" colspan="2" id="table-1-9-4" x-max="279.0" x-min="131.0" y-max="152.5" y-min="144.5"><inno:font font-name="Times-Roman" font-size="9.00pt">GASOLINE (RAYMOND)</inno:font></inno:td>
+<inno:td col="5" id="table-1-9-5" x-max="321.5" x-min="279.0" y-max="152.5" y-min="144.5"/>
+<inno:td col="6" id="table-1-9-6" x-max="375.0" x-min="321.5" y-max="152.5" y-min="144.5"><inno:font font-name="Times-Roman" font-size="9.00pt">92.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="10">
+<inno:td col="1" id="table-1-10-1" x-max="69.5" x-min="18.0" y-max="161.0" y-min="152.5"><inno:font font-name="Times-Roman" font-size="9.00pt">03/31/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-10-2" x-max="108.5" x-min="69.5" y-max="161.0" y-min="152.5"/>
+<inno:td col="3" id="table-1-10-3" x-max="131.0" x-min="108.5" y-max="161.0" y-min="152.5"/>
+<inno:td col="4" colspan="2" id="table-1-10-4" x-max="279.0" x-min="131.0" y-max="161.0" y-min="152.5"><inno:font font-name="Times-Roman" font-size="9.00pt">SIBUYAS DAHONAN ( PAOLO LECHON)</inno:font></inno:td>
+<inno:td col="5" id="table-1-10-5" x-max="321.5" x-min="279.0" y-max="161.0" y-min="152.5"/>
+<inno:td col="6" id="table-1-10-6" x-max="375.0" x-min="321.5" y-max="161.0" y-min="152.5"><inno:font font-name="Times-Roman" font-size="9.00pt">50.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="11">
+<inno:td col="1" id="table-1-11-1" x-max="69.5" x-min="18.0" y-max="169.0" y-min="161.0"><inno:font font-name="Times-Roman" font-size="9.00pt">04/03/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-11-2" x-max="108.5" x-min="69.5" y-max="169.0" y-min="161.0"/>
+<inno:td col="3" id="table-1-11-3" x-max="131.0" x-min="108.5" y-max="169.0" y-min="161.0"/>
+<inno:td col="4" colspan="2" id="table-1-11-4" x-max="279.0" x-min="131.0" y-max="169.0" y-min="161.0"><inno:font font-name="Times-Roman" font-size="9.00pt">Feeds for hogs</inno:font></inno:td>
+<inno:td col="5" id="table-1-11-5" x-max="321.5" x-min="279.0" y-max="169.0" y-min="161.0"/>
+<inno:td col="6" id="table-1-11-6" x-max="375.0" x-min="321.5" y-max="169.0" y-min="161.0"><inno:font font-name="Times-Roman" font-size="9.00pt">1,195.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="12">
+<inno:td col="1" id="table-1-12-1" x-max="69.5" x-min="18.0" y-max="178.05" y-min="169.0"><inno:font font-name="Times-Roman" font-size="9.00pt">04/13/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-12-2" x-max="108.5" x-min="69.5" y-max="178.05" y-min="169.0"/>
+<inno:td col="3" colspan="3" id="table-1-12-3" x-max="279.0" x-min="108.5" y-max="178.05" y-min="169.0"><inno:font font-name="Times-Roman" font-size="9.00pt">GLOBE LOAD FOR THE MONTH OF APRIL 2021 (OFFICE USED</inno:font></inno:td>
+<inno:td col="4" id="table-1-12-4" x-max="321.5" x-min="279.0" y-max="178.05" y-min="169.0"><inno:font font-name="Times-Roman" font-size="9.00pt">D)</inno:font></inno:td>
+<inno:td col="5" id="table-1-12-5" x-max="375.0" x-min="321.5" y-max="178.05" y-min="169.0"><inno:font font-name="Times-Roman" font-size="9.00pt">350.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="13">
+<inno:td col="1" id="table-1-13-1" x-max="69.5" x-min="18.0" y-max="186.5" y-min="178.05"><inno:font font-name="Times-Roman" font-size="9.00pt">04/06/2021</inno:font></inno:td>
+<inno:td col="2" colspan="5" id="table-1-13-2" x-max="321.5" x-min="69.5" y-max="186.5" y-min="178.05"><inno:font font-name="Times-Roman" font-size="9.00pt">GASOLINE ALLOWANCE FOR MOTORCYCLE SERVICE OF RULLY LAO</inno:font></inno:td>
+<inno:td col="3" id="table-1-13-3" x-max="375.0" x-min="321.5" y-max="186.5" y-min="178.05"><inno:font font-name="Times-Roman" font-size="9.00pt">115.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="14">
+<inno:td col="1" id="table-1-14-1" x-max="69.5" x-min="18.0" y-max="194.5" y-min="186.5"><inno:font font-name="Times-Roman" font-size="9.00pt">04/05/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-14-2" x-max="108.5" x-min="69.5" y-max="194.5" y-min="186.5"/>
+<inno:td col="3" id="table-1-14-3" x-max="131.0" x-min="108.5" y-max="194.5" y-min="186.5"/>
+<inno:td col="4" colspan="2" id="table-1-14-4" x-max="279.0" x-min="131.0" y-max="194.5" y-min="186.5"><inno:font font-name="Times-Roman" font-size="9.00pt">GASOLINE (HONDA BEAT)</inno:font></inno:td>
+<inno:td col="5" id="table-1-14-5" x-max="321.5" x-min="279.0" y-max="194.5" y-min="186.5"/>
+<inno:td col="6" id="table-1-14-6" x-max="375.0" x-min="321.5" y-max="194.5" y-min="186.5"><inno:font font-name="Times-Roman" font-size="9.00pt">100.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="15">
+<inno:td col="1" id="table-1-15-1" x-max="69.5" x-min="18.0" y-max="202.5" y-min="194.5"><inno:font font-name="Times-Roman" font-size="9.00pt">04/06/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-15-2" x-max="108.5" x-min="69.5" y-max="202.5" y-min="194.5"/>
+<inno:td col="3" id="table-1-15-3" x-max="131.0" x-min="108.5" y-max="202.5" y-min="194.5"/>
+<inno:td col="4" id="table-1-15-4" x-max="209.0" x-min="131.0" y-max="202.5" y-min="194.5"><inno:font font-name="Times-Roman" font-size="9.00pt">FEEDS</inno:font></inno:td>
+<inno:td col="5" id="table-1-15-5" x-max="279.0" x-min="209.0" y-max="202.5" y-min="194.5"/>
+<inno:td col="6" id="table-1-15-6" x-max="321.5" x-min="279.0" y-max="202.5" y-min="194.5"/>
+<inno:td col="7" id="table-1-15-7" x-max="375.0" x-min="321.5" y-max="202.5" y-min="194.5"><inno:font font-name="Times-Roman" font-size="9.00pt">979.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="16">
+<inno:td col="1" id="table-1-16-1" x-max="69.5" x-min="18.0" y-max="211.0" y-min="202.5"><inno:font font-name="Times-Roman" font-size="9.00pt">04/06/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-16-2" x-max="108.5" x-min="69.5" y-max="211.0" y-min="202.5"/>
+<inno:td col="3" id="table-1-16-3" x-max="131.0" x-min="108.5" y-max="211.0" y-min="202.5"/>
+<inno:td col="4" colspan="2" id="table-1-16-4" x-max="279.0" x-min="131.0" y-max="211.0" y-min="202.5"><inno:font font-name="Times-Roman" font-size="9.00pt">1 GAL OF WATER</inno:font></inno:td>
+<inno:td col="5" id="table-1-16-5" x-max="321.5" x-min="279.0" y-max="211.0" y-min="202.5"/>
+<inno:td col="6" id="table-1-16-6" x-max="375.0" x-min="321.5" y-max="211.0" y-min="202.5"><inno:font font-name="Times-Roman" font-size="9.00pt">25.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="17">
+<inno:td col="1" id="table-1-17-1" x-max="69.5" x-min="18.0" y-max="219.5" y-min="211.0"><inno:font font-name="Times-Roman" font-size="9.00pt">04/06/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-17-2" x-max="108.5" x-min="69.5" y-max="219.5" y-min="211.0"/>
+<inno:td col="3" id="table-1-17-3" x-max="131.0" x-min="108.5" y-max="219.5" y-min="211.0"/>
+<inno:td col="4" colspan="2" id="table-1-17-4" x-max="279.0" x-min="131.0" y-max="219.5" y-min="211.0"><inno:font font-name="Times-Roman" font-size="9.00pt">1 SET VULCATE (HI ACE GREEN ) GFF 691)</inno:font></inno:td>
+<inno:td col="5" id="table-1-17-5" x-max="321.5" x-min="279.0" y-max="219.5" y-min="211.0"/>
+<inno:td col="6" id="table-1-17-6" x-max="375.0" x-min="321.5" y-max="219.5" y-min="211.0"><inno:font font-name="Times-Roman" font-size="9.00pt">120.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="18">
+<inno:td col="1" id="table-1-18-1" x-max="69.5" x-min="18.0" y-max="228.0" y-min="219.5"><inno:font font-name="Times-Roman" font-size="9.00pt">04/07/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-18-2" x-max="108.5" x-min="69.5" y-max="228.0" y-min="219.5"/>
+<inno:td col="3" id="table-1-18-3" x-max="131.0" x-min="108.5" y-max="228.0" y-min="219.5"/>
+<inno:td col="4" colspan="2" id="table-1-18-4" x-max="279.0" x-min="131.0" y-max="228.0" y-min="219.5"><inno:font font-name="Times-Roman" font-size="9.00pt">medicine for hog</inno:font></inno:td>
+<inno:td col="5" id="table-1-18-5" x-max="321.5" x-min="279.0" y-max="228.0" y-min="219.5"/>
+<inno:td col="6" id="table-1-18-6" x-max="375.0" x-min="321.5" y-max="228.0" y-min="219.5"><inno:font font-name="Times-Roman" font-size="9.00pt">50.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="19">
+<inno:td col="1" id="table-1-19-1" x-max="69.5" x-min="18.0" y-max="236.5" y-min="228.0"><inno:font font-name="Times-Roman" font-size="9.00pt">04/08/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-19-2" x-max="108.5" x-min="69.5" y-max="236.5" y-min="228.0"/>
+<inno:td col="3" id="table-1-19-3" x-max="131.0" x-min="108.5" y-max="236.5" y-min="228.0"/>
+<inno:td col="4" colspan="2" id="table-1-19-4" x-max="279.0" x-min="131.0" y-max="236.5" y-min="228.0"><inno:font font-name="Times-Roman" font-size="9.00pt">PAYMENT FO DUGO</inno:font></inno:td>
+<inno:td col="5" id="table-1-19-5" x-max="321.5" x-min="279.0" y-max="236.5" y-min="228.0"/>
+<inno:td col="6" id="table-1-19-6" x-max="375.0" x-min="321.5" y-max="236.5" y-min="228.0"><inno:font font-name="Times-Roman" font-size="9.00pt">100.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="20">
+<inno:td col="1" id="table-1-20-1" x-max="69.5" x-min="18.0" y-max="244.5" y-min="236.5"><inno:font font-name="Times-Roman" font-size="9.00pt">04/08/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-20-2" x-max="108.5" x-min="69.5" y-max="244.5" y-min="236.5"/>
+<inno:td col="3" id="table-1-20-3" x-max="131.0" x-min="108.5" y-max="244.5" y-min="236.5"/>
+<inno:td col="4" colspan="2" id="table-1-20-4" x-max="279.0" x-min="131.0" y-max="244.5" y-min="236.5"><inno:font font-name="Times-Roman" font-size="9.00pt">gasoline for Hi-Ace</inno:font></inno:td>
+<inno:td col="5" id="table-1-20-5" x-max="321.5" x-min="279.0" y-max="244.5" y-min="236.5"/>
+<inno:td col="6" id="table-1-20-6" x-max="375.0" x-min="321.5" y-max="244.5" y-min="236.5"><inno:font font-name="Times-Roman" font-size="9.00pt">1,000.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="21">
+<inno:td col="1" id="table-1-21-1" x-max="69.5" x-min="18.0" y-max="253.0" y-min="244.5"><inno:font font-name="Times-Roman" font-size="9.00pt">04/13/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-21-2" x-max="108.5" x-min="69.5" y-max="253.0" y-min="244.5"/>
+<inno:td col="3" id="table-1-21-3" x-max="131.0" x-min="108.5" y-max="253.0" y-min="244.5"/>
+<inno:td col="4" colspan="2" id="table-1-21-4" x-max="279.0" x-min="131.0" y-max="253.0" y-min="244.5"><inno:font font-name="Times-Roman" font-size="9.00pt">SIBUYAS DAHONAN (( LECHON FOR OPAV)</inno:font></inno:td>
+<inno:td col="5" id="table-1-21-5" x-max="321.5" x-min="279.0" y-max="253.0" y-min="244.5"/>
+<inno:td col="6" id="table-1-21-6" x-max="375.0" x-min="321.5" y-max="253.0" y-min="244.5"><inno:font font-name="Times-Roman" font-size="9.00pt">100.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="22">
+<inno:td col="1" id="table-1-22-1" x-max="69.5" x-min="18.0" y-max="260.5" y-min="253.0"><inno:font font-name="Times-Roman" font-size="9.00pt">04/12/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-22-2" x-max="108.5" x-min="69.5" y-max="260.5" y-min="253.0"/>
+<inno:td col="3" id="table-1-22-3" x-max="131.0" x-min="108.5" y-max="260.5" y-min="253.0"/>
+<inno:td col="4" colspan="2" id="table-1-22-4" x-max="279.0" x-min="131.0" y-max="260.5" y-min="253.0"><inno:font font-name="Times-Roman" font-size="9.00pt">GASOLINE FOR TATA</inno:font></inno:td>
+<inno:td col="5" id="table-1-22-5" x-max="321.5" x-min="279.0" y-max="260.5" y-min="253.0"/>
+<inno:td col="6" id="table-1-22-6" x-max="375.0" x-min="321.5" y-max="260.5" y-min="253.0"><inno:font font-name="Times-Roman" font-size="9.00pt">510.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="23">
+<inno:td col="1" id="table-1-23-1" x-max="69.5" x-min="18.0" y-max="270.0" y-min="260.5"><inno:font font-name="Times-Roman" font-size="9.00pt">04/12/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-23-2" x-max="108.5" x-min="69.5" y-max="270.0" y-min="260.5"/>
+<inno:td col="3" id="table-1-23-3" x-max="131.0" x-min="108.5" y-max="270.0" y-min="260.5"/>
+<inno:td col="4" colspan="2" id="table-1-23-4" x-max="279.0" x-min="131.0" y-max="270.0" y-min="260.5"><inno:font font-name="Times-Roman" font-size="9.00pt">Feeds for hogs</inno:font></inno:td>
+<inno:td col="5" id="table-1-23-5" x-max="321.5" x-min="279.0" y-max="270.0" y-min="260.5"/>
+<inno:td col="6" id="table-1-23-6" x-max="375.0" x-min="321.5" y-max="270.0" y-min="260.5"><inno:font font-name="Times-Roman" font-size="9.00pt">623.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="24">
+<inno:td col="1" id="table-1-24-1" x-max="69.5" x-min="18.0" y-max="278.0" y-min="270.0"><inno:font font-name="Times-Roman" font-size="9.00pt">04/12/2021</inno:font></inno:td>
+<inno:td col="2" id="table-1-24-2" x-max="108.5" x-min="69.5" y-max="278.0" y-min="270.0"/>
+<inno:td col="3" id="table-1-24-3" x-max="131.0" x-min="108.5" y-max="278.0" y-min="270.0"/>
+<inno:td col="4" colspan="2" id="table-1-24-4" x-max="279.0" x-min="131.0" y-max="278.0" y-min="270.0"><inno:font font-name="Times-Roman" font-size="9.00pt">feeds for hogs</inno:font></inno:td>
+<inno:td col="5" id="table-1-24-5" x-max="321.5" x-min="279.0" y-max="278.0" y-min="270.0"/>
+<inno:td col="6" id="table-1-24-6" x-max="375.0" x-min="321.5" y-max="278.0" y-min="270.0"><inno:font font-name="Times-Roman" font-size="9.00pt">758.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="25">
+<inno:td col="1" id="table-1-25-1" x-max="69.5" x-min="18.0" y-max="288.0" y-min="278.0"/>
+<inno:td col="2" id="table-1-25-2" x-max="108.5" x-min="69.5" y-max="288.0" y-min="278.0"/>
+<inno:td col="3" id="table-1-25-3" x-max="131.0" x-min="108.5" y-max="288.0" y-min="278.0"/>
+<inno:td col="4" id="table-1-25-4" x-max="209.0" x-min="131.0" y-max="288.0" y-min="278.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Total</inno:font></inno:b></inno:td>
+<inno:td col="5" id="table-1-25-5" x-max="279.0" x-min="209.0" y-max="288.0" y-min="278.0"/>
+<inno:td col="6" id="table-1-25-6" x-max="321.5" x-min="279.0" y-max="288.0" y-min="278.0"/>
+<inno:td col="7" id="table-1-25-7" x-max="375.0" x-min="321.5" y-max="288.0" y-min="278.0"><inno:font font-name="Times-Roman" font-size="9.00pt">9,014.00</inno:font></inno:td>
+</inno:tr>
+</inno:block></inno:table><inno:text id="text-4" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="54.0" x-min="18.0" y-max="344.0" y-min="333.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Prepared By</inno:font></inno:b></inno:block></inno:text><inno:text id="text-5" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="72.0" x-min="18.0" y-max="366.0" y-min="349.0"><inno:font font-name="Times-Roman" font-size="9.00pt">_________________<inno:br/>AERIAL S. TABAR</inno:font></inno:block></inno:text><inno:text id="text-6" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="162.0" x-min="126.0" y-max="344.0" y-min="333.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt">Approved By</inno:font></inno:b></inno:block></inno:text><inno:text id="text-7" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="177.0" x-min="125.0" y-max="356.9" y-min="349.0"><inno:font font-name="Times-Roman" font-size="9.00pt">_________________<inno:br/>Aprilane Q Maturan</inno:font></inno:block></inno:text><inno:text id="text-8" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="166.0" x-min="126.0" y-max="366.0" y-min="357.0"><inno:font font-name="Times-Roman" font-size="9.00pt">Finance Officer</inno:font></inno:block></inno:text></inno:content></inno:dom>

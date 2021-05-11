@@ -149,7 +149,55 @@
             <div class="box-header with-border">
                   
             </div>
-          
+            <div class="box-body">
+                <h1>Dowload file from FTP</h1>
+                <div class="col-lg-6">
+                    <form action="" method="post">
+                      <div class="form-group">
+                        <label>Input name of the file</label>
+                        <input type="text" class="form-control" name="nameOfFile"  required >
+                      </div>
+                      <div class="form-group">
+                        <label>Input save name of the file</label>
+                        <input type="text" class="form-control" name="saveNameOfFile"  required >
+                      </div>
+                      
+                      <div class="form-group pull-right">
+                          <button type="submit" class="btn btn-primary">Download file</button>
+                         
+                      </div>
+                      </form>
+                  </div>
+            </div>
+            <div class="box-body">
+                 <h2>List of downloaded files from FTP </h2>
+                 <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                          <th width="15%">Name of File</th>
+                          <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>sample1.pdf</td>
+                          <td><a href=""><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
+                        </tr>
+                        <tr>
+                          <td>sample2.pdf</td>
+                          <td><a href=""><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
+                        </tr>
+                        <tr>
+                          <td>sample3.pdf</td>
+                          <td><a href=""><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
+                        </tr>
+                        <tr>
+                          <td>sample4.pdf</td>
+                          <td><a href=""><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
            
             <!-- /.box-footer -->
           </div>
@@ -205,5 +253,18 @@
     <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <script>
+      $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+          'paging'      : true,
+          'lengthChange': false,
+          'searching'   : false,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : false
+        })
+      })
+    </script>
 </body>
 </html>

@@ -190,9 +190,10 @@ $Task=$_GET['Task'];
 						
 						while(odbc_fetch_row($rs))
 						{
-							$filename="uploadFiles/".odbc_result($rs,"Filename");;
+							//$filename="uploadFiles/".odbc_result($rs,"Filename");;
+							$filename="uploadfiles/".odbc_result($rs,"Filename");
 							
-							echo "<li  class='$pagestatus'><a href='index.php?page=Enrich&file=".$filename."&BatchID=".odbc_result($rs,"BatchID")."&Task=$ProcessCode'>".'<i class="fa fa-file-pdf-o"></i>'.odbc_result($rs,"JObname")."</a></li>";
+							echo "<li  class='$pagestatus'><a href='index.php?page=Enrich&file=".$filename."&BatchID=".odbc_result($rs,"BatchId")."&Task=$ProcessCode'>".'<i class="fa fa-file-pdf-o"></i>'.odbc_result($rs,"JobName")."</a></li>";
 						}
 					}
 					?>

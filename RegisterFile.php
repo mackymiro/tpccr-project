@@ -69,10 +69,13 @@ function MultipleFileUploadEX($prFileName,$TLID,$SubFolder,$conWMS,$GGUserName,$
 
         $JobID= GetWMSValue("Select JobID From PRIMO_Integration WHERE Filename='".$filename."'","JobId",$conWMS);
 
+        //this is commented out
         // $BatchId=GetWMSValue("Select BatchId from primo_view_Jobs Where JobID='$JobID'","BatchId",$conWMS);
 
+        //this is commented out
         // $sqls="EXEC USP_PRIMO_HOLDBATCH @BatchId=".$BatchId;
    
+        //this is commented
         // ExecuteQuerySQLSERVER ($sqls,$conWMS);
  
         // ExecuteQuerySQLSERVER ("Update PRIMO_Integration Set DocumentType='Awards' Where JobId='".$JobID."'",$conWMS);
@@ -218,7 +221,9 @@ function PostJob($token,$ContentURI,$filename,$fSize,$conWMS,$isImage,$prJobID){
     // curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"WKLI\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[{ \"from\": \"8e651b35-074e-4d44-a306-5be24baac8e7\", \"to\": \"764bc3b8-94d0-4228-a218-b83f6078ea8a\" }]},\"taxonomy\":\"wkli-taxonomy.json\"},\"text-extraction\":{\"ocr\":true},\"zoning\":{\"high_confidence_threshold\":\"0\"}},\"type\":\"data-point-extraction\",\"use_for_training\":true}");
     //curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"".$GGTeam."\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"".$GGTaxonomy."\"},\"zoning\":{\"high_confidence_threshold\":\"1.0\"}},\"type\":\"data-point-extraction\",\"use_for_training\":false}");
     //curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"TPCCR\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"legal-bu-taxonomy-test-v2.json\"},\"zoning\":{\"high_confidence_threshold\":\"1.0\",\"taxonomy\":\"19-zones-taxonomy.json\"},\"reading\":{\"high_confidence_threshold\":\"1.0\"}},\"type\":\"data-point-extraction\",\"use_for_training\":true}"); doc2xml
-      curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"".$GGTeam."\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"".$GGTaxonomyMapping."\"},\"zoning\":{\"high_confidence_threshold\":\"1.0\",\"taxonomy\":\"".$GGTaxonomyZoning."\"},\"reading\":{\"high_confidence_threshold\":\"1.0\"}},\"type\":\"".$GGJobType."\",\"use_for_training\":true}"); 
+    //curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"".$GGTeam."\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"1.0\",\"qa\":{\"teams\":[]},\"taxonomy\":\"".$GGTaxonomyMapping."\"},\"zoning\":{\"high_confidence_threshold\":\"1.0\",\"taxonomy\":\"".$GGTaxonomyZoning."\"},\"reading\":{\"high_confidence_threshold\":\"1.0\"}},\"type\":\"".$GGJobType."\",\"use_for_training\":true}"); 
+    curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"collaboration\":{\"teams\":[{\"name\":\"".$GGTeam."\",\"steps\":[\"*\"]}]},\"input_content\":{\"role\":\"input\",\"uri\":\"".$ContentURI."\"},\"metadata\":{\"mapping\":{\"high_confidence_threshold\":\"".$mapping."\",\"qa\":{\"teams\":[]},\"taxonomy\":\"".$GGTaxonomyMapping."\"},\"zoning\":{\"high_confidence_threshold\":\"".$zoning."\",\"taxonomy\":\"".$GGTaxonomyZoning."\"},\"reading\":{\"high_confidence_threshold\":\"".$reading."\"}},\"type\":\"".$GGJobType."\",\"use_for_training\":true}"); 
+      
       curl_setopt($ch, CURLOPT_USERPWD, $token . ":" . $token);  
       $headers = array();
       $headers[] = 'Accept: application/json';

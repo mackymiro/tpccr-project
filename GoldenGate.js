@@ -39,7 +39,6 @@ function GetJobStatus(){
   
   var response=document.getElementById("GGStatus");
   response.innerHTML="<b><font color='red'>checking status...</font></b>";
-
   //var jTextArea=document.getElementById("jTextArea").value;
   var jTextArea = "index";
   var data = 'data='+encodeURIComponent(JobID)+"&filename="+encodeURIComponent(Filename);
@@ -54,6 +53,7 @@ function GetJobStatus(){
       
       if (response.innerHTML.trim()=='completed(100%)'){
         LoadDataEntryContent(Filename);
+        
       }
       else if(response.innerHTML.trim()=='blocked(55%)'){
         document.getElementById("GoldenGateLink").href="https://wb.innodatalabs.com/zoning/#/job/" + JobID + "?token=" + TokenVAL;
@@ -91,6 +91,7 @@ function GetJobStatus(){
   //     console.log(errMsg);
 }
 // }); 
+
 
 
 const LoadDataEntryContent = (prFilename) =>{

@@ -74,7 +74,7 @@ else{
 
 
 echo $GGStatus."(".$GGProgress."%)" ;
- 
+
  
 // $get_data = callAPI('GET', 'https://54.151.177.173/GOLDG/getggstatus/'.$JobID, false);
 // echo $get_data;

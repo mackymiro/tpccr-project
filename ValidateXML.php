@@ -16,9 +16,10 @@ if (!empty($post_data)) {
     $dir = 'uploadfiles';
      
     file_put_contents($dir."/".$nfile, $post_data);
+   
 
     $cmd = "D:\\THUCL\\iChecker\\iChecker.exe C:\\xampp\\htdocs\\primoLN\\uploadfiles\\".$nfile;
-
+    
     exec($cmd, $out, $ret);
     if (file_exists("uploadfiles/LOGS/uploadfiles/logs/".$filename.".ERR")){
         $LogFile = file_get_contents("uploadfiles/LOGS/uploadfiles/logs/".$filename.".ERR"); 
@@ -64,7 +65,7 @@ if (!empty($post_data)) {
      
     	// unlink("uploadfiles/LOGS/uploadfiles/logs/".$filename.".ERR");
     	// unlink($filename.".xml");
-        }
+    }
 
         
      //$cmd = 'C:\\xampp\\htdocs\\primoTHUCL\\xmlparser\\parser\\XMLBatchParser.exe "C:\\xampp\\htdocs\\primoLN\\uploadfiles\\'.$nfile.'" "C:\xampp\htdocs\primoTHUCL\xmlparser\parser\schema\judicial.artifact.xsd" C:\\xampp\\htdocs\\primoLN\\uploadfiles\\'.$filename.'.log"';

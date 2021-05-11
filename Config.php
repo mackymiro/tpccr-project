@@ -9,9 +9,15 @@ $GGPassword='test@1qaz';
 $GGProductionMode='OFF';//ON or OFF;
 $GGTaxonomyZoning = "legal-bu-zoning-taxonomy-test-v2.json";
 $GGTaxonomyMapping = "legal-bu-taxonomy-test-v2.json";
+
 //job type: data-point-extraction or doc2xml
 $GGJobType = "data-point-extraction";
 $GGTeam="TPCCR";
+
+//treshold set to 1.0 or 0
+$mapping = 1.0;
+$zoning  = 1.0;
+$reading = 0;
 
 
 $SourceFilePath = "C:\\XAMPP\\htdocs\\tpccr\\uploadfiles\\SourceFiles\\";
