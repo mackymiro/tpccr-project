@@ -106,7 +106,8 @@ $Task=$_GET['Task'];
              <!-- <li class="active"><a href="NewContent.php?page=Acquire"><i class="fa fa-circle-o"></i>New content <small class="label pull-right bg-green"><?php echo $NewCount;?></small></a></li>
               <li class="active"><a href="NotRelevant.php?page=Acquire"><i class="fa fa-question"></i>Not Relevant<small class="label pull-right bg-green"><?php echo $NewCount1;?></small></a></li>-->
               <li class="active"><a href="receiving.php"><i class="fa fa-file"></i>Receiving</a></li>
-			  <li class="active"><a href="downloading.php"><i class="fa fa-file"></i>Downloading</a></li>
+			  <li class="active"><a href="ftpfile.php"><i class="fa fa-file"></i>FTP file</a></li>
+			  <li class="active"><a href="downloading.php"><i class="fa fa-file"></i>Downloaded</a></li>
 			  <li class="active"><a href="inventory.php"><i class="fa fa-file"></i>Inventory</a></li>
 			  <li class="active"><a href="Registration.php?page=Acquire"><i class="fa fa-file"></i>Registration</a></li> 
           </ul>

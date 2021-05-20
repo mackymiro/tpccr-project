@@ -30,7 +30,7 @@ if ($result=mysqli_query($con,$sql))
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>primo</title>
+  <title>Tpccr</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -106,7 +106,7 @@ if ($result=mysqli_query($con,$sql))
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $_SESSION['EName'];?></span>
+              <span class="hidden-xs"><?= $_SESSION['EName'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -114,8 +114,8 @@ if ($result=mysqli_query($con,$sql))
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                 <?php echo $_SESSION['EName'];?>
-                  <small><?php echo $_SESSION['UserType'];?></small>
+                 <?= $_SESSION['EName'];?>
+                  <small><?= $_SESSION['UserType'];?></small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -151,7 +151,7 @@ include ("sideBar.php");
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Task Configuration (<?php echo $_GET['Name'];?>)
+        Task Configuration (<?= $_GET['Name'];?>)
         
       </h1>
       <ol class="breadcrumb">
@@ -186,6 +186,8 @@ include ("sideBar.php");
 					$DataEntry=$row[6];
 					$TreeView=$row[7];
 					$MenuGroup=$row[8];
+          $sgmlTransformation = $row[9];
+          
 				}
 			}
 			if ($SOURCE==1){
@@ -230,19 +232,25 @@ include ("sideBar.php");
 			else{
 				$TreeView='';
 			}
+      if($sgmlTransformation == 1){
+        $sgmlTransformation = 'checked';
+      }else{
+        $sgmlTransformation = '';
+      } 
 			
 			?>
 			<div class="box-body">
 			<b>Editor Setting</b><br>
-				 <input type="checkbox"  name="SOURCE"  <?php echo $SOURCE;?>> Source<BR>
-				 <input type="checkbox"  name="Styling"  <?php echo $Styling;?>> Styling<BR>
-				 <input type="checkbox"  name="XML_Editor"  <?php echo $XMLEditor;?>> XML Editor<BR>
-				 <input type="checkbox"  name="SequenceLabeling"  <?php echo $SequenceLabeling;?>> Sequence Labeling<BR>
-				 <input type="checkbox"  name="TextCat"  <?php echo $TextCat;?>> Text Categorization<BR>
-				 <input type="checkbox"  name="DataEntry"  <?php echo $DataEntry;?>> Data Entry<BR>
-				 <input type="checkbox"  name="TreeView"  <?php echo $TreeView;?>> Golden Gate<BR>
-				 <input type="hidden" name="TaskID" value="<?php echo $_GET['UID'];?>">
-				 <input type="hidden" name="ProcessCode" value="<?php echo $_GET['ProcessCode'];?>">
+				 <input type="checkbox"  name="SOURCE"  <?= $SOURCE;?>> Source<BR>
+				 <input type="checkbox"  name="Styling"  <?= $Styling;?>> Styling<BR>
+				 <input type="checkbox"  name="XML_Editor"  <?= $XMLEditor;?>> XML Editor<BR>
+				 <input type="checkbox"  name="SequenceLabeling"  <?= $SequenceLabeling;?>> Sequence Labeling<BR>
+				 <input type="checkbox"  name="TextCat"  <?= $TextCat;?>> Text Categorization<BR>
+				 <input type="checkbox"  name="DataEntry"  <?= $DataEntry;?>> Data Entry<BR>
+				 <input type="checkbox"  name="TreeView"  <?= $TreeView;?>> Golden Gate<BR>
+         <input type="checkbox"  name="SGMLTransformation"  <?= $sgmlTransformation; ?>> SGML Transformation<BR>
+				 <input type="hidden" name="TaskID" value="<?= $_GET['UID'];?>">
+				 <input type="hidden" name="ProcessCode" value="<?= $_GET['ProcessCode'];?>">
 			</div>
 			<div class="box-body">
 			<b>Menu Group</b><br>
@@ -250,7 +258,7 @@ include ("sideBar.php");
 					<option value="ACQUIRE">ACQUIRE</option>
 					<option value="ENRICH">ENRICH</option>		 
 					<option value="DELIVER">DELIVER</option>
-					<option value="<?php echo $MenuGroup;?>" selected><?php echo $MenuGroup;?></option>
+					<option value="<?= $MenuGroup;?>" selected><?= $MenuGroup;?></option>
 				</select>
 			</div>
 			

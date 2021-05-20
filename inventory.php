@@ -144,10 +144,15 @@
       <div class="row">
   
   
-        <div class="col-md-12">
+        <div class="col-md-6">
           <div class="box box-primary">
             <div class="box-header with-border">
-              
+               <?php 
+                $fileVal="uploadfiles/SourceFiles/AUTEN_SupplementaryInfoMarch2021.pdf";
+               
+               ?>
+                 <embed src="<?= $fileVal; ?>" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+				
                 
             </div>
           
@@ -157,6 +162,40 @@
           <!-- /. box -->
         </div>
         <!-- /.col -->
+        <div class="col-md-6">
+          <div class="box box-primary">
+              <div class="box-header with-border">
+                  <button class="btn btn-success btn-lg">Approve</button>
+                  <button class="btn btn-danger btn-lg">Cancel</button>
+                  <br />
+                  <br />
+                  <form>
+                    <div class="col-md-4">
+                      <label>FieldName</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                      
+                    </div>
+                    <div class="col-md-4">
+                      <label>Value</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                    </div>
+                  
+                  </form>
+                  
+              </div>
+            
+            
+              <!-- /.box-footer -->
+            </div>
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                  <h2>Ref Source Path:</h2>  
+              </div>
+            
+            
+              <!-- /.box-footer -->
+            </div>
+        </div>
       </div>
       <!-- /.row -->
     </section>

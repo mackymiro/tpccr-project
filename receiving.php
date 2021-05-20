@@ -138,6 +138,13 @@
         <li class="active">Receiving</li>
       </ol>
     </section>
+    <?php 
+        require_once "Config.php"; 
+
+        /* Search Emails having the specified keyword in the email subject */
+        $emailData = imap_search($connection, 'SUBJECT "TPCCR "');
+    
+    ?>
 
     <!-- Main content -->
     <section class="content">
@@ -149,7 +156,43 @@
             <div class="box-header with-border">
                 
             </div>
-          
+            <div class="box-body">
+              <h2>Receiving</h2>
+              <br />
+              <br />
+              <?php if(!empty($emailData)): ?>
+              <table id="example1" class="table table-bordered table-striped">
+                 <thead>
+                      <tr>
+                         <th width="35%">From</th>
+                         <th>Subject</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <?php foreach($emailData as $emailIdent): ?>
+                      <?php
+                            $overview = imap_fetch_overview($connection, $emailIdent, 0);
+                            $message = imap_fetchbody($connection, $emailIdent, '1.1');
+                            $messageExcerpt = substr($message, 0, 150);
+                            $partialMessage = trim(quoted_printable_decode($messageExcerpt)); 
+                            $date = date("d F, Y", strtotime($overview[0]->date));
+      
+                            $structure = imap_fetchstructure($connection,$emailIdent);
+                      ?>
+                      <tr>
+                          <td> <?php echo $overview[0]->from; ?></td>
+                          <td> <?php echo $overview[0]->subject; ?> </td>
+                          
+                      </tr>
+                      
+                      <?php endforeach; ?>
+                  </tbody>
+              </table>
+              <?php endif; ?>
+            </div>
+            <?php 
+               imap_close($connection);
+            ?>
            
             <!-- /.box-footer -->
           </div>
@@ -205,5 +248,18 @@
     <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <script>
+      $(function () {
+        $('#example1').DataTable()
+          $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+          })
+      })
+    </script>
 </body>
 </html>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inno:dom xmlns:inno="http://innodatalabs.com/innodom"><inno:meta/><inno:content><inno:image id="image-1" type="image"><inno:block page="1" page-height="512" page-width="396" x-max="92.0" x-min="26.0" y-max="82.0" y-min="18.0"/></inno:image><inno:text id="text-1" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="359.0" x-min="98.0" y-max="69.0" y-min="54.0"><inno:font font-name="Times-Roman" font-size="7.50pt">Dino Compound, 3rd Floor Dino Group Administration Bldg., No.88 Labogon Road, Barangay Labogon, Mandaue City, 6014 Cebu,<inno:br/>Philippines</inno:font></inno:block></inno:text><inno:text id="text-2" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="358.0" x-min="98.0" y-max="82.0" y-min="69.1"><inno:font font-name="Times-Roman" font-size="7.50pt">Tel. Nos. (63-32) 346-2567; 420-5639 / Fax No. (63-32) 346-0341<inno:br/>Email Address: admin@dnogroup.ph / sales@dnogroup.ph / marketing@dnogroup.ph</inno:font></inno:block></inno:text><inno:text id="text-3" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="247.0" x-min="149.0" y-max="100.0" y-min="88.0"><inno:b><inno:font font-name="Times-Bold" font-size="12.00pt"><inno:i><inno:u>CLIENT BOOKING FORM</inno:u></inno:i></inno:font></inno:b></inno:block></inno:text><inno:table id="table-1" type="table"><inno:block page="1" page-height="512" page-width="396" x-max="375.0" x-min="18.0" y-max="247.0" y-min="107.0"><inno:tr row="1">
+<inno:td col="1" colspan="2" id="table-1-1-1" rowspan="5" x-max="59.5" x-min="18.0" y-max="135.05" y-min="107.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Date of Event<inno:br/>Time of Event<inno:br/>No of People</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-1-2" rowspan="4" x-max="110.0" x-min="59.5" y-max="134.0" y-min="107.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>04/01/2021<inno:br/>04;00 PM<inno:br/>30.00</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-1-3" x-max="151.0" x-min="110.0" y-max="117.05" y-min="107.0"/>
+<inno:td col="4" id="table-1-1-4" x-max="246.0" x-min="151.0" y-max="117.05" y-min="107.0"/>
+<inno:td col="5" colspan="4" id="table-1-1-5" x-max="375.0" x-min="246.0" y-max="117.05" y-min="107.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Client Booking No CB- 000498</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="2">
+<inno:td col="1" id="table-1-2-1" x-max="151.0" x-min="110.0" y-max="124.05" y-min="117.05"/>
+<inno:td col="2" id="table-1-2-2" x-max="246.0" x-min="151.0" y-max="124.05" y-min="117.05"/>
+<inno:td col="3" id="table-1-2-3" rowspan="2" x-max="284.05" x-min="246.0" y-max="132.95" y-min="117.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>CBF No<inno:br/>Client</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="4" id="table-1-2-4" x-max="303.5" x-min="284.05" y-max="124.05" y-min="117.05"/>
+<inno:td col="5" colspan="2" id="table-1-2-5" x-max="375.0" x-min="303.5" y-max="124.05" y-min="117.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>2021000012</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="3">
+<inno:td col="1" id="table-1-3-1" x-max="151.0" x-min="110.0" y-max="132.95" y-min="124.05"/>
+<inno:td col="2" id="table-1-3-2" x-max="246.0" x-min="151.0" y-max="132.95" y-min="124.05"/>
+<inno:td col="3" id="table-1-3-3" x-max="303.5" x-min="284.05" y-max="132.95" y-min="124.05"/>
+<inno:td col="4" colspan="2" id="table-1-3-4" x-max="375.0" x-min="303.5" y-max="132.95" y-min="124.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>MR. SAMPLE A</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="4">
+<inno:td col="1" id="table-1-4-1" x-max="151.0" x-min="110.0" y-max="134.0" y-min="132.95"/>
+<inno:td col="2" id="table-1-4-2" x-max="246.0" x-min="151.0" y-max="134.0" y-min="132.95"/>
+<inno:td col="3" id="table-1-4-3" rowspan="3" x-max="284.05" x-min="246.0" y-max="139.5" y-min="132.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Mobile N</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="4" id="table-1-4-4" rowspan="3" x-max="303.5" x-min="284.05" y-max="139.5" y-min="132.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>umber</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="5" id="table-1-4-5" x-max="323.5" x-min="303.5" y-max="134.0" y-min="132.95"/>
+<inno:td col="6" id="table-1-4-6" x-max="375.0" x-min="323.5" y-max="134.0" y-min="132.95"/>
+</inno:tr>
+<inno:tr row="5">
+<inno:td col="1" id="table-1-5-1" rowspan="3" x-max="110.0" x-min="59.5" y-max="141.0" y-min="134.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>N/A</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-5-2" x-max="151.0" x-min="110.0" y-max="135.05" y-min="134.0"/>
+<inno:td col="3" id="table-1-5-3" x-max="246.0" x-min="151.0" y-max="135.05" y-min="134.0"/>
+<inno:td col="4" colspan="2" id="table-1-5-4" rowspan="3" x-max="375.0" x-min="303.5" y-max="141.0" y-min="134.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>+63 9772955322</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="6">
+<inno:td col="1" id="table-1-6-1" rowspan="2" x-max="48.05" x-min="18.0" y-max="141.0" y-min="135.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Motiff</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-6-2" x-max="59.5" x-min="48.05" y-max="139.5" y-min="135.05"/>
+<inno:td col="3" id="table-1-6-3" x-max="151.0" x-min="110.0" y-max="139.5" y-min="135.05"/>
+<inno:td col="4" id="table-1-6-4" x-max="246.0" x-min="151.0" y-max="139.5" y-min="135.05"/>
+</inno:tr>
+<inno:tr row="7">
+<inno:td col="1" id="table-1-7-1" x-max="59.5" x-min="48.05" y-max="141.0" y-min="139.5"/>
+<inno:td col="2" id="table-1-7-2" x-max="151.0" x-min="110.0" y-max="141.0" y-min="139.5"/>
+<inno:td col="3" id="table-1-7-3" x-max="246.0" x-min="151.0" y-max="141.0" y-min="139.5"/>
+<inno:td col="4" colspan="2" id="table-1-7-4" rowspan="2" x-max="303.5" x-min="246.0" y-max="147.95" y-min="139.5"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Email Address</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="8">
+<inno:td col="1" id="table-1-8-1" x-max="48.05" x-min="18.0" y-max="147.95" y-min="141.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Type of Pa</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="2" colspan="3" id="table-1-8-2" x-max="151.0" x-min="48.05" y-max="147.95" y-min="141.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>ackage Cooking Charge - 0.00</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-8-3" x-max="246.0" x-min="151.0" y-max="147.95" y-min="141.0"/>
+<inno:td col="4" id="table-1-8-4" x-max="323.5" x-min="303.5" y-max="147.95" y-min="141.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>N/A</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="5" id="table-1-8-5" x-max="375.0" x-min="323.5" y-max="147.95" y-min="141.0"/>
+</inno:tr>
+<inno:tr row="9">
+<inno:td col="1" colspan="5" id="table-1-9-1" x-max="246.0" x-min="18.0" y-max="163.95" y-min="147.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Place of Event 28 PASEO EMILIO, MA. LUISA , BANILAD CEBU CITY</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="2" colspan="4" id="table-1-9-2" x-max="375.0" x-min="246.0" y-max="163.95" y-min="147.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Special Requests STAFF MEALS<inno:br/>Total Amount 5,400.00</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="10">
+<inno:td col="1" id="table-1-10-1" x-max="48.05" x-min="18.0" y-max="174.5" y-min="163.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Qty</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="2" id="table-1-10-2" x-max="59.5" x-min="48.05" y-max="174.5" y-min="163.95"/>
+<inno:td col="3" id="table-1-10-3" x-max="110.0" x-min="59.5" y-max="174.5" y-min="163.95"/>
+<inno:td col="4" id="table-1-10-4" x-max="151.0" x-min="110.0" y-max="174.5" y-min="163.95"/>
+<inno:td col="5" id="table-1-10-5" x-max="246.0" x-min="151.0" y-max="174.5" y-min="163.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Item</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="6" id="table-1-10-6" x-max="284.05" x-min="246.0" y-max="174.5" y-min="163.95"/>
+<inno:td col="7" id="table-1-10-7" x-max="303.5" x-min="284.05" y-max="174.5" y-min="163.95"/>
+<inno:td col="8" id="table-1-10-8" x-max="323.5" x-min="303.5" y-max="174.5" y-min="163.95"/>
+<inno:td col="9" id="table-1-10-9" x-max="375.0" x-min="323.5" y-max="174.5" y-min="163.95"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Amount</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="11">
+<inno:td col="1" id="table-1-11-1" x-max="48.05" x-min="18.0" y-max="182.5" y-min="174.5"><inno:font font-name="Times-Roman" font-size="9.00pt">30</inno:font></inno:td>
+<inno:td col="2" id="table-1-11-2" x-max="59.5" x-min="48.05" y-max="182.5" y-min="174.5"/>
+<inno:td col="3" id="table-1-11-3" x-max="110.0" x-min="59.5" y-max="182.5" y-min="174.5"/>
+<inno:td col="4" colspan="2" id="table-1-11-4" x-max="246.0" x-min="110.0" y-max="182.5" y-min="174.5"><inno:font font-name="Times-Roman" font-size="9.00pt">PAX BREAKFAST (FRIED EGG &amp; RICE)</inno:font></inno:td>
+<inno:td col="5" id="table-1-11-5" x-max="284.05" x-min="246.0" y-max="182.5" y-min="174.5"/>
+<inno:td col="6" id="table-1-11-6" x-max="303.5" x-min="284.05" y-max="182.5" y-min="174.5"/>
+<inno:td col="7" id="table-1-11-7" x-max="323.5" x-min="303.5" y-max="182.5" y-min="174.5"/>
+<inno:td col="8" id="table-1-11-8" x-max="375.0" x-min="323.5" y-max="182.5" y-min="174.5"><inno:font font-name="Times-Roman" font-size="9.00pt">1800.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="12">
+<inno:td col="1" id="table-1-12-1" x-max="48.05" x-min="18.0" y-max="190.5" y-min="182.5"><inno:font font-name="Times-Roman" font-size="9.00pt">30</inno:font></inno:td>
+<inno:td col="2" id="table-1-12-2" x-max="59.5" x-min="48.05" y-max="190.5" y-min="182.5"/>
+<inno:td col="3" id="table-1-12-3" x-max="110.0" x-min="59.5" y-max="190.5" y-min="182.5"/>
+<inno:td col="4" colspan="2" id="table-1-12-4" x-max="246.0" x-min="110.0" y-max="190.5" y-min="182.5"><inno:font font-name="Times-Roman" font-size="9.00pt">PAX LUNCH PORK ADOBO WITH RICE</inno:font></inno:td>
+<inno:td col="5" id="table-1-12-5" x-max="284.05" x-min="246.0" y-max="190.5" y-min="182.5"/>
+<inno:td col="6" id="table-1-12-6" x-max="303.5" x-min="284.05" y-max="190.5" y-min="182.5"/>
+<inno:td col="7" id="table-1-12-7" x-max="323.5" x-min="303.5" y-max="190.5" y-min="182.5"/>
+<inno:td col="8" id="table-1-12-8" x-max="375.0" x-min="323.5" y-max="190.5" y-min="182.5"><inno:font font-name="Times-Roman" font-size="9.00pt">1800.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="13">
+<inno:td col="1" id="table-1-13-1" x-max="48.05" x-min="18.0" y-max="209.0" y-min="190.5"><inno:font font-name="Times-Roman" font-size="9.00pt">30</inno:font></inno:td>
+<inno:td col="2" id="table-1-13-2" x-max="59.5" x-min="48.05" y-max="209.0" y-min="190.5"/>
+<inno:td col="3" id="table-1-13-3" x-max="110.0" x-min="59.5" y-max="209.0" y-min="190.5"/>
+<inno:td col="4" colspan="2" id="table-1-13-4" x-max="246.0" x-min="110.0" y-max="209.0" y-min="190.5"><inno:font font-name="Times-Roman" font-size="9.00pt">PAX DINNER CHOPSUEY WITH RICE</inno:font></inno:td>
+<inno:td col="5" id="table-1-13-5" x-max="284.05" x-min="246.0" y-max="209.0" y-min="190.5"/>
+<inno:td col="6" id="table-1-13-6" x-max="303.5" x-min="284.05" y-max="209.0" y-min="190.5"/>
+<inno:td col="7" id="table-1-13-7" x-max="323.5" x-min="303.5" y-max="209.0" y-min="190.5"/>
+<inno:td col="8" id="table-1-13-8" x-max="375.0" x-min="323.5" y-max="209.0" y-min="190.5"><inno:font font-name="Times-Roman" font-size="9.00pt">1800.00</inno:font></inno:td>
+</inno:tr>
+<inno:tr row="14">
+<inno:td col="1" id="table-1-14-1" x-max="48.05" x-min="18.0" y-max="228.05" y-min="209.0"/>
+<inno:td col="2" colspan="2" id="table-1-14-2" x-max="110.0" x-min="48.05" y-max="228.05" y-min="209.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Total</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-14-3" x-max="151.0" x-min="110.0" y-max="228.05" y-min="209.0"/>
+<inno:td col="4" id="table-1-14-4" x-max="246.0" x-min="151.0" y-max="228.05" y-min="209.0"/>
+<inno:td col="5" id="table-1-14-5" x-max="284.05" x-min="246.0" y-max="228.05" y-min="209.0"/>
+<inno:td col="6" id="table-1-14-6" x-max="303.5" x-min="284.05" y-max="228.05" y-min="209.0"/>
+<inno:td col="7" id="table-1-14-7" x-max="323.5" x-min="303.5" y-max="228.05" y-min="209.0"/>
+<inno:td col="8" id="table-1-14-8" x-max="375.0" x-min="323.5" y-max="228.05" y-min="209.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>5,400.00</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="15">
+<inno:td col="1" id="table-1-15-1" x-max="48.05" x-min="18.0" y-max="235.5" y-min="228.05"/>
+<inno:td col="2" id="table-1-15-2" x-max="59.5" x-min="48.05" y-max="235.5" y-min="228.05"/>
+<inno:td col="3" id="table-1-15-3" x-max="110.0" x-min="59.5" y-max="235.5" y-min="228.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Less</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="4" id="table-1-15-4" x-max="151.0" x-min="110.0" y-max="235.5" y-min="228.05"/>
+<inno:td col="5" id="table-1-15-5" x-max="246.0" x-min="151.0" y-max="235.5" y-min="228.05"/>
+<inno:td col="6" id="table-1-15-6" x-max="284.05" x-min="246.0" y-max="235.5" y-min="228.05"/>
+<inno:td col="7" id="table-1-15-7" x-max="303.5" x-min="284.05" y-max="235.5" y-min="228.05"/>
+<inno:td col="8" id="table-1-15-8" x-max="323.5" x-min="303.5" y-max="235.5" y-min="228.05"/>
+<inno:td col="9" id="table-1-15-9" x-max="375.0" x-min="323.5" y-max="235.5" y-min="228.05"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>0.00</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+<inno:tr row="16">
+<inno:td col="1" id="table-1-16-1" x-max="48.05" x-min="18.0" y-max="247.0" y-min="235.5"/>
+<inno:td col="2" colspan="2" id="table-1-16-2" x-max="110.0" x-min="48.05" y-max="247.0" y-min="235.5"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Balance</inno:i></inno:font></inno:b></inno:td>
+<inno:td col="3" id="table-1-16-3" x-max="151.0" x-min="110.0" y-max="247.0" y-min="235.5"/>
+<inno:td col="4" id="table-1-16-4" x-max="246.0" x-min="151.0" y-max="247.0" y-min="235.5"/>
+<inno:td col="5" id="table-1-16-5" x-max="284.05" x-min="246.0" y-max="247.0" y-min="235.5"/>
+<inno:td col="6" id="table-1-16-6" x-max="303.5" x-min="284.05" y-max="247.0" y-min="235.5"/>
+<inno:td col="7" id="table-1-16-7" x-max="323.5" x-min="303.5" y-max="247.0" y-min="235.5"/>
+<inno:td col="8" id="table-1-16-8" x-max="375.0" x-min="323.5" y-max="247.0" y-min="235.5"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>5,400.00</inno:i></inno:font></inno:b></inno:td>
+</inno:tr>
+</inno:block></inno:table><inno:text id="text-4" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="53.0" x-min="18.0" y-max="292.0" y-min="280.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Prepared By</inno:i></inno:font></inno:b></inno:block></inno:text><inno:text id="text-5" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="64.0" x-min="18.0" y-max="305.0" y-min="295.0"><inno:font font-name="Times-Roman" font-size="9.00pt">______________<inno:br/>Charina L. Bulan</inno:font></inno:block></inno:text><inno:text id="text-6" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="170.0" x-min="138.0" y-max="292.0" y-min="280.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Checked By</inno:i></inno:font></inno:b></inno:block></inno:text><inno:text id="text-7" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="294.0" x-min="255.0" y-max="292.0" y-min="280.0"><inno:b><inno:font font-name="Times-Bold" font-size="9.00pt"><inno:i>Conformed By</inno:i></inno:font></inno:b></inno:block></inno:text><inno:text id="text-8" type="text"><inno:block page="1" page-height="512" page-width="396" x-max="299.0" x-min="256.0" y-max="305.0" y-min="295.0"><inno:font font-name="Times-Roman" font-size="9.00pt">______________<inno:br/>Mr. Alan L. Dino</inno:font></inno:block></inno:text></inno:content></inno:dom>

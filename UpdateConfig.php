@@ -12,6 +12,7 @@
 	$TreeView=$_POST['TreeView'];
 	$MenuGroup=$_POST['MenuGroup'];
 	$ProcessCode=$_POST['ProcessCode'];
+	$sgmlTransformation = $_POST['SGMLTransformation'];
 	 
 	if ($SOURCE!=''){
 		$SOURCE=1;
@@ -55,7 +56,12 @@
 	else{
 		$TreeView=0;
 	}
-	
+	if($sgmlTransformation != ''){
+		$sgmlTransformation = 1;
+	}else{
+		$sgmlTransformation = 0;
+	}
+
 	 $sql="SELECT * FROM tbltaskeditorsetting Where TaskID='$TaskID'";
 	if ($result=mysqli_query($con,$sql))
 	{
@@ -66,10 +72,22 @@
 	}
     
 	if ($sID!=''){
-		$sql="Update tbltaskeditorsetting SET Source='$SOURCE',Styling='$Styling',XMLEditor='$XML_Editor',SequenceLabeling='$SequenceLabeling',TextCategorization='$TextCat',DataEntry='$DataEntry',TreeView='$TreeView',MenuGroup='$MenuGroup',ProcessCode='$ProcessCode' WHERE TaskID='$TaskID'";
+		$sql="
+			Update tbltaskeditorsetting 
+			SET Source='$SOURCE',
+			Styling='$Styling',
+			XMLEditor='$XML_Editor',
+			SequenceLabeling='$SequenceLabeling',
+			TextCategorization='$TextCat',
+			DataEntry='$DataEntry',
+			TreeView='$TreeView',
+			MenuGroup='$MenuGroup',
+			ProcessCode='$ProcessCode',
+			sgml_transformation='$sgmlTransformation'
+			WHERE TaskID='$TaskID'";
 	}
 	else{
-		$sql="INSERT INTO tbltaskeditorsetting ( TaskID, Source, Styling, XMLEditor, SequenceLabeling, TextCategorization,MenuGroup,ProcessCode,DataEntry,TreeView) VALUES ('$TaskID','$SOURCE','$Styling','$XML_Editor','$SequenceLabeling','$TextCat','$MenuGroup','$ProcessCode','$DataEntry','$TreeView')";
+		$sql="INSERT INTO tbltaskeditorsetting ( TaskID, Source, Styling, XMLEditor, SequenceLabeling, TextCategorization,MenuGroup,sgml_transformation,ProcessCode,DataEntry,TreeView) VALUES ('$TaskID','$SOURCE','$Styling','$XML_Editor','$SequenceLabeling','$TextCat','$MenuGroup', '$sgmlTransformation', '$ProcessCode','$DataEntry','$TreeView')";
 	}
 	ExecuteQuery($sql,$con);
 	

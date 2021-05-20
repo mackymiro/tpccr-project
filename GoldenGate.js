@@ -94,7 +94,7 @@ function GetJobStatus(){
 
 
 
-const LoadDataEntryContent = (prFilename) =>{
+function LoadDataEntryContent(prFilename){
     editor_html.setValue("");
     var data = 'data='+encodeURIComponent(prFilename);
     var xmlhttp = new XMLHttpRequest();
@@ -111,15 +111,15 @@ const LoadDataEntryContent = (prFilename) =>{
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     
     xmlhttp.send(data);
-};
+}
 
-const RefreshEditor = () =>{
+function RefreshEditor() {
     editor_html.refresh();
     // var totalLines = editor_html.lineCount();
     // editor_html.autoFormatRange({line:0, ch:0}, {line:totalLines});
-};
+}
 
-const SaveDataEntry = () =>{
+function SaveDataEntry() {
     var data = 'filename='+encodeURIComponent(document.getElementById("filename").innerHTML) + "&Title="+encodeURIComponent(document.getElementById("Title").value)+"&OriginatingDate="+encodeURIComponent(document.getElementById("OriginatingDate").value)+"&Register="+encodeURIComponent(document.getElementById("Register").value)+"&Type="+encodeURIComponent(document.getElementById("Type").value)+"&Priority="+encodeURIComponent(document.getElementById("Priority").value)+"&Topic="+encodeURIComponent(document.getElementById("Topic").value)+"&Status="+encodeURIComponent(document.getElementById("Status").value)+"&StateDate="+encodeURIComponent(document.getElementById("StateDate").value)+"&Remarks="+encodeURIComponent(document.getElementById("Remarks").value);
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange=function(){

@@ -130,71 +130,47 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-         Downloading
+         Downloaded
         
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Downloading</li>
+        <li class="active">Downloaded files</li>
       </ol>
     </section>
-
+    <?php
+        
+    ?>
     <!-- Main content -->
     <section class="content">
       <div class="row">
-  
-  
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
                   
             </div>
+            <?php
+                $mydir = 'downloadedFtpFiles';
+                $myfiles = array_diff(scandir($mydir), ['.', '..']);  
+            ?>
             <div class="box-body">
-                <h1>Dowload file from FTP</h1>
-                <div class="col-lg-6">
-                    <form action="" method="post">
-                      <div class="form-group">
-                        <label>Input name of the file</label>
-                        <input type="text" class="form-control" name="nameOfFile"  required >
-                      </div>
-                      <div class="form-group">
-                        <label>Input save name of the file</label>
-                        <input type="text" class="form-control" name="saveNameOfFile"  required >
-                      </div>
-                      
-                      <div class="form-group pull-right">
-                          <button type="submit" class="btn btn-primary">Download file</button>
-                         
-                      </div>
-                      </form>
-                  </div>
-            </div>
-            <div class="box-body">
-                 <h2>List of downloaded files from FTP </h2>
+                 <h2>Downloaded files</h2>
                  <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                          <th width="15%">Name of File</th>
+                          <th width="35%">Name of File</th>
                           <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach($myfiles as $file): ?>
                         <tr>
-                          <td>sample1.pdf</td>
-                          <td><a href=""><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
+                          <td ><?= $file; ?></td>
+                          <td><a href="">Register File</td>
+                    
                         </tr>
-                        <tr>
-                          <td>sample2.pdf</td>
-                          <td><a href=""><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>sample3.pdf</td>
-                          <td><a href=""><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>sample4.pdf</td>
-                          <td><a href=""><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
-                        </tr>
+                        <?php endforeach;?>
+                       
                     </tbody>
                   </table>
             </div>
@@ -204,6 +180,7 @@
           <!-- /. box -->
         </div>
         <!-- /.col -->
+
       </div>
       <!-- /.row -->
     </section>

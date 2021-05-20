@@ -16,9 +16,9 @@ if (!empty($post_data)) {
     $dir = 'uploadfiles';
      
     file_put_contents($dir."/".$nfile, $post_data);
-   
-
-    $cmd = "D:\\THUCL\\iChecker\\iChecker.exe C:\\xampp\\htdocs\\primoLN\\uploadfiles\\".$nfile;
+    
+    //$cmd = "D:\\THUCL\\iChecker\\iChecker.exe C:\\xampp\\htdocs\\primoLN\\uploadfiles\\".$nfile;
+    $cmd = "C:\\XAMPP\\htdocs\\tpccr\\iChecker\\iChecker.exe C:\\xampp\\htdocs\\tpccr\\uploadfiles\\".$nfile;
     
     exec($cmd, $out, $ret);
     if (file_exists("uploadfiles/LOGS/uploadfiles/logs/".$filename.".ERR")){

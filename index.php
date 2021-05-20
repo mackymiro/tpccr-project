@@ -87,6 +87,7 @@ if ($result=mysqli_query($con,$sql))
 		$TextCategorization=$row[5];
 		$DataEntry=$row[6];
 		$TreeView=$row[7];
+		$sgmlTransformation = $row[9];
 	}
 }
 		
@@ -548,7 +549,7 @@ function LoadStyles(){
             <div class="box-body no-padding">
               <ul class="nav nav-pills nav-stacked">
               	<li><a href="#"><i class="fa fa-tasks"></i><b>TASK: <span id="Task1"><?= $Task;?></span></b></a></li>
-              	<li><a href="<?= $SourceURL;?>" target="_blankk"><i class="fa fa-file-o"></i>FileName: <u><span id="filename"><?php echo $Filename;?></span></u></a></li>
+              	<li><a href="<?= $SourceURL;?>" target="_blank"><i class="fa fa-file-o"></i>FileName: <u><span id="filename"><?php echo $Filename;?></span></u></a></li>
               <!-- 	<li><a href="<?= $SourceURL;?>" target="_blankk"><i class="fa fa-file-o"></i>Source URL: <u><span id="filename"><?php echo $SourceURL;?></span></u></a></li> -->
 			    <li><a href="#"><i class="fa fa-folder"></i>JobName: <u><?= $Jobname;?></u></a></li>
 			    <!-- <li><a href="#"><i class="fa fa-folder"></i>Priority Number: <u><?= $PrioNumber;?></u></a></li> -->
@@ -616,9 +617,12 @@ function LoadStyles(){
                
 				?>
 					<!-- <li style="display: block" id="isPDFImage"><a><i class="fa fa-question-circle"></i><input type="checkbox" id="PDFImage"> PDF Image?</a></li> -->
- 
-					<li style="display: block" id="JobRepost"><a><i class="fa fa-question-circle"></i><button onclick="JobRewind()">Rewind</button></li>
+					
+					<?php if($TreeView != 0): ?>
+						<li style="display: block" id="JobRepost"><a><i class="fa fa-question-circle"></i><button onclick="JobRewind()">Rewind</button></li>
 
+					<?php endif; ?>
+					
 						<!-- <button onclick="JobRepost()">Repost</button> -->
 
 				 <?php
@@ -1238,7 +1242,10 @@ function LoadStyles(){
 	   <div class="col-md-9">
 	     <div class="nav-tabs-custom">
             <ul class="nav nav-tabs pull-right">
-			
+			<?php if($sgmlTransformation == 1): ?>
+				<li class=""><a href="#tab_sgml" data-toggle="tab">SGML Transformation</a></li>
+
+			<?php endif;?>
 			<?php
 			if ($DataEntry==1){
 				
@@ -1348,8 +1355,88 @@ function LoadStyles(){
 					?>
 					 </div>
 				</div>
+	
+				</div>
+				<div class="tab-pane" id="tab_sgml">
+					<fieldset>
+						<div class="form-group" style="width:100%; height:65vh;">
+							<?php
+							if ($FileStatus!='Done'){
+								?>
+			
+								<textarea id="codeSgml" rows="100" spellcheck="true"  name="code"><?php echo $sXML;?></textarea>
+								<?php
+								}
+								else{
+									?>
+								<textarea id="codeSgml" rows="100" spellcheck="true" name="code"></textarea>
+									<?php
+								}
+								?>
+								 <textarea id="spellcheckText" rows="100" spellcheck="true" style="width:100%; height:65vh;display:none"  ></textarea>
+								 <script id="script">
+										var prToggle=1;
+									/*
+									* Demonstration of code folding
+									*/
+								
+									
+									var te_html = document.getElementById("codeSgml");
+									
+									
+									var editor_html = CodeMirror.fromTextArea(te_html, {
+										mode: "text/xml",
+										lineNumbers: true,
+										matchTags: {bothTags: true},
+										lineWrapping: true,
+										extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+										foldGutter: true,
+										styleActiveLine: true,
+										styleActiveSelected: true,
+										styleSelectedText: true,
+										autoRefresh: true,
+										indentUnit: 4,
+										indentWithTabs: true,
+										readOnly: false,
+										smartIndent: true,
 
-				
+										gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+
+
+									});
+									
+									editor_html.on ('beforeChange',function(){
+										
+										DisableTag(prToggle);
+									});
+
+									editor_html.refresh();
+									editor_html.setSize("100%","65vh"); 
+
+									
+					  		</script>
+							<script>
+								function jumpToLine(prLineNo,prCol,prLength){
+									
+									editor_html.refresh();
+									editor_html.setCursor(prLineNo);
+									// alert(prLength);
+									editor_html.setSelection({line: prLineNo-1, ch: prCol-prLength}, {line: prLineNo-1, ch:prCol+prLength});
+
+									// editor_html.markText({line: prLineNo-1, ch: prCol}, {line: prLineNo, ch:1}, {className: "styled-background"});
+
+									// var line = editor_html.getLineHandle(prLineNo);
+									// editor_html.setLineClass(line,'background','line-error');
+								}
+							</script>		
+							<br />
+							<div class="pull-right">
+						 		<span id="" ></span>
+									<button type="button" class="btn btn-success .btn-sm" onclick="">Save</button>
+									
+								</div>
+						</div>
+					</fieldset>
 				</div>
 				<div class="tab-pane " id="tab_1-0" >
 
@@ -1540,10 +1627,10 @@ function LoadStyles(){
  
 			</script>
 
-<?php
- $sXML = file_get_contents($sXMLFile);
- // $sXML =formatXmlString(trim($sXML));
-?>
+			<?php
+			$sXML = file_get_contents($sXMLFile);
+			// $sXML =formatXmlString(trim($sXML));
+			?>
               <!-- /.tab-pane -->
               <div class="tab-pane " id="tab_1-1"  >
 				
@@ -2364,7 +2451,7 @@ function LoadStyles(){
      <img src="images/Preloader_2/Preloader_2.gif">
     </p>
      <p align="center">
-    Validating XML...
+    	Validating XML...
     </p>
   </div>
   <!-- /.modal-content -->

@@ -401,12 +401,13 @@ function ConvertPDFHTML(){
 function ValidateXML(){
        var Filename = document.getElementById("filename").innerHTML;
         $("#modal-validate").modal();
-        var response=document.getElementById("ValidationList");
+        var response = document.getElementById("ValidationList");
         var data = 'data='+encodeURIComponent(editor_html.getValue())+"&filename="+encodeURIComponent(Filename);
+        
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange=function(){
           if (xmlhttp.readyState==4 && xmlhttp.status==200){
-            response.innerHTML=xmlhttp.responseText;
+            response.innerHTML = xmlhttp.responseText;
              document.getElementById("ValidateTrigger").value =  xmlhttp.responseText.trim();
             $('#modal-validate').modal('hide');
             alert("File successfully validated!");
