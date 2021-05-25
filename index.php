@@ -154,6 +154,13 @@ if (file_exists("uploadfiles/$file[0].xml")) {
  
 }
 
+/*if (file_exists("TPCCR17-InnoDomTransformation/_Output/NR 2021-11_TEST.sgm")) {   
+	$sXML = file_get_contents("TPCCR17-InnoDomTransformation/_Output/NR 2021-11_TEST.sgm");
+	//$sXML=_utf8_decode($sXML);
+ 
+}*/
+
+
 ?>
  <script src="js/jquery-3.4.1.min.js"></script>
   
@@ -298,8 +305,10 @@ function check() {
 		}
 		$_SESSION['JobID']=$JobID;
 		$sxfilename = pathinfo($Filename, PATHINFO_FILENAME);
-		$nfile=$sxfilename.".xml";
+		//$nfile=$sxfilename.".xml";
+		$nfile=$sxfilename.".sgm";
 		$sXMLFile = "uploadfiles/".$nfile;
+		//$sXMLFile = "TPCCR17-InnoDomTransformation/_Output/NR 2021-11_TEST.sgm";
 		
 		?>
 
@@ -571,8 +580,10 @@ function LoadStyles(){
 		
 				 <!-- <li><a href="#" onClick="TestGetJobStatus()"><i class="fa fa-refresh"></i>Test Status: <u><span id="TestGGStatus"></span></u></a></li> -->
 				<?php
-				$innoXML= str_replace(".pdf", "_response.xml", $Filename);
-				$innoXML= str_replace(".PDF", "_response.xml", $innoXML)
+				//$innoXML= str_replace(".pdf", "_response.xml", $Filename);
+				//$innoXML= str_replace(".PDF", "_response.xml", $innoXML);
+				$innoXML= str_replace(".pdf", "_response.sgm", $Filename);
+				$innoXML= str_replace(".PDF", "_response.sgm", $innoXML);
 				?>
 				 
 				<!-- <li><a href="uploadfiles/<?php //echo  $innoXML;?>" target="_blank" ><i class="fa fa-file-excel-o"></i><u>Innodom XML</u></a></li>-->
@@ -1629,6 +1640,10 @@ function LoadStyles(){
 
 			<?php
 			$sXML = file_get_contents($sXMLFile);
+			//echo "<pre>";
+			//print_r($sXML);
+			//echo "</pre>";
+			
 			// $sXML =formatXmlString(trim($sXML));
 			?>
               <!-- /.tab-pane -->

@@ -55,16 +55,30 @@ if ($GGStatus == 'completed'){
     $file = fopen($file_path, 'w+');
     fputs($file, $file_data);
 
-     $file_path1 = 'uploadfiles/' . $nFilename . '_response.xml';
+    $file_path1 = 'uploadfiles/' . $nFilename . '_response.xml';
     // echo $file_path;
     $file = fopen($file_path1, 'w+');
     fputs($file, $file_data);
 
+    $file_path2 = 'uploadfiles/' . $nFilename. '.sgm';
+    $file = fopen($file_path2, 'w+');
+    fputs($file, $file_data);
+
+    $file_path3 = 'uploadfiles/' .$nFilename. '_response.sgm';
+    $file = fopen($file_path3, 'w+');
+    fputs($file, $file_data);
 
     fclose($file);
 
-     //exec ('D:\\xampp\\htdocs\\tpccr\\zonedetection\\ZoneDetection.exe D:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml');
-     exec (__DIR__.'\zonedetection\\ZoneDetection.exe'.__DIR__.'\\uploadfiles\\'.$nFilename.'.xml');
+
+    exec('C:\\xampp\\htdocs\\tpccr\\TPCCR17-InnoDomTransformation\\TPCCR17-InnoDomTransformation.exe "C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml" C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.sgm"');
+   
+    //exec('C:\\xampp\\htdocs\\tpccr\\TPCCR17-InnoDomTransformation\\TPCCR17-InnoDomTransformation.exe C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.sgm');
+    
+    //exec('C:\\xampp\\htdocs\\tpccr\\TPCCR17-InnoDomTransformation\\TPCCR17-InnoDomTransformation.exe' "C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml" "C:\\xampp\\htdocs\\tpccr\\TPCCR17-InnoDomTransformation\\_Output\\'.$nFilename.'.sgm");
+    //exec ('D:\\xampp\\htdocs\\tpccr\\zonedetection\\ZoneDetection.exe D:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml');
+   
+    //exec (__DIR__.'\zonedetection\\ZoneDetection.exe'.__DIR__.'\\uploadfiles\\'.$nFilename.'.xml');
 
 }
 else{

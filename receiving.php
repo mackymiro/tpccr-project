@@ -140,11 +140,18 @@
     </section>
     <?php 
         require_once "Config.php"; 
+        require_once "fpdf.php";
+
+        $con = mysqli_connect('localhost','root','','primo');
+        // Check connection
+        if (mysqli_connect_errno())
+        {
+          echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
 
         /* Search Emails having the specified keyword in the email subject */
-        $emailData = imap_search($connection, 'SUBJECT "TPCCR "');
-    
-    ?>
+        $emailData = imap_search($connection, 'FROM "@wecode-x.com"');
+    ?>  
 
     <!-- Main content -->
     <section class="content">
@@ -161,14 +168,18 @@
               <br />
               <br />
               <?php if(!empty($emailData)): ?>
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-striped" style="overflow:auto;">
                  <thead>
                       <tr>
-                         <th width="35%">From</th>
-                         <th>Subject</th>
+                       
+                         <th width="15%">From</th>
+                         <th class="bg bg-info">Subject</th>
+                         <th>Messages</th>
+                         <th class="bg bg-info" width="">Attachments</th>
+                         <th width="15%">Date</th>
                       </tr>
                   </thead>
-                  <tbody>
+                  <tbody >
                       <?php foreach($emailData as $emailIdent): ?>
                       <?php
                             $overview = imap_fetch_overview($connection, $emailIdent, 0);
@@ -178,10 +189,128 @@
                             $date = date("d F, Y", strtotime($overview[0]->date));
       
                             $structure = imap_fetchstructure($connection,$emailIdent);
+
+                            $header = imap_header($connection, $emailIdent);
+
+                           
+                            $toAddress = $header->toaddress;
+                            $toPersonal  = $header->to[0]->personal;
+                            $toMailBox = $header->to[0]->mailbox;
+                            $toHost = $header->to[0]->host;
+                            $cc = $header->ccaddress;
+                            $ccPersonal = $header->cc[0]->personal;
+                            $ccMailbox = $header->cc[0]->mailbox;
+                            $ccHost = $header->cc[0]->host;
+                            $subject = $header->cc[0]->subject;
+                            $date = $header->Date;
+                            $from = $header->fromaddress;
+                            $fromPersonal = $header->from[0]->personal;
+                            $fromMailbox = $header->from[0]->mailbox;
+                            $fromHost = $header->from[0]->host; 
+                            $mainSubject = $header->Subject;
+
+                            //convert to PDF then create a folder 
+                            $pdf = new FPDF();
+                            $pdf->AddPage();
+                            $pdf->SetFont('Arial','B', 10);
+                            $pdf->Cell(40,10,'From: '.$from.', <'.$fromMailbox.'@'.$fromHost.'>');
+                            $pdf->Ln();
+                            $pdf->Cell(40, 10,'To: '.$toAddress.', <'.$toPersonal.'@'.$toHost.'>');
+                            $pdf->Ln();
+                            $pdf->Cell(40, 10,'CC: '.$ccMailbox.', <'.$ccPersonal.'>');
+                            $pdf->Ln();
+                            $pdf->Cell(40, 10,'Subject: '.$mainSubject.'');
+                            $pdf->Ln();
+                            $pdf->Cell(40, 10,'Date: '.$date.'');
+                            $pdf->Ln();
+                            $pdf->Ln();
+                            $pdf->Cell(40,10,'From: '.$from.'');
+                            $pdf->Ln();
+                            $pdf->Cell(40,10,'Re: '.$mainSubject.'');
+                            $pdf->Ln();
+                            $pdf->Cell(40,10,'Date: '.$date.'');
+                            $pdf->Ln();
+                            $pdf->Cell(40,10,'Ref: '.$mainSubject.'');
+                            $pdf->Ln();
+                            $pdf->Cell(40,10,'_____________________________________________________________');
+                            $pdf->Ln();
+                            $pdf->Cell(40,10,''.$partialMessage.'');
+
+                            //make directory
+                            mkdir("TPCCR-Inventory/".$mainSubject."/");
+
+                            $filename = "TPCCR-Inventory/$mainSubject/".$mainSubject.".pdf";
+                            $pdf->Output($filename,'F');
+
+                            $created_at = date('Y-m-d H:i:s');
+                            $updated_at = date('Y-m-d H:i:s');
+
+                            $query = "SELECT * FROM tbl_tpccr_outlook_files WHERE ref='$mainSubject'";
+                            $result = mysqli_query($con, $query);
+
+                            if ($result) {
+                              if (mysqli_num_rows($result) > 0) {
+                                  //
+                              } else {
+                                $insertSql = "INSERT INTO tbl_tpccr_outlook_files(ref, bundle_no, product_type, subject1, tat, delivery_date, no_of_files, source_type, source_path, created_at, updated_at)
+                                VALUES('$mainSubject', '$mainSubject', 'Legal', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$filename', '$created_at', '$updated_at')";
+    
+                                $res = mysqli_query($con, $insertSql);
+                              }
+                            }
+
+                           
+                            $attachments = array();
+                            if(isset($structure->parts) && count($structure->parts)) {
+                              for($i = 0; $i < count($structure->parts); $i++) {
+                                $attachments[$i] = array(
+                                   'is_attachment' => false,
+                                   'filename' => '',
+                                   'name' => '',
+                                   'att
+                                   achment' => '');
+                     
+                                if($structure->parts[$i]->ifdparameters) {
+                                  foreach($structure->parts[$i]->dparameters as $object) {
+                                    if(strtolower($object->attribute) == 'filename') {
+                                      $attachments[$i]['is_attachment'] = true;
+                                      $attachments[$i]['filename'] = $object->value;
+                                      $emailAttachments = $attachments[$i]['filename'] .'<br />';
+                                    }
+                                  }
+                                }
+                     
+                                if($structure->parts[$i]->ifparameters) {
+                                  foreach($structure->parts[$i]->parameters as $object) {
+                                    if(strtolower($object->attribute) == 'name') {
+                                      $attachments[$i]['is_attachment'] = true;
+                                      $attachments[$i]['name'] = $object->value;
+                                      //echo $attachments[$i]['filename'] .'<br />';
+                                    }
+                                  }
+                                }
+                     
+                                if($attachments[$i]['is_attachment']) {
+                                  $attachments[$i]['attachment'] = imap_fetchbody($connection, $emailIdent, $i+1);
+                                  if($structure->parts[$i]->encoding == 3) { // 3 = BASE64
+                                    $attachments[$i]['attachment'] = base64_decode($attachments[$i]['attachment']);
+                                  }
+                                  elseif($structure->parts[$i]->encoding == 4) { // 4 = QUOTED-PRINTABLE
+                                    $attachments[$i]['attachment'] = quoted_printable_decode($attachments[$i]['attachment']);
+                                  }
+                                }             
+                              } // for($i = 0; $i < count($structure->parts); $i++)
+                          }
+
+
                       ?>
                       <tr>
-                          <td> <?php echo $overview[0]->from; ?></td>
-                          <td> <?php echo $overview[0]->subject; ?> </td>
+                         
+                          <td> <?= $overview[0]->from; ?></td>
+                          <td class="bg bg-info">  <?= $overview[0]->subject; ?> </td>
+                          <td><?= $partialMessage; ?></td>
+                          <td class="bg bg-info"><?= $emailAttachments; ?></td>
+                          <td><?= $date; ?></td>
                           
                       </tr>
                       

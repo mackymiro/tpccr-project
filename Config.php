@@ -19,16 +19,16 @@ $mapping = 1.0;
 $zoning  = 1.0;
 $reading = 0;
 
-//connnection from FTP server
 
+/* Connecting Gmail server with IMAP */
+$connection = imap_open('{imap.gmail.com:993/imap/ssl}INBOX', 'ask.macky.miro@gmail.com', 'gu3stadmintmp@abc') or die('Cannot connect to Gmail: ' . imap_last_error());
+
+
+//connnection from FTP server
 $ftp_server = "staging.crm.dnogroup.ph";
 $ftp_username="testing"; //username
 $ftp_userpass="helloworld"; //password
 $ftp_path = "/TO_INNO/CONVERSION"; //file path
-
-/* Connecting Gmail server with IMAP */
-$connection = imap_open('{imap.gmail.com:993/imap/ssl}INBOX', 'ask.macky.miro@gmail.com', 'gu3stadmintmp@abc') 
-or die('Cannot connect to Gmail: ' . imap_last_error());
 
 $SourceFilePath = "C:\\XAMPP\\htdocs\\tpccr\\uploadfiles\\SourceFiles\\";
 

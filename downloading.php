@@ -154,25 +154,54 @@
                 $myfiles = array_diff(scandir($mydir), ['.', '..']);  
             ?>
             <div class="box-body">
-                 <h2>Downloaded files</h2>
-                 <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                          <th width="35%">Name of File</th>
-                          <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach($myfiles as $file): ?>
-                        <tr>
-                          <td ><?= $file; ?></td>
-                          <td><a href="">Register File</td>
-                    
-                        </tr>
-                        <?php endforeach;?>
-                       
-                    </tbody>
-                  </table>
+                <div class="col-md-6">
+                  <h2>Downloaded files from FTP</h2>
+                  <table id="example1" class="table table-bordered table-striped">
+                      <thead>
+                          <tr>
+                            <th width="35%">Name of File</th>
+                           
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <?php foreach($myfiles as $file): ?>
+                          <tr>
+                            <td ><?= $file; ?></td>
+                           
+                          </tr>
+                          <?php endforeach;?>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-md-6">
+                  <h2>Downloaded files from receiving</h2>
+
+                  <?php 
+                    require_once "conn.php";
+
+                    $sql  = "SELECT * FROM tbl_tpccr_outlook_files";
+                    $result = mysqli_query($con, $sql);
+
+                  
+                  ?>
+                  <table id="example2" class="table table-bordered table-striped">
+                      <thead>
+                          <tr>
+                            <th width="35%">Name of File</th>
+                           
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <?php while($row = mysqli_fetch_assoc($result)): ?>
+                          <tr>
+                            <td><?= $row['ref'];?></td>
+                          </tr>
+                          <?php endwhile; ?>
+                        
+                      </tbody>
+                    </table>
+                  </div>
             </div>
            
             <!-- /.box-footer -->
@@ -233,14 +262,14 @@
     <script>
       $(function () {
         $('#example1').DataTable()
-        $('#example2').DataTable({
-          'paging'      : true,
-          'lengthChange': false,
-          'searching'   : false,
-          'ordering'    : true,
-          'info'        : true,
-          'autoWidth'   : false
-        })
+          $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+          })
       })
     </script>
 </body>
