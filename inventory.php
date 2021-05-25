@@ -148,8 +148,8 @@
           <div class="box box-primary">
             <div class="box-header with-border">
                <?php 
-                $fileVal="uploadfiles/SourceFiles/AUTEN_SupplementaryInfoMarch2021.pdf";
-               
+                  $fileVal="uploadfiles/SourceFiles/AUTEN_SupplementaryInfoMarch2021.pdf";
+                  
                ?>
                  <embed src="<?= $fileVal; ?>" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 				
@@ -189,7 +189,50 @@
             </div>
             <div class="box box-primary">
               <div class="box-header with-border">
-                  <h2>Ref Source Path:</h2>  
+                   <a href="inventory.php" >Back to main directory</a>
+                  <?php
+                    require_once "conn.php";
+
+                    $path = $_GET['path'];
+                  
+                    $mydir = 'TPCCR-Inventory'; 
+
+                    if($path == ""){
+                      $myfiles = array_diff(scandir($mydir), ['.', '..']); 
+                    }else{
+                       $pathExp = explode("/", $path);
+                    
+                       $insideFile = "SELECT * FROM tbl_tpccr_outlook_files WHERE ref = '$pathExp[1]'";
+                       $inventory = mysqli_query($con, $insideFile);
+                      
+                    } 
+                   
+                  ?>
+                  <h3>Ref Source Path: <?= $path; ?></h3>  
+                  <table id="example1" class="table table-bordered table-striped">
+                      <thead>
+                          <tr>
+                            <th width="35%">File name</th>
+                           
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <?php if($path ==""):?>
+                            <?php foreach($myfiles as $file): ?>
+                                <tr>
+                                  <td><a href="inventory.php?path=<?= $mydir."/".$file; ?>"><?= $mydir."/".$file; ?></a></td>
+                                </tr>
+                            <?php endforeach;?>
+                          <?php else: ?>
+                            <?php while($row = mysqli_fetch_assoc($inventory)): ?>
+                                <tr>
+                                  <td><a href="#"><?= $row['source_path']; ?></a></td>
+                                </tr>
+                              
+                            <?php endwhile;?>
+                            <?php endif; ?>
+                      </tbody>
+                  </table>
               </div>
             
             
@@ -245,5 +288,18 @@
     <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <script>
+      $(function () {
+        $('#example1').DataTable()
+          $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+          })
+      })
+    </script>
 </body>
 </html>

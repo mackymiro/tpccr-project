@@ -299,8 +299,7 @@ function check() {
 			 
 			$FileStatus=odbc_result($rs,"StatusString");
 			$Filename=odbc_result($rs,"Filename");
-			$JobID=odbc_result($rs,"JobId");
-			
+			$JobID=odbc_result($rs,"JobId");		
 			
 		}
 		$_SESSION['JobID']=$JobID;

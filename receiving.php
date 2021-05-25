@@ -150,7 +150,7 @@
         }
 
         /* Search Emails having the specified keyword in the email subject */
-        $emailData = imap_search($connection, 'FROM "@wecode-x.com"');
+        $emailData = imap_search($connection, 'FROM "@wecode-x.com" ');
     ?>  
 
     <!-- Main content -->
@@ -212,6 +212,10 @@
                             //convert to PDF then create a folder 
                             $pdf = new FPDF();
                             $pdf->AddPage();
+                            $pdf->SetFont('Arial','B', 18);
+                            $pdf->Ln();
+                            $pdf->Cell(40,10, ucfirst($mainSubject));
+                            $pdf->Ln();
                             $pdf->SetFont('Arial','B', 10);
                             $pdf->Cell(40,10,'From: '.$from.', <'.$fromMailbox.'@'.$fromHost.'>');
                             $pdf->Ln();
@@ -242,6 +246,8 @@
                             $filename = "TPCCR-Inventory/$mainSubject/".$mainSubject.".pdf";
                             $pdf->Output($filename,'F');
 
+                            $fileNamePDF = $mainSubject.".pdf";
+
                             $created_at = date('Y-m-d H:i:s');
                             $updated_at = date('Y-m-d H:i:s');
 
@@ -253,7 +259,7 @@
                                   //
                               } else {
                                 $insertSql = "INSERT INTO tbl_tpccr_outlook_files(ref, bundle_no, product_type, subject1, tat, delivery_date, no_of_files, source_type, source_path, created_at, updated_at)
-                                VALUES('$mainSubject', '$mainSubject', 'Legal', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$filename', '$created_at', '$updated_at')";
+                                VALUES('$mainSubject', '$mainSubject', 'Legal', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
     
                                 $res = mysqli_query($con, $insertSql);
                               }

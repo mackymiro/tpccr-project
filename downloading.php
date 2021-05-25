@@ -195,7 +195,7 @@
                       <tbody>
                           <?php while($row = mysqli_fetch_assoc($result)): ?>
                           <tr>
-                            <td><?= $row['ref'];?></td>
+                            <td><a target="_blank" href="TPCCR-Inventory/<?= $row['ref']?>/<?= $row['ref']. ".pdf"?>" >TPCCR-Inventory/<?= $row['ref'];?>/<?= $row['ref']; ?>.pdf</a></td>
                           </tr>
                           <?php endwhile; ?>
                         
