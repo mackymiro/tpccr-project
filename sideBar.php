@@ -108,7 +108,7 @@ $Task=$_GET['Task'];
               <li class="active"><a href="receiving.php"><i class="fa fa-file"></i>Receiving</a></li>
 			  <li class="active"><a href="ftpfile.php"><i class="fa fa-file"></i>FTP file</a></li>
 			  <li class="active"><a href="downloading.php"><i class="fa fa-file"></i>Downloaded</a></li>
-			  <li class="active"><a href="inventory.php"><i class="fa fa-file"></i>Inventory</a></li>
+			  <li class="active"><a href="TPCCR-inventory/inventory-pdf.php"><i class="fa fa-file"></i>Inventory</a></li>
 			  <li class="active"><a href="Registration.php?page=Acquire"><i class="fa fa-file"></i>Registration</a></li> 
           </ul>
         </li>

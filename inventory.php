@@ -148,12 +148,30 @@
           <div class="box box-primary">
             <div class="box-header with-border">
                <?php 
-                  $fileVal="uploadfiles/SourceFiles/AUTEN_SupplementaryInfoMarch2021.pdf";
+                  
+                  $getPdf = $_GET['path'];
+                  $pdfExp = explode("/", $getPdf);
+
+                  $pdfPath = "SELECT * FROM tbl_tpccr_outlook_files WHERE ref = '$pdfExp[1]'";
+                  $pth = mysqli_query($con, $pdfPath);
+                
                   
                ?>
-                 <embed src="<?= $fileVal; ?>" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+                <?php if($getPdf != ""): ?>
+                <?php while($row = mysqli_fetch_assoc($pth)): ?>
+                  <?php 
+                      $fileVal= $getPdf."/".$row['source_path']; 
+                      
+                  ?>
+                  <embed src="<?= $fileVal; ?>" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 				
-                
+
+                <?php endwhile; ?>
+                <?php else:?>
+                  <embed src="" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+				
+                <?php endif; ?>
+
             </div>
           
            
@@ -170,18 +188,60 @@
                   <br />
                   <br />
                   <form>
-                    <div class="col-md-4">
+                    
+                    <div class="col-md-6">
                       <label>FieldName</label>
                       <input type="text" name="fieldname" class="form-control" /> 
                       
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <label>Value</label>
                       <input type="text" name="fieldname" class="form-control" /> 
                     </div>
-                  
+                    <div style="clear:both;"></div>
+                    <div class="col-md-6">
+                      <label>FieldName</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                      
+                    </div>
+                    <div class="col-md-6">
+                      <label>Value</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div class="col-md-6">
+                      <label>FieldName</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                      
+                    </div>
+                    <div class="col-md-6">
+                      <label>Value</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div class="col-md-6">
+                      <label>FieldName</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                      
+                    </div>
+                    <div class="col-md-6">
+                      <label>Value</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div class="col-md-6">
+                      <label>FieldName</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                      
+                    </div>
+                    <div class="col-md-6">
+                      <label>Value</label>
+                      <input type="text" name="fieldname" class="form-control" /> 
+                    </div>
+                    
                   </form>
-                  
+                 
+                                  
               </div>
             
             
@@ -189,12 +249,10 @@
             </div>
             <div class="box box-primary">
               <div class="box-header with-border">
+                  
                    <a href="inventory.php" >Back to main directory</a>
                   <?php
-                    require_once "conn.php";
-
                     $path = $_GET['path'];
-                  
                     $mydir = 'TPCCR-Inventory'; 
 
                     if($path == ""){
@@ -208,7 +266,14 @@
                     } 
                    
                   ?>
-                  <h3>Ref Source Path: <?= $path; ?></h3>  
+                  <h3>Ref Source Path: <?= $mydir ; ?></h3>  
+                  <?php
+                    require_once "TPCCR-Inventory/inventory-pdf.php";
+                   
+                    if ($path) echo '<a href="TPCCR-Inventory/inventory-pdf.php?file='.urlencode(substr(dirname($root.$path), strlen($root) + 1)).'"><i class="fa fa-folder fa-2x""aria-hidden="true"></i>
+                    </a><br />';
+
+                  ?>
                   <table id="example1" class="table table-bordered table-striped">
                       <thead>
                           <tr>
@@ -217,20 +282,15 @@
                           </tr>
                       </thead>
                       <tbody>
-                          <?php if($path ==""):?>
-                            <?php foreach($myfiles as $file): ?>
-                                <tr>
-                                  <td><a href="inventory.php?path=<?= $mydir."/".$file; ?>"><?= $mydir."/".$file; ?></a></td>
-                                </tr>
-                            <?php endforeach;?>
-                          <?php else: ?>
-                            <?php while($row = mysqli_fetch_assoc($inventory)): ?>
-                                <tr>
-                                  <td><a href="#"><?= $row['source_path']; ?></a></td>
-                                </tr>
-                              
-                            <?php endwhile;?>
-                            <?php endif; ?>
+                          <?php foreach(glob($root.$path.'/*') as $file): ?>
+                          <?php
+                            $file = realpath($file);
+                            $link = substr($file, strlen($root) + 1);
+                          ?>
+                          <tr>
+                            <td><?php echo '<a  href="TPCCR-Inventory/inventory-pdf.php?file='.urlencode($link).'">'.basename($file).'</a><br />';?></td>
+                          </tr>
+                          <?php endforeach; ?>
                       </tbody>
                   </table>
               </div>
@@ -301,5 +361,6 @@
           })
       })
     </script>
+    
 </body>
 </html>

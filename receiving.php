@@ -1,4 +1,5 @@
 <?php
+  error_reporting(0);
   require_once "conn.php";
   session_start();
 	if ($_SESSION['login_user']==''){
@@ -141,6 +142,7 @@
     <?php 
         require_once "Config.php"; 
         require_once "fpdf.php";
+        require_once "conn.php";
 
         $con = mysqli_connect('localhost','root','','primo');
         // Check connection
@@ -151,6 +153,11 @@
 
         /* Search Emails having the specified keyword in the email subject */
         $emailData = imap_search($connection, 'FROM "@wecode-x.com" ');
+
+        //fetch email from @sendthisfile
+        $emailDataSendThisFile = imap_search($connection, 'FROM "@sendthisfile.com" ');
+
+
     ?>  
 
     <!-- Main content -->
@@ -180,6 +187,7 @@
                       </tr>
                   </thead>
                   <tbody >
+                     
                       <?php foreach($emailData as $emailIdent): ?>
                       <?php
                             $overview = imap_fetch_overview($connection, $emailIdent, 0);
@@ -192,7 +200,7 @@
 
                             $header = imap_header($connection, $emailIdent);
 
-                           
+
                             $toAddress = $header->toaddress;
                             $toPersonal  = $header->to[0]->personal;
                             $toMailBox = $header->to[0]->mailbox;
@@ -240,6 +248,7 @@
                             $pdf->Ln();
                             $pdf->Cell(40,10,''.$partialMessage.'');
 
+                            
                             //make directory
                             mkdir("TPCCR-Inventory/".$mainSubject."/");
 
@@ -252,20 +261,26 @@
                             $updated_at = date('Y-m-d H:i:s');
 
                             $query = "SELECT * FROM tbl_tpccr_outlook_files WHERE ref='$mainSubject'";
-                            $result = mysqli_query($con, $query);
+                            //$result = mysqli_query($con, $query);
+                            $result = ExecuteQuerySQLSERVER($query,$conWMS);
 
-                            if ($result) {
-                              if (mysqli_num_rows($result) > 0) {
+                            //$insertSql = "INSERT INTO tbl_tpccr_outlook_files(Ref, Bundle_no, Subject1, TAT, Delivery_date, No_of_files, Source_type, Source_path, created_at, updated_at)
+                            //VALUES('$mainSubject', '$mainSubject', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
+                            //$res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
+                            //$res = mysqli_query($con, $insertSql);
+
+                            if($result) {
+                              if (odbc_num_rows($result) > 0) {
                                   //
                               } else {
                                 $insertSql = "INSERT INTO tbl_tpccr_outlook_files(ref, bundle_no, product_type, subject1, tat, delivery_date, no_of_files, source_type, source_path, created_at, updated_at)
                                 VALUES('$mainSubject', '$mainSubject', 'Legal', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
-    
-                                $res = mysqli_query($con, $insertSql);
+                                $res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
+                                //$res = mysqli_query($con, $insertSql);    
+
                               }
                             }
 
-                           
                             $attachments = array();
                             if(isset($structure->parts) && count($structure->parts)) {
                               for($i = 0; $i < count($structure->parts); $i++) {
@@ -311,7 +326,6 @@
 
                       ?>
                       <tr>
-                         
                           <td> <?= $overview[0]->from; ?></td>
                           <td class="bg bg-info">  <?= $overview[0]->subject; ?> </td>
                           <td><?= $partialMessage; ?></td>
@@ -325,6 +339,70 @@
               </table>
               <?php endif; ?>
             </div>
+            <!-- fetch the email from sendthisfile -->
+            <?php if(!empty($emailDataSendThisFile)): ?>
+              <?php foreach($emailDataSendThisFile as $emailDataIdent): ?>
+                    <?php
+                       $overview = imap_fetch_overview($connection, $emailDataIdent, 0);
+                       $message = imap_fetchbody($connection, $emailDataIdent, "1");
+                       $messageExcerpt = substr($message, 0, 500);
+                       $partialMessage = trim(quoted_printable_decode($messageExcerpt)); 
+                       $date = date("d F, Y", strtotime($overview[0]->date));
+           
+                       $structure = imap_fetchstructure($connection,$emailDataIdent);
+           
+                       $header = imap_header($connection, $emailDataIdent);
+                       
+                       $pattern = '~[a-z]+://\S+~';
+                       $str = $message;
+                       if(preg_match_all($pattern, $str, $out)){
+                          foreach($out[0] as $url){
+                                //echo $url;
+                                $page = file_get_contents($url);
+                                //$rawHtml =  htmlspecialchars($page);
+                                //$testing = str_replace('<','&lt;',$rawHtml);
+                                preg_match_all('/href=["\']?([^"\'>]+)["\']?/',$page, $matches);
+                                        
+                                $exp = explode('="', $matches[0][4]);
+            
+                                $cleanUrl = explode('"', $exp[1]);
+            
+                                $zipUrl = $cleanUrl[0];
+                                $fileName = date().".zip"; //create a random name or certain kind of name here
+            
+                                $fh = fopen($filename, 'w');
+                                $ch = curl_init();
+                                curl_setopt($ch, CURLOPT_URL, $zipUrl);
+                                curl_setopt($ch, CURLOPT_FILE, $fh); 
+                                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // this will follow redirects
+                                curl_exec($ch);
+                                curl_close($ch);
+                                fclose($fh); 
+            
+                                $path = "TPCCR-Inventory/";
+            
+                                $zip = new ZipArchive;
+                                $res = $zip->open($filename);
+                                if($res === TRUE) {
+                                  $zip->extractTo($path);
+                                  $zip->close(); 
+
+                                  //$insertSql = "INSERT INTO tbl_tpccr_outlook_files(ref, bundle_no, product_type, subject1, tat, delivery_date, no_of_files, source_type, source_path, created_at, updated_at)
+                                  //VALUES('$mainSubject', '$mainSubject', 'Legal', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
+                                  //$res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
+
+                                  //echo "WOOT! $filename extracted to $path";     
+                                } else {
+                                    //echo "Error opening the file $filename";
+                                }
+            
+                            }
+                      }
+
+                    ?>
+
+               <?php endforeach; ?>
+            <?php endif; ?>
             <?php 
                imap_close($connection);
             ?>
