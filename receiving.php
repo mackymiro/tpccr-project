@@ -252,35 +252,40 @@
                             //make directory
                             mkdir("TPCCR-Inventory/".$mainSubject."/");
 
-                            $filename = "TPCCR-Inventory/$mainSubject/".$mainSubject.".pdf";
-                            $pdf->Output($filename,'F');
+                            $filename12 = "TPCCR-Inventory/$mainSubject/".$mainSubject.".pdf";
+                            $pdf->Output($filename12,'F');
 
                             $fileNamePDF = $mainSubject.".pdf";
 
                             $created_at = date('Y-m-d H:i:s');
                             $updated_at = date('Y-m-d H:i:s');
 
-                            $query = "SELECT * FROM tbl_tpccr_outlook_files WHERE ref='$mainSubject'";
+                            $query = "SELECT * FROM tbl_tpccr_outlook_files WHERE Ref='$mainSubject'";
                             //$result = mysqli_query($con, $query);
-                            $result = ExecuteQuerySQLSERVER($query,$conWMS);
+                            //$result = ExecuteQuerySQLSERVER($query,$conWMS);
 
-                            //$insertSql = "INSERT INTO tbl_tpccr_outlook_files(Ref, Bundle_no, Subject1, TAT, Delivery_date, No_of_files, Source_type, Source_path, created_at, updated_at)
-                            //VALUES('$mainSubject', '$mainSubject', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
-                            //$res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
+                            $queryResult = odbc_exec($conWMS, $query);
+                            if(odbc_num_rows($queryResult) > 0){
+                                //
+                            }else{
+                                $insertSql = "INSERT INTO tbl_tpccr_outlook_files(Ref, Bundle_No, Subject1, TAT, Delivery_date, No_of_files, Source_Type, Source_Path, created_at, updated_at)
+                                VALUES('$mainSubject', '$mainSubject', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
+                                $res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
+                            }
+            
                             //$res = mysqli_query($con, $insertSql);
-
-                            if($result) {
+                            /*if($result) {
                               if (odbc_num_rows($result) > 0) {
                                   //
                               } else {
-                                $insertSql = "INSERT INTO tbl_tpccr_outlook_files(ref, bundle_no, product_type, subject1, tat, delivery_date, no_of_files, source_type, source_path, created_at, updated_at)
-                                VALUES('$mainSubject', '$mainSubject', 'Legal', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
-                                $res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
-                                //$res = mysqli_query($con, $insertSql);    
+                                  $insertSql = "INSERT INTO tbl_tpccr_outlook_files(Ref, Bundle_no, Subject1, TAT, Delivery_date, No_of_files, Source_type, Source_path, created_at, updated_at)
+                                  VALUES('$mainSubject', '$mainSubject', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
+                                  $res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
+                                  //$res = mysqli_query($con, $insertSql);    
 
                               }
-                            }
-
+                            }*/
+                          
                             $attachments = array();
                             if(isset($structure->parts) && count($structure->parts)) {
                               for($i = 0; $i < count($structure->parts); $i++) {
@@ -343,19 +348,25 @@
             <?php if(!empty($emailDataSendThisFile)): ?>
               <?php foreach($emailDataSendThisFile as $emailDataIdent): ?>
                     <?php
-                       $overview = imap_fetch_overview($connection, $emailDataIdent, 0);
-                       $message = imap_fetchbody($connection, $emailDataIdent, "1");
-                       $messageExcerpt = substr($message, 0, 500);
-                       $partialMessage = trim(quoted_printable_decode($messageExcerpt)); 
-                       $date = date("d F, Y", strtotime($overview[0]->date));
+                      $overview = imap_fetch_overview($connection, $emailDataIdent, 0);
+                      $message = imap_fetchbody($connection, $emailDataIdent, "1");
+                      $messageExcerpt = substr($message, 0, 500);
+                      $partialMessage = trim(quoted_printable_decode($messageExcerpt)); 
+                      $date = date("d F, Y", strtotime($overview[0]->date));
            
-                       $structure = imap_fetchstructure($connection,$emailDataIdent);
+                      $structure = imap_fetchstructure($connection,$emailDataIdent);
            
-                       $header = imap_header($connection, $emailDataIdent);
-                       
-                       $pattern = '~[a-z]+://\S+~';
-                       $str = $message;
-                       if(preg_match_all($pattern, $str, $out)){
+                      $header = imap_header($connection, $emailDataIdent);
+
+                      $mainSubject = $header->Subject;
+
+                      $created_at = date('Y-m-d H:i:s');
+                      $updated_at = date('Y-m-d H:i:s');
+
+
+                      $pattern = '~[a-z]+://\S+~';
+                      $str = $message;
+                      if(preg_match_all($pattern, $str, $out)){
                           foreach($out[0] as $url){
                                 //echo $url;
                                 $page = file_get_contents($url);
@@ -378,21 +389,45 @@
                                 curl_exec($ch);
                                 curl_close($ch);
                                 fclose($fh); 
-            
+
+                                $query1 = "SELECT * FROM tbl_tpccr_outlook_files WHERE Ref='$mainSubject'";
+                                $queryResult = odbc_exec($conWMS, $query1);
+
+                                $queryResult1 = odbc_exec($conWMS, $query1);
+                                if(odbc_num_rows($queryResult1) > 0){
+                                    //
+                                }else{
+                                    $insertSql1 ="INSERT INTO tbl_tpccr_outlook_files(Ref, Bundle_No, Subject1, TAT, Delivery_Date, No_of_files, Source_Type, Source_Path, created_at, updated_at)
+                                    VALUES('$mainSubject', '$mainSubject', '$mainSubject', '1', '$created_at', '11', 'Sendthisfile', '$filename', '$created_at', '$updated_at')";
+                                    $res = ExecuteQuerySQLSERVER($insertSql1, $conWMS);     
+                                }
+                                
+                                
+                                //$getInsertedId = "SELECT @@IDENTITY AS Id";
+                                //$resultId = odbc_exec($getInsertedId, $conWMS);
+                                //$rowAddId = odbc_fetch_array($resultId);
+                                //$idInventory = $rowaddid['Id'];
+ 
                                 $path = "TPCCR-Inventory/";
-            
+                                
                                 $zip = new ZipArchive;
                                 $res = $zip->open($filename);
                                 if($res === TRUE) {
-                                  $zip->extractTo($path);
-                                  $zip->close(); 
+                                    $zip->extractTo($path);
 
-                                  //$insertSql = "INSERT INTO tbl_tpccr_outlook_files(ref, bundle_no, product_type, subject1, tat, delivery_date, no_of_files, source_type, source_path, created_at, updated_at)
-                                  //VALUES('$mainSubject', '$mainSubject', 'Legal', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
-                                  //$res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
+                                    for( $i = 0; $i < $za->numFiles; $i++ ){
+                                      $stat = $za->statIndex( $i );
+                                            print_r( basename( $stat['name'] ) . PHP_EOL );
+                                    } 
 
-                                  //echo "WOOT! $filename extracted to $path";     
-                                } else {
+                                    $insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                    VALUES('$idInventory', '$path', '$mainSubject', '1', '1', 'CED', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
+                                    $res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
+                              
+                                    $zip->close(); 
+
+                                    //echo "WOOT! $filename extracted to $path";     
+                                }else{
                                     //echo "Error opening the file $filename";
                                 }
             

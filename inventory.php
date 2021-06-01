@@ -61,7 +61,6 @@
         }  
     }
 </script>
- 
 </head>
 <body class="hold-transition fixed skin-blue sidebar-mini">
 <div class="wrapper">
@@ -149,29 +148,31 @@
             <div class="box-header with-border">
                <?php 
                   
-                  $getPdf = $_GET['path'];
-                  $pdfExp = explode("/", $getPdf);
+                 // $getPdf = $_GET['path'];
+                 // $pdfExp = explode("/", $getPdf);
 
-                  $pdfPath = "SELECT * FROM tbl_tpccr_outlook_files WHERE ref = '$pdfExp[1]'";
-                  $pth = mysqli_query($con, $pdfPath);
+                 // $pdfPath = "SELECT * FROM tbl_tpccr_outlook_files WHERE ref = '$pdfExp[1]'";
+                 // $pth = mysqli_query($con, $pdfPath);
                 
                   
                ?>
-                <?php if($getPdf != ""): ?>
-                <?php while($row = mysqli_fetch_assoc($pth)): ?>
+                <?php //if($getPdf != ""): ?>
+                <?php //while($row = mysqli_fetch_assoc($pth)): ?>
                   <?php 
-                      $fileVal= $getPdf."/".$row['source_path']; 
+                      //$fileVal= $getPdf."/".$row['source_path']; 
                       
                   ?>
-                  <embed src="<?= $fileVal; ?>" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+                 <!-- <embed src="<?= $fileVal; ?>" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">-->
 				
 
-                <?php endwhile; ?>
-                <?php else:?>
-                  <embed src="" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+                <?php //endwhile; ?>
+                <?php //else:?>
+                  <!--<embed src="" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">-->
 				
-                <?php endif; ?>
-
+                <?php // endif; ?>
+                <?php $fileVal = "uploadfiles/Sourcefiles/Document1.pdf";?>
+                 <embed src="<?= $fileVal;?>" style="width:100%; height:37vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+				
             </div>
           
            
@@ -179,65 +180,114 @@
           </div>
           <!-- /. box -->
         </div>
+        <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+            <div style="overflow-x:auto;" class="box-header with-border">
+                    <table id="example3" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                              <td>RefId</td>
+                              <td>DocFileName</td>
+                              <td>Data</td>
+                              <td>Pages</td>
+                              <td>Number Of Pages</td>
+                              <td>Product Type</td>
+                              <td>INIT ID</td>
+                              <td>TI_content</td>
+                              <td>N_content</td>
+                              <td>Date</td>
+                              <td>Final Filename</td>
+                              <td>Graphics Filename</td>
+                              <td>Inline Code</td>
+                              <td>Process Type</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          
+           
+            <!-- /.box-footer -->
+          </div>
+        </div>
         <!-- /.col -->
         <div class="col-md-6">
           <div class="box box-primary">
               <div class="box-header with-border">
-                  <button class="btn btn-success btn-lg">Approve</button>
-                  <button class="btn btn-danger btn-lg">Cancel</button>
-                  <br />
-                  <br />
-                  <form>
-                    
-                    <div class="col-md-6">
-                      <label>FieldName</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                      
-                    </div>
-                    <div class="col-md-6">
-                      <label>Value</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                    </div>
-                    <div style="clear:both;"></div>
-                    <div class="col-md-6">
-                      <label>FieldName</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                      
-                    </div>
-                    <div class="col-md-6">
-                      <label>Value</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                    </div>
-                    <div style="clear:both;"></div>
-                    <div class="col-md-6">
-                      <label>FieldName</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                      
-                    </div>
-                    <div class="col-md-6">
-                      <label>Value</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                    </div>
-                    <div style="clear:both;"></div>
-                    <div class="col-md-6">
-                      <label>FieldName</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                      
-                    </div>
-                    <div class="col-md-6">
-                      <label>Value</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                    </div>
-                    <div style="clear:both;"></div>
-                    <div class="col-md-6">
-                      <label>FieldName</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                      
-                    </div>
-                    <div class="col-md-6">
-                      <label>Value</label>
-                      <input type="text" name="fieldname" class="form-control" /> 
-                    </div>
+                  <form action="" method="post">
+                      <button type="submit" class="btn btn-success btn-lg">Approve</button>
+                      <button class="btn btn-danger btn-lg">Cancel</button>
+                      <br />
+                      <br /> 
+                        <div class="col-md-6">
+                          <label>FieldName</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                          
+                        </div>
+                        <div class="col-md-6">
+                          <label>Value</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="col-md-6">
+                          <label>FieldName</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                          
+                        </div>
+                        <div class="col-md-6">
+                          <label>Value</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="col-md-6">
+                          <label>FieldName</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                          
+                        </div>
+                        <div class="col-md-6">
+                          <label>Value</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="col-md-6">
+                          <label>FieldName</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                          
+                        </div>
+                        <div class="col-md-6">
+                          <label>Value</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="col-md-6">
+                          <label>FieldName</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                          
+                        </div>
+                        <div class="col-md-6">
+                          <label>Value</label>
+                          <input type="text" name="fieldname" class="form-control" /> 
+                        </div>
                     
                   </form>
                  
@@ -247,6 +297,7 @@
             
               <!-- /.box-footer -->
             </div>
+           
             <div class="box box-primary">
               <div class="box-header with-border">
                   
@@ -258,22 +309,16 @@
                     if($path == ""){
                       $myfiles = array_diff(scandir($mydir), ['.', '..']); 
                     }else{
-                       $pathExp = explode("/", $path);
-                    
-                       $insideFile = "SELECT * FROM tbl_tpccr_outlook_files WHERE ref = '$pathExp[1]'";
-                       $inventory = mysqli_query($con, $insideFile);
-                      
+                       //$pathExp = explode("/", $path);
+                     
+                      $insideFile = "SELECT * FROM tbl_tpccr_outlook_files WHERE Ref='$path'";
+                      //$inventory = mysqli_query($con, $insideFile); 
+                      $inventory=odbc_exec($conWMS,$insideFile);
                     } 
                    
                   ?>
                   <h3>Ref Source Path: <?= $mydir ; ?></h3>  
-                  <?php
-                    require_once "TPCCR-Inventory/inventory-pdf.php";
-                   
-                    if ($path) echo '<a href="TPCCR-Inventory/inventory-pdf.php?file='.urlencode(substr(dirname($root.$path), strlen($root) + 1)).'"><i class="fa fa-folder fa-2x""aria-hidden="true"></i>
-                    </a><br />';
-
-                  ?>
+                  
                   <table id="example1" class="table table-bordered table-striped">
                       <thead>
                           <tr>
@@ -282,15 +327,20 @@
                           </tr>
                       </thead>
                       <tbody>
-                          <?php foreach(glob($root.$path.'/*') as $file): ?>
-                          <?php
-                            $file = realpath($file);
-                            $link = substr($file, strlen($root) + 1);
-                          ?>
-                          <tr>
-                            <td><?php echo '<a  href="TPCCR-Inventory/inventory-pdf.php?file='.urlencode($link).'">'.basename($file).'</a><br />';?></td>
-                          </tr>
-                          <?php endforeach; ?>
+                          <?php if($path == ""): ?>
+                          <?php foreach($myfiles as $files): ?>
+                              <tr>
+                                <td><a href="?path=<?php echo $files; ?>"><?php echo $files; ?></a></td>
+                              </tr>
+                          <?php endforeach;?>
+                          <?php else:?>
+                              <?php while(odbc_fetch_row($inventory)): ?>
+                                <tr>
+                                    <td><a href=""><?php echo odbc_result($inventory, "Source_Path")?></a></td>
+                                    <td></td>
+                                </tr>
+                               <?php endwhile;?>
+                          <?php endif;?>
                       </tbody>
                   </table>
               </div>
@@ -352,6 +402,14 @@
       $(function () {
         $('#example1').DataTable()
           $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+          })
+          $('#example3').DataTable({
             'paging'      : true,
             'lengthChange': false,
             'searching'   : false,
