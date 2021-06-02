@@ -348,11 +348,11 @@
             <?php if(!empty($emailDataSendThisFile)): ?>
               <?php foreach($emailDataSendThisFile as $emailDataIdent): ?>
                     <?php
-                      $overview = imap_fetch_overview($connection, $emailDataIdent, 0);
-                      $message = imap_fetchbody($connection, $emailDataIdent, "1");
-                      $messageExcerpt = substr($message, 0, 500);
-                      $partialMessage = trim(quoted_printable_decode($messageExcerpt)); 
-                      $date = date("d F, Y", strtotime($overview[0]->date));
+                      $overview1 = imap_fetch_overview($connection, $emailDataIdent, 0);
+                      $message1 = imap_fetchbody($connection, $emailDataIdent, "1");
+                      $messageExcerpt1 = substr($message1, 0, 500);
+                      $partialMessage1 = trim(quoted_printable_decode($messageExcerpt1)); 
+                      $date = date("d F, Y", strtotime($overview1[0]->date));
            
                       $structure = imap_fetchstructure($connection,$emailDataIdent);
            
@@ -365,7 +365,7 @@
 
 
                       $pattern = '~[a-z]+://\S+~';
-                      $str = $message;
+                      $str = $message1;
                       if(preg_match_all($pattern, $str, $out)){
                           foreach($out[0] as $url){
                                 //echo $url;
@@ -377,8 +377,10 @@
                                 $exp = explode('="', $matches[0][4]);
             
                                 $cleanUrl = explode('"', $exp[1]);
-            
+
+        
                                 $zipUrl = $cleanUrl[0];
+
                                 $fileName = date().".zip"; //create a random name or certain kind of name here
             
                                 $fh = fopen($filename, 'w');
@@ -391,45 +393,55 @@
                                 fclose($fh); 
 
                                 $query1 = "SELECT * FROM tbl_tpccr_outlook_files WHERE Ref='$mainSubject'";
-                                $queryResult = odbc_exec($conWMS, $query1);
+                                //$queryResult = odbc_exec($conWMS, $query1);
 
                                 $queryResult1 = odbc_exec($conWMS, $query1);
                                 if(odbc_num_rows($queryResult1) > 0){
                                     //
                                 }else{
                                     $insertSql1 ="INSERT INTO tbl_tpccr_outlook_files(Ref, Bundle_No, Subject1, TAT, Delivery_Date, No_of_files, Source_Type, Source_Path, created_at, updated_at)
-                                    VALUES('$mainSubject', '$mainSubject', '$mainSubject', '1', '$created_at', '11', 'Sendthisfile', '$filename', '$created_at', '$updated_at')";
+                                    VALUES('$mainSubject', '$mainSubject', '$mainSubject', '1', '$created_at', '11', 'Sendthisfile', '0', '$created_at', '$updated_at')";
                                     $res = ExecuteQuerySQLSERVER($insertSql1, $conWMS);     
                                 }
                                 
-                                
+                            
                                 //$getInsertedId = "SELECT @@IDENTITY AS Id";
                                 //$resultId = odbc_exec($getInsertedId, $conWMS);
                                 //$rowAddId = odbc_fetch_array($resultId);
                                 //$idInventory = $rowaddid['Id'];
+
+                                //$insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                //VALUES('1', 'test.pdf', 'test', '1', '1', 'CED', '0', '0', '0', '2021-06-02 02:49:12.000', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2021-06-02 02:49:12.000')";
+                                //$res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
+
+                                //$insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                //VALUES('1', 'testing.pdf', '$mainSubject', '1', '1', '0', '0', '0', '0', '2021-06-02 02:49:12.000', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2021-06-02 02:49:12.000')";
+                                //$res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
  
                                 $path = "TPCCR-Inventory/";
                                 
                                 $zip = new ZipArchive;
                                 $res = $zip->open($filename);
+                                $file_count = $zip->count();
                                 if($res === TRUE) {
+                                    
                                     $zip->extractTo($path);
+                                    for($i = 0; $i < $file_count; $i++) {
+                                        $file_name = $zip->getNameIndex($i);
+                                        $fileExp = explode("/", $file_name);
+                                        $fileZ = $fileExp[1];
 
-                                    for( $i = 0; $i < $za->numFiles; $i++ ){
-                                      $stat = $za->statIndex( $i );
-                                            print_r( basename( $stat['name'] ) . PHP_EOL );
-                                    } 
+                                        $insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                        VALUES('1', '$fileZ', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
+                                        $res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
 
-                                    $insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
-                                    VALUES('$idInventory', '$path', '$mainSubject', '1', '1', 'CED', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
-                                    $res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
-                              
+                                     }
                                     $zip->close(); 
 
                                     //echo "WOOT! $filename extracted to $path";     
                                 }else{
                                     //echo "Error opening the file $filename";
-                                }
+                                }              
             
                             }
                       }

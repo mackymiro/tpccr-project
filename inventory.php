@@ -143,8 +143,8 @@
       <div class="row">
   
   
-        <div class="col-md-6">
-          <div class="box box-primary">
+        <div class="col-md-6" >
+          <div class="box box-primary" style="height:1075px;">
             <div class="box-header with-border">
                <?php 
                   
@@ -171,7 +171,7 @@
 				
                 <?php // endif; ?>
                 <?php $fileVal = "uploadfiles/Sourcefiles/Document1.pdf";?>
-                 <embed src="<?= $fileVal;?>" style="width:100%; height:37vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+                 <embed src="<?= $fileVal;?>" style="width:100%; height:50vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 				
             </div>
           
@@ -183,44 +183,72 @@
         <div class="col-md-6">
         <div class="box box-primary">
             <div class="box-header with-border">
-            <div style="overflow-x:auto;" class="box-header with-border">
+            <div style="overflow-x:auto; overflow-y:auto;" class="box-header with-border">
+                    <?php 
+                      require_once "conn.php";
+                      $getFilePath = $_GET['path'];
+
+                      $getFilePaths = "SELECT * FROM TPCCR_INVENTORY WHERE Data='$getFilePath'";
+                      $getResults = odbc_exec($conWMS, $getFilePaths);
+
+                    ?>
                     <table id="example3" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                              <td>RefId</td>
-                              <td>DocFileName</td>
-                              <td>Data</td>
-                              <td>Pages</td>
-                              <td>Number Of Pages</td>
-                              <td>Product Type</td>
-                              <td>INIT ID</td>
-                              <td>TI_content</td>
-                              <td>N_content</td>
-                              <td>Date</td>
-                              <td>Final Filename</td>
-                              <td>Graphics Filename</td>
-                              <td>Inline Code</td>
-                              <td>Process Type</td>
+                             
+                              <td class="bg bg-success">DocFileName</td>
+                              <td class="bg bg-success">Data</td>
+                              <td class="bg bg-success">Pages</td>
+                              <td class="bg bg-success">Number Of Pages</td>
+                              <td class="bg bg-success">Product Type</td>
+                              <td class="bg bg-success">INIT ID</td>
+                              <td class="bg bg-success">TI_content</td>
+                              <td class="bg bg-success">N_content</td>
+                              <td class="bg bg-success">Date</td>
+                              <td class="bg bg-success">Final Filename</td>
+                              <td class="bg bg-success">Graphics Filename</td>
+                              <td class="bg bg-success">Inline Code</td>
+                              <td class="bg bg-success">Process Type</td>
+                              <td class="bg bg-success">WithTIFF</td>
+                              <td class="bg bg-success">WithImageEdit</td>
+                              <td class="bg bg-success">WithDocSegregate</td>
+                              <td class="bg bg-success">FileType</td>
+                              <td class="bg bg-success">ByteSize</td>
+                              <td class="bg bg-success">Jobname</td>
+                              <td class="bg bg-success">JobId</td>
+                              <td class="bg bg-success">PriorityNo</td>
+                              <td  style="width:70%;" class="bg bg-success">DateRegistered</td>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php while(odbc_fetch_row($getResults)): ?>  
+                            <?php if(!empty(odbc_result($getResults, "DocFilename"))): ?>
                             <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-
+                                <td><?= odbc_result($getResults, "DocFilename"); ?></td>
+                                <td><textarea class="form-control" name="data"></textarea></td>
+                                <td><textarea class="form-control" name="pages"></textarea></td>
+                                <td><textarea class="form-control" name="numberOfPages"></textarea></td>
+                                <td><textarea class="form-control" name="productType"></textarea></td>
+                                <td><textarea class="form-control" name="initId"></textarea></td>
+                                <td><textarea class="form-control" name="tiContent"></textarea></td>
+                                <td><textarea class="form-control" name="nContent"></textarea></td>
+                                <td><textarea class="form-control" name="date"></textarea></td>
+                                <td><textarea class="form-control" name="finalFileName"></textarea></td>
+                                <td><textarea class="form-control" name="graphicsFileName"></textarea></td>
+                                <td><textarea class="form-control" name="inlineCode"></textarea></td>
+                                <td><textarea class="form-control" name="processType"></textarea></td>
+                                <td><textarea class="form-control" name="withTiff"></textarea></td>
+                                <td><textarea class="form-control" name="withImageEdit"></textarea></td>
+                                <td><textarea class="form-control" name="withDocSegregate"></textarea></td>
+                                <td><textarea class="form-control" name="fileType"></textarea></td>
+                                <td><textarea class="form-control" name="byteSize"></textarea></td>
+                                <td><textarea class="form-control" name="jobName"></textarea></td>
+                                <td><textarea class="form-control" name="jobId"></textarea></td>
+                                <td><textarea class="form-control" name="priorityNo"></textarea></td>
+                                <td><?= odbc_result($getResults, "DateRegistered"); ?></td>
                             </tr>
+                            <?php endif; ?>
+                            <?php endwhile; ?>
                         </tbody>
                     </table>
                 </div>
@@ -231,6 +259,9 @@
           </div>
         </div>
         <!-- /.col -->
+        <br />
+        <br />
+        <br />
         <div class="col-md-6">
           <div class="box box-primary">
               <div class="box-header with-border">
@@ -306,18 +337,21 @@
                     $path = $_GET['path'];
                     $mydir = 'TPCCR-Inventory'; 
 
-                    if($path == ""){
-                      $myfiles = array_diff(scandir($mydir), ['.', '..']); 
-                    }else{
-                       //$pathExp = explode("/", $path);
+                              
+                      if($path == ""){
+                          $insideFile = "SELECT * FROM tbl_tpccr_outlook_files";
+                          $inventory=odbc_exec($conWMS,$insideFile);
+                      }else{
+                          $getTpccrInv = "SELECT * FROM TPCCR_INVENTORY WHERE Data='$path'";
+                         
+                          $inventoryInside=odbc_exec($conWMS,$getTpccrInv);
+                      }
                      
-                      $insideFile = "SELECT * FROM tbl_tpccr_outlook_files WHERE Ref='$path'";
-                      //$inventory = mysqli_query($con, $insideFile); 
-                      $inventory=odbc_exec($conWMS,$insideFile);
-                    } 
+                     
+                    
                    
                   ?>
-                  <h3>Ref Source Path: <?= $mydir ; ?></h3>  
+                  <h3>Ref Source Path: <?= $mydir ; ?>/<?= $path?></h3>  
                   
                   <table id="example1" class="table table-bordered table-striped">
                       <thead>
@@ -327,20 +361,20 @@
                           </tr>
                       </thead>
                       <tbody>
-                          <?php if($path == ""): ?>
-                          <?php foreach($myfiles as $files): ?>
+                         
+                            <?php while(odbc_fetch_row($inventory)): ?>
                               <tr>
-                                <td><a href="?path=<?php echo $files; ?>"><?php echo $files; ?></a></td>
+                                  <td><a href="?path=<?= odbc_result($inventory, "Ref") ?>"><?= odbc_result($inventory, "Ref")?></a></td>
+                                  
                               </tr>
-                          <?php endforeach;?>
-                          <?php else:?>
-                              <?php while(odbc_fetch_row($inventory)): ?>
-                                <tr>
-                                    <td><a href=""><?php echo odbc_result($inventory, "Source_Path")?></a></td>
-                                    <td></td>
-                                </tr>
-                               <?php endwhile;?>
-                          <?php endif;?>
+                              <?php endwhile;?>
+                              <?php while(odbc_fetch_row($inventoryInside)): ?>
+                              <tr>
+                                  <td><a href="#"><?= odbc_result($inventoryInside, "DocFilename")?></a></td>
+                                  
+                              </tr>
+                              <?php endwhile;?>
+                         
                       </tbody>
                   </table>
               </div>
