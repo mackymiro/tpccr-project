@@ -61,6 +61,31 @@
         }  
     }
 </script>
+
+
+<style style="text/css">
+  	.hoverTable{
+		width:100%; 
+		border-collapse:collapse; 
+	}
+	.hoverTable td{ 
+		padding:7px; border:#4e95f4 1px solid;
+    
+	}
+	/* Define the default color for all the table rows */
+	.hoverTable tr{
+		background: #b8d1f3;
+	}
+  
+	/* Define the hover highlight color for the table row */
+    .hoverTable tr:hover {
+          background-color: #ffff99;
+    }
+   
+</style>
+
+
+
 </head>
 <body class="hold-transition fixed skin-blue sidebar-mini">
 <div class="wrapper">
@@ -144,7 +169,7 @@
   
   
         <div class="col-md-6" >
-          <div class="box box-primary" style="height:1075px;">
+          <div class="box box-primary" style="">
             <div class="box-header with-border">
                <?php 
                   
@@ -171,15 +196,29 @@
 				
                 <?php // endif; ?>
                 <?php $fileVal = "uploadfiles/Sourcefiles/Document1.pdf";?>
-                 <embed src="<?= $fileVal;?>" style="width:100%; height:50vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
-				
+                 <embed src="<?= $fileVal;?>" style="width:100%; height:70vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+                 
+                <!-- <iframe  src="https://docs.google.com/viewer?embedded=true&url=http://projects.cebucodesolutions.com/TPCCR-Inventory/AB-1163/Taxnet-AB-1163.xls" frameborder="no" style="width:100%;height:900px"></iframe>
+                  -->
             </div>
           
            
             <!-- /.box-footer -->
           </div>
           <!-- /. box -->
+
+          <div class="box box-primary" style="height:1236px;">
+            <div class="box-header with-border">
+              
+            </div>
+          
+           
+            <!-- /.box-footer -->
+          </div>
+          <!-- /. box -->
+
         </div>
+
         <div class="col-md-6">
         <div class="box box-primary">
             <div class="box-header with-border">
@@ -192,7 +231,16 @@
                       $getResults = odbc_exec($conWMS, $getFilePaths);
 
                     ?>
-                    <table id="example3" class="table table-bordered table-striped">
+                   
+                    <form action="updateInventory.php" method="post">
+                    <button type="submit" class="btn btn-success btn-lg">Update</button>
+
+                    <br />
+                    <br />
+                    <?= "<p style='color:green; font-size:18px; font-weight:bold;'>".$_SESSION['updateInventory']."</p>"; ?>
+                    <br />
+                    <br />
+                    <table id="example3" class="hoverTable table">
                         <thead>
                             <tr>
                              
@@ -225,32 +273,37 @@
                             <?php if(!empty(odbc_result($getResults, "DocFilename"))): ?>
                             <tr>
                                 <td><?= odbc_result($getResults, "DocFilename"); ?></td>
-                                <td><textarea class="form-control" name="data"></textarea></td>
-                                <td><textarea class="form-control" name="pages"></textarea></td>
-                                <td><textarea class="form-control" name="numberOfPages"></textarea></td>
-                                <td><textarea class="form-control" name="productType"></textarea></td>
-                                <td><textarea class="form-control" name="initId"></textarea></td>
-                                <td><textarea class="form-control" name="tiContent"></textarea></td>
-                                <td><textarea class="form-control" name="nContent"></textarea></td>
-                                <td><textarea class="form-control" name="date"></textarea></td>
-                                <td><textarea class="form-control" name="finalFileName"></textarea></td>
-                                <td><textarea class="form-control" name="graphicsFileName"></textarea></td>
-                                <td><textarea class="form-control" name="inlineCode"></textarea></td>
-                                <td><textarea class="form-control" name="processType"></textarea></td>
-                                <td><textarea class="form-control" name="withTiff"></textarea></td>
-                                <td><textarea class="form-control" name="withImageEdit"></textarea></td>
-                                <td><textarea class="form-control" name="withDocSegregate"></textarea></td>
-                                <td><textarea class="form-control" name="fileType"></textarea></td>
-                                <td><textarea class="form-control" name="byteSize"></textarea></td>
-                                <td><textarea class="form-control" name="jobName"></textarea></td>
-                                <td><textarea class="form-control" name="jobId"></textarea></td>
-                                <td><textarea class="form-control" name="priorityNo"></textarea></td>
+                                <td><textarea placeholder="Data" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][data]"><?= odbc_result($getResults, "Data"); ?></textarea></td>
+                                <td><textarea placeholder="Pages" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][pages]"><?= odbc_result($getResults, "Pages"); ?></textarea></td>
+                                <td><textarea placeholder="Number Of Pages" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][numberOfPages]"><?= odbc_result($getResults, "NumberOfPages"); ?></textarea></td>
+                                <td><textarea placeholder="Product Type" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][productType]"><?= odbc_result($getResults, "ProductType"); ?></textarea></td>
+                                <td><textarea placeholder="INIT ID"class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][initId]"><?= odbc_result($getResults, "INITID"); ?></textarea></td>
+                                <td><textarea placeholder="TI Content"class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][tiContent]"><?= odbc_result($getResults, "TI_content"); ?></textarea></td>
+                                <td><textarea placeholder="N Content" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][nContent]"><?= odbc_result($getResults, "N_content"); ?></textarea></td>
+                                <td><textarea placeholder="date" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][date]"><?= odbc_result($getResults, "Date"); ?></textarea></td>
+                                <td><textarea placeholder="FinalFileName" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][finalFileName]"><?= odbc_result($getResults, "FinalFIlename"); ?></textarea></td>
+                                <td><textarea placeholder="GraphicsFileName" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][graphicsFileName]"><?= odbc_result($getResults, "GraphicsFilename"); ?></textarea></td>
+                                <td><textarea placeholder="InlineCode" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][inlineCode]"><?= odbc_result($getResults, "InlineCode"); ?></textarea></td>
+                                <td><textarea placeholder="ProcessType" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][processType]"><?= odbc_result($getResults, "ProcessType"); ?></textarea></td>
+                                <td><textarea placeholder="WithTIFF" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][withTiff]"><?= odbc_result($getResults, "WithTIFF"); ?></textarea></td>
+                                <td><textarea placeholder="WithImageEdit" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][withImageEdit]"><?= odbc_result($getResults, "WithImageEdit"); ?></textarea></td>
+                                <td><textarea placeholder="WithDocSegregate" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][withDocSegregate]"><?= odbc_result($getResults, "WithDocSegregate"); ?></textarea></td>
+                                <td><textarea placeholder="FileType" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][fileType]"><?= odbc_result($getResults, "FileType"); ?></textarea></td>
+                                <td><textarea placeholder="ByteSize" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][byteSize]"><?= odbc_result($getResults, "ByteSize"); ?></textarea></td>
+                                <td><textarea placeholder="" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][jobName]"><?= odbc_result($getResults, "Jobname"); ?></textarea></td>
+                                <td><textarea class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][jobId]"><?= odbc_result($getResults, "JobId"); ?></textarea></td>
+                                <td><textarea class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][priorityNo]"><?= odbc_result($getResults, "PriorityNo"); ?></textarea></td>
                                 <td><?= odbc_result($getResults, "DateRegistered"); ?></td>
                             </tr>
                             <?php endif; ?>
+                           
                             <?php endwhile; ?>
                         </tbody>
                     </table>
+                    <input type="hidden" name="getUrl" value="<?= $getFilePath; ?>" />
+                    </form>
+                    <button class="btn btn-success btn-lg">Approved</button>
+                    <?php unset($_SESSION['updateInventory']); ?>
                 </div>
             </div>
           
@@ -263,71 +316,7 @@
         <br />
         <br />
         <div class="col-md-6">
-          <div class="box box-primary">
-              <div class="box-header with-border">
-                  <form action="" method="post">
-                      <button type="submit" class="btn btn-success btn-lg">Approve</button>
-                      <button class="btn btn-danger btn-lg">Cancel</button>
-                      <br />
-                      <br /> 
-                        <div class="col-md-6">
-                          <label>FieldName</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                          
-                        </div>
-                        <div class="col-md-6">
-                          <label>Value</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                        </div>
-                        <div style="clear:both;"></div>
-                        <div class="col-md-6">
-                          <label>FieldName</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                          
-                        </div>
-                        <div class="col-md-6">
-                          <label>Value</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                        </div>
-                        <div style="clear:both;"></div>
-                        <div class="col-md-6">
-                          <label>FieldName</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                          
-                        </div>
-                        <div class="col-md-6">
-                          <label>Value</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                        </div>
-                        <div style="clear:both;"></div>
-                        <div class="col-md-6">
-                          <label>FieldName</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                          
-                        </div>
-                        <div class="col-md-6">
-                          <label>Value</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                        </div>
-                        <div style="clear:both;"></div>
-                        <div class="col-md-6">
-                          <label>FieldName</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                          
-                        </div>
-                        <div class="col-md-6">
-                          <label>Value</label>
-                          <input type="text" name="fieldname" class="form-control" /> 
-                        </div>
-                    
-                  </form>
-                 
-                                  
-              </div>
-            
-            
-              <!-- /.box-footer -->
-            </div>
+        
            
             <div class="box box-primary">
               <div class="box-header with-border">
@@ -342,21 +331,20 @@
                           $insideFile = "SELECT * FROM tbl_tpccr_outlook_files";
                           $inventory=odbc_exec($conWMS,$insideFile);
                       }else{
+                          
                           $getTpccrInv = "SELECT * FROM TPCCR_INVENTORY WHERE Data='$path'";
                          
                           $inventoryInside=odbc_exec($conWMS,$getTpccrInv);
                       }
                      
-                     
-                    
-                   
+                             
                   ?>
                   <h3>Ref Source Path: <?= $mydir ; ?>/<?= $path?></h3>  
                   
                   <table id="example1" class="table table-bordered table-striped">
                       <thead>
                           <tr>
-                            <th width="35%">File name</th>
+                            <th width="35%">Ref name</th>
                            
                           </tr>
                       </thead>
@@ -370,7 +358,7 @@
                               <?php endwhile;?>
                               <?php while(odbc_fetch_row($inventoryInside)): ?>
                               <tr>
-                                  <td><a href="#"><?= odbc_result($inventoryInside, "DocFilename")?></a></td>
+                                  <td><a href="https://docs.google.com/viewerng/viewer?url=http://projects.cebucodesolutions.com/TPCCR-Inventory/AB-1163/Taxnet-AB-1163.xls" target="_blank"><?= odbc_result($inventoryInside, "DocFilename")?></a></td>
                                   
                               </tr>
                               <?php endwhile;?>
@@ -383,8 +371,10 @@
               <!-- /.box-footer -->
             </div>
         </div>
+         
       </div>
       <!-- /.row -->
+     
     </section>
     <!-- /.content -->
   </div>

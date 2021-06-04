@@ -142,7 +142,7 @@
     <?php 
         require_once "Config.php"; 
         require_once "fpdf.php";
-        require_once "conn.php";
+        //require_once "conn.php";
 
         $con = mysqli_connect('localhost','root','','primo');
         // Check connection
@@ -269,8 +269,15 @@
                                 //
                             }else{
                                 $insertSql = "INSERT INTO tbl_tpccr_outlook_files(Ref, Bundle_No, Subject1, TAT, Delivery_date, No_of_files, Source_Type, Source_Path, created_at, updated_at)
-                                VALUES('$mainSubject', '$mainSubject', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '$fileNamePDF', '$created_at', '$updated_at')";
+                                VALUES('$mainSubject', '$mainSubject', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '0', '$created_at', '$updated_at')";
                                 $res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
+
+                                //insert the data into tppcr_inventory table in wms 
+                               // $insertData = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                //VALUES('1', '$fileNamePDF', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
+                                //$resIn = ExecuteQuerySQLSERVER($insertData, $conWMS);
+
+
                             }
             
                             //$res = mysqli_query($con, $insertSql);
@@ -430,6 +437,17 @@
                                         $file_name = $zip->getNameIndex($i);
                                         $fileExp = explode("/", $file_name);
                                         $fileZ = $fileExp[1];
+
+                                        //$querySql = "SELECT * FROM TPCCR_INVENTORY WHERE flag='$mainSubject'";
+                                        //$queryResult2 = odbc_exec($conWMS, $querySql);
+
+                                        //if(odbc_num_rows($queryResult2) > 0){
+                                          //
+                                        //}else{
+                                        //    $insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                        //    VALUES('1', '$fileZ', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
+                                        //    $res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
+                                       // }
 
                                         $insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
                                         VALUES('1', '$fileZ', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
