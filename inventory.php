@@ -166,84 +166,30 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-  
-  
-        <div class="col-md-6" >
-          <div class="box box-primary" style="">
-            <div class="box-header with-border">
-               <?php 
-                  
-                 // $getPdf = $_GET['path'];
-                 // $pdfExp = explode("/", $getPdf);
-
-                 // $pdfPath = "SELECT * FROM tbl_tpccr_outlook_files WHERE ref = '$pdfExp[1]'";
-                 // $pth = mysqli_query($con, $pdfPath);
-                
-                  
-               ?>
-                <?php //if($getPdf != ""): ?>
-                <?php //while($row = mysqli_fetch_assoc($pth)): ?>
-                  <?php 
-                      //$fileVal= $getPdf."/".$row['source_path']; 
-                      
-                  ?>
-                 <!-- <embed src="<?= $fileVal; ?>" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">-->
-				
-
-                <?php //endwhile; ?>
-                <?php //else:?>
-                  <!--<embed src="" style="width:100%; height:45vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">-->
-				
-                <?php // endif; ?>
-                <?php $fileVal = "uploadfiles/Sourcefiles/Document1.pdf";?>
-                 <embed src="<?= $fileVal;?>" style="width:100%; height:70vw;" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
-                 
-                <!-- <iframe  src="https://docs.google.com/viewer?embedded=true&url=http://projects.cebucodesolutions.com/TPCCR-Inventory/AB-1163/Taxnet-AB-1163.xls" frameborder="no" style="width:100%;height:900px"></iframe>
-                  -->
-            </div>
-          
-           
-            <!-- /.box-footer -->
-          </div>
-          <!-- /. box -->
-
-          <div class="box box-primary" style="height:1236px;">
-            <div class="box-header with-border">
-              
-            </div>
-          
-           
-            <!-- /.box-footer -->
-          </div>
-          <!-- /. box -->
-
-        </div>
-
-        <div class="col-md-6">
-        <div class="box box-primary">
-            <div class="box-header with-border">
+         <div class="col-md-8">
+          <div class="box box-primary">
+              <div class="box-header with-border">
             <div style="overflow-x:auto; overflow-y:auto;" class="box-header with-border">
                     <?php 
                       require_once "conn.php";
                       $getFilePath = $_GET['path'];
 
-                      $getFilePaths = "SELECT * FROM TPCCR_INVENTORY WHERE Data='$getFilePath'";
+                      $getFilePaths = "SELECT * FROM TPCCR_INVENTORY WHERE flag='$getFilePath'";
                       $getResults = odbc_exec($conWMS, $getFilePaths);
 
                     ?>
-                   
-                    <form action="updateInventory.php" method="post">
-                    <button type="submit" class="btn btn-success btn-lg">Update</button>
-
+                    <h3>Inventory Table</h3>
                     <br />
+                    <form action="updateInventory.php" method="post">
+                    <?php if(!empty($getFilePath)): ?>
+                         <button type="submit" class="btn btn-success btn-lg">Update</button>
+                    <?php endif; ?>
                     <br />
                     <?= "<p style='color:green; font-size:18px; font-weight:bold;'>".$_SESSION['updateInventory']."</p>"; ?>
-                    <br />
                     <br />
                     <table id="example3" class="hoverTable table">
                         <thead>
                             <tr>
-                             
                               <td class="bg bg-success">DocFileName</td>
                               <td class="bg bg-success">Data</td>
                               <td class="bg bg-success">Pages</td>
@@ -274,6 +220,7 @@
                             <tr>
                                 <td><?= odbc_result($getResults, "DocFilename"); ?></td>
                                 <td><textarea placeholder="Data" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][data]"><?= odbc_result($getResults, "Data"); ?></textarea></td>
+                               
                                 <td><textarea placeholder="Pages" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][pages]"><?= odbc_result($getResults, "Pages"); ?></textarea></td>
                                 <td><textarea placeholder="Number Of Pages" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][numberOfPages]"><?= odbc_result($getResults, "NumberOfPages"); ?></textarea></td>
                                 <td><textarea placeholder="Product Type" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][productType]"><?= odbc_result($getResults, "ProductType"); ?></textarea></td>
@@ -290,9 +237,9 @@
                                 <td><textarea placeholder="WithDocSegregate" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][withDocSegregate]"><?= odbc_result($getResults, "WithDocSegregate"); ?></textarea></td>
                                 <td><textarea placeholder="FileType" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][fileType]"><?= odbc_result($getResults, "FileType"); ?></textarea></td>
                                 <td><textarea placeholder="ByteSize" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][byteSize]"><?= odbc_result($getResults, "ByteSize"); ?></textarea></td>
-                                <td><textarea placeholder="" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][jobName]"><?= odbc_result($getResults, "Jobname"); ?></textarea></td>
-                                <td><textarea class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][jobId]"><?= odbc_result($getResults, "JobId"); ?></textarea></td>
-                                <td><textarea class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][priorityNo]"><?= odbc_result($getResults, "PriorityNo"); ?></textarea></td>
+                                <td><textarea placeholder="Jobname" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][jobName]"><?= odbc_result($getResults, "Jobname"); ?></textarea></td>
+                                <td><textarea placeholder="JobId" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][jobId]"><?= odbc_result($getResults, "JobId"); ?></textarea></td>
+                                <td><textarea placeholder="PriorityNo" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][priorityNo]"><?= odbc_result($getResults, "PriorityNo"); ?></textarea></td>
                                 <td><?= odbc_result($getResults, "DateRegistered"); ?></td>
                             </tr>
                             <?php endif; ?>
@@ -302,7 +249,27 @@
                     </table>
                     <input type="hidden" name="getUrl" value="<?= $getFilePath; ?>" />
                     </form>
-                    <button class="btn btn-success btn-lg">Approved</button>
+                   
+                    <?php if(!empty($getFilePath)): ?>
+                    <?php
+                        if(isset($_POST['approved'])){
+                          
+                            $approved = "Approved";
+                            $updateQuery = "UPDATE tbl_tpccr_outlook_files SET
+                                            status='$approved'
+                                            WHERE Ref='$getFilePath'";
+
+                            $resQ = ExecuteQuerySQLSERVER($updateQuery,$conWMS);
+                            header("location: inventory.php");
+                        }
+                        
+                       
+                      
+                    ?>
+                    <form action="" method="post">
+                        <button type="submit" name="approved" class="btn btn-success btn-lg">Approved</button>
+                    </form>
+                    <?php endif; ?>
                     <?php unset($_SESSION['updateInventory']); ?>
                 </div>
             </div>
@@ -310,12 +277,37 @@
            
             <!-- /.box-footer -->
           </div>
+          <?php if(empty($getFilePath)): ?>
+          <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3>Approved files</h3>
+                <?php
+                    $getApprovedFiles = "SELECT * FROM tbl_tpccr_outlook_files";
+                    $approvedFiles=odbc_exec($conWMS,$getApprovedFiles);
+                ?>
+                <table class="display table table-bordered table-striped">
+                    <thead>
+                          <tr>
+                              <th width="35%">Refname</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                          <?php while(odbc_fetch_row($approvedFiles)): ?>
+                              <?php if(odbc_result($approvedFiles, "status") == "Approved"): ?>
+                              <tr>
+                                  <td><?= odbc_result($approvedFiles, "Ref")?></td>
+                              </tr>
+                              <?php endif;  ?>
+                          <?php endwhile; ?>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+          <?php endif; ?>
         </div>
+      
         <!-- /.col -->
-        <br />
-        <br />
-        <br />
-        <div class="col-md-6">
+        <div class="col-md-4">
         
            
             <div class="box box-primary">
@@ -332,7 +324,7 @@
                           $inventory=odbc_exec($conWMS,$insideFile);
                       }else{
                           
-                          $getTpccrInv = "SELECT * FROM TPCCR_INVENTORY WHERE Data='$path'";
+                          $getTpccrInv = "SELECT * FROM TPCCR_INVENTORY WHERE flag='$path'";
                          
                           $inventoryInside=odbc_exec($conWMS,$getTpccrInv);
                       }
@@ -351,16 +343,20 @@
                       <tbody>
                          
                             <?php while(odbc_fetch_row($inventory)): ?>
-                              <tr>
-                                  <td><a href="?path=<?= odbc_result($inventory, "Ref") ?>"><?= odbc_result($inventory, "Ref")?></a></td>
-                                  
-                              </tr>
+                                <?php if(odbc_result($inventory, "status") != "Approved"): ?>
+                                  <tr>
+                                      <td><a href="?path=<?= odbc_result($inventory, "Ref") ?>"><?= odbc_result($inventory, "Ref")?></a></td>
+                                      
+                                  </tr>
+                                  <?php endif; ?>
                               <?php endwhile;?>
+                             
                               <?php while(odbc_fetch_row($inventoryInside)): ?>
                               <tr>
                                   <td><a href="https://docs.google.com/viewerng/viewer?url=http://projects.cebucodesolutions.com/TPCCR-Inventory/AB-1163/Taxnet-AB-1163.xls" target="_blank"><?= odbc_result($inventoryInside, "DocFilename")?></a></td>
                                   
                               </tr>
+                             
                               <?php endwhile;?>
                          
                       </tbody>
@@ -371,6 +367,7 @@
               <!-- /.box-footer -->
             </div>
         </div>
+       
          
       </div>
       <!-- /.row -->
@@ -424,6 +421,7 @@
     <script src="dist/js/demo.js"></script>
     <script>
       $(function () {
+        $('table.display').DataTable( {} );
         $('#example1').DataTable()
           $('#example2').DataTable({
             'paging'      : true,
@@ -434,6 +432,14 @@
             'autoWidth'   : false
           })
           $('#example3').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+          })
+          $('#example4').DataTable({
             'paging'      : true,
             'lengthChange': false,
             'searching'   : false,

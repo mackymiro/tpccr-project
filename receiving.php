@@ -272,8 +272,8 @@
                                 VALUES('$mainSubject', '$mainSubject', '$partialMessage', '1', '$created_at', '11', 'CandyCane', '0', '$created_at', '$updated_at')";
                                 $res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
 
-                                //insert the data into tppcr_inventory table in wms 
-                               // $insertData = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                 //insert the data into tppcr_inventory table in wms 
+                                //$insertData = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
                                 //VALUES('1', '$fileNamePDF', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
                                 //$resIn = ExecuteQuerySQLSERVER($insertData, $conWMS);
 
@@ -417,13 +417,11 @@
                                 //$rowAddId = odbc_fetch_array($resultId);
                                 //$idInventory = $rowaddid['Id'];
 
-                                //$insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
-                                //VALUES('1', 'test.pdf', 'test', '1', '1', 'CED', '0', '0', '0', '2021-06-02 02:49:12.000', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2021-06-02 02:49:12.000')";
+                                //$insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, flag, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                //VALUES('1', 'test.pdf', '0', '$mainSubject', '1', '1', 'CED', '0', '0', '0', '2021-06-02 02:49:12.000', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2021-06-02 02:49:12.000')";
                                 //$res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
 
-                                //$insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
-                                //VALUES('1', 'testing.pdf', '$mainSubject', '1', '1', '0', '0', '0', '0', '2021-06-02 02:49:12.000', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2021-06-02 02:49:12.000')";
-                                //$res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
+                      
  
                                 $path = "TPCCR-Inventory/";
                                 
@@ -449,8 +447,8 @@
                                         //    $res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
                                        // }
 
-                                        $insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
-                                        VALUES('1', '$fileZ', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
+                                        $insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, flag, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                        VALUES('1', '$fileZ', '0', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
                                         $res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
 
                                      }

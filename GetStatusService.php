@@ -31,7 +31,6 @@ $GGStatus = $jobj->response->status;
 
 curl_close($ch);
 
-
 if ($GGStatus == 'completed'){
    $GGProgress='100';
    $URL= $jobj->response->output_content->uri;
