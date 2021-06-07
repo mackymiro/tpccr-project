@@ -260,10 +260,8 @@
                                             WHERE Ref='$getFilePath'";
 
                             $resQ = ExecuteQuerySQLSERVER($updateQuery,$conWMS);
-                            header("location: inventory.php");
-                        }
-                        
-                       
+                            //header("location: inventory.php");
+                        }                     
                       
                     ?>
                     <form action="" method="post">

@@ -273,8 +273,8 @@
                                 $res = ExecuteQuerySQLSERVER($insertSql,$conWMS);
 
                                  //insert the data into tppcr_inventory table in wms 
-                                //$insertData = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
-                                //VALUES('1', '$fileNamePDF', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
+                                //$insertData = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, flag, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                //VALUES('1', '$fileNamePDF', '0', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
                                 //$resIn = ExecuteQuerySQLSERVER($insertData, $conWMS);
 
 
@@ -442,8 +442,8 @@
                                         //if(odbc_num_rows($queryResult2) > 0){
                                           //
                                         //}else{
-                                        //    $insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
-                                        //    VALUES('1', '$fileZ', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
+                                        //    $insertInventory = "INSERT INTO TPCCR_INVENTORY(RefId, DocFilename, Data, flag, Pages, NumberOfPages, ProductType, INITID, TI_content, N_content, Date, FinalFilename, GraphicsFilename, InlineCode, ProcessType, WithTIFF, WithImageEdit, WithDocSegregate, FileType, ByteSize, Jobname, JobId, PriorityNo, DateRegistered)
+                                        //    VALUES('1', '$fileZ', '0', '$mainSubject', '1', '1', '0', '0', '0', '0', '$created_at', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '$created_at')";
                                         //    $res1 = ExecuteQuerySQLSERVER($insertInventory, $conWMS);
                                        // }
 

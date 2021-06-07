@@ -2085,8 +2085,6 @@ function LoadStyles(){
 				$snewile =str_replace("." . $info["extension"],".pdf",$fileVal);	
 				$snewile =str_replace("." . $info["extension"],".PDF",$snewile);	
 				 
-				 
-
 				if ($FileStatus!='Done'){
 				 
 				if ($info["extension"] == "pdf"||$info["extension"] == "PDF") {
