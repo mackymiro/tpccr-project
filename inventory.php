@@ -275,33 +275,7 @@
            
             <!-- /.box-footer -->
           </div>
-          <?php if(empty($getFilePath)): ?>
-          <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3>Approved files</h3>
-                <?php
-                    $getApprovedFiles = "SELECT * FROM tbl_tpccr_outlook_files";
-                    $approvedFiles=odbc_exec($conWMS,$getApprovedFiles);
-                ?>
-                <table class="display table table-bordered table-striped">
-                    <thead>
-                          <tr>
-                              <th width="35%">Refname</th>
-                          </tr>
-                    </thead>
-                    <tbody>
-                          <?php while(odbc_fetch_row($approvedFiles)): ?>
-                              <?php if(odbc_result($approvedFiles, "status") == "Approved"): ?>
-                              <tr>
-                                  <td><?= odbc_result($approvedFiles, "Ref")?></td>
-                              </tr>
-                              <?php endif;  ?>
-                          <?php endwhile; ?>
-                    </tbody>
-                </table>
-            </div>
-          </div>
-          <?php endif; ?>
+        
         </div>
       
         <!-- /.col -->
