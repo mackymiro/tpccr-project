@@ -68,9 +68,9 @@ if ($GGStatus == 'completed'){
     fputs($file, $file_data);
 
     fclose($file);
-      
+
     exec('C:\\xampp\\htdocs\\tpccr\\TPCCR17-InnoDomTransformation\\TPCCR17-InnoDomTransformation.exe "C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml" C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.sgm"');
-   
+    
     //exec('C:\\xampp\\htdocs\\tpccr\\TPCCR17-InnoDomTransformation\\TPCCR17-InnoDomTransformation.exe C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.sgm');
     
     //exec('C:\\xampp\\htdocs\\tpccr\\TPCCR17-InnoDomTransformation\\TPCCR17-InnoDomTransformation.exe' "C:\\xampp\\htdocs\\tpccr\\uploadfiles\\'.$nFilename.'.xml" "C:\\xampp\\htdocs\\tpccr\\TPCCR17-InnoDomTransformation\\_Output\\'.$nFilename.'.sgm");

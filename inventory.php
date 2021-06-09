@@ -185,6 +185,7 @@
                          <button type="submit" class="btn btn-success btn-lg">Update</button>
                     <?php endif; ?>
                     <br />
+                    <br />
                     <?= "<p style='color:green; font-size:18px; font-weight:bold;'>".$_SESSION['updateInventory']."</p>"; ?>
                     <br />
                     <table id="example3" class="hoverTable table">
@@ -223,7 +224,50 @@
                                
                                 <td><textarea placeholder="Pages" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][pages]"><?= odbc_result($getResults, "Pages"); ?></textarea></td>
                                 <td><textarea placeholder="Number Of Pages" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][numberOfPages]"><?= odbc_result($getResults, "NumberOfPages"); ?></textarea></td>
-                                <td><textarea placeholder="Product Type" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][productType]"><?= odbc_result($getResults, "ProductType"); ?></textarea></td>
+                                <td>
+                                    <select class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][productType]">
+                                        <option value="INSOLVENCY"<?= (odbc_result($getResults, "ProductType") ==  "INSOLVENCY") ? ' selected="selected"' : '';?>>INSOLVENCY</option>
+                                        <option value="BCSC"<?= (odbc_result($getResults, "ProductType") ==  "BCSC") ? ' selected="selected"' : '';?>>BCSC</option>
+                                        <option value="CDROM"<?= (odbc_result($getResults, "ProductType") ==  "CDROM") ? ' selected="selected"' : '';?>>CDROM</option>
+                                        <option value="CED"<?= (odbc_result($getResults, "ProductType") ==  "CED") ? ' selected="selected"' : '';?>>CED</option>
+                                        <option value="CIVIL"<?= (odbc_result($getResults, "ProductType") ==  "CIVIL") ? ' selected="selected"' : '';?>>CIVIL</option>
+                                        <option value="CRIMINAL"<?= (odbc_result($getResults, "ProductType") ==  "CRIMINAL") ? ' selected="selected"' : '';?>>CRIMINAL</option>
+                                        <option value="ESTATES"<?= (odbc_result($getResults, "ProductType") ==  "ESTATES") ? ' selected="selected"' : '';?>>ESTATES</option>
+                                        <option value="FAMILY"<?= (odbc_result($getResults, "ProductType") ==  "FAMILY") ? ' selected="selected"' : '';?>>FAMILY</option>
+                                        <option value="FILELAW"<?= (odbc_result($getResults, "ProductType") ==  "FILELAW") ? ' selected="selected"' : '';?>>FILELAW</option>
+                                        <option value="GST" <?= (odbc_result($getResults, "ProductType") ==  "GST") ? ' selected="selected"' : '';?>>GST</option>
+                                        <option value="IPSOURCE" <?= (odbc_result($getResults, "ProductType") ==  "IPSOURCE") ? ' selected="selected"' : '';?>>IPSOURCE</option>
+                                        <option value="LAB-ONLINELEGALSMG" <?= (odbc_result($getResults, "ProductType") ==  "LAB-ONLINELEGALSMG") ? ' selected="selected"' : '';?>>LAB-ONLINELEGALSMG</option>
+                                        <option value="LAWREPORTS" <?= (odbc_result($getResults, "ProductType") ==  "LAWREPORTS") ? ' selected="selected"' : '';?>>LAWREPORTS</option>
+                                        <option value="LITIGATION" <?= (odbc_result($getResults, "ProductType") ==  "LITIGATION") ? ' selected="selected"' : '';?>>LITIGATION</option>
+                                        <option value="MONTREAL-LEGIS" <?= (odbc_result($getResults, "ProductType") ==  "MONTREAL-LEGIS") ? ' selected="selected"' : '';?>>MONTREAL-LEGIS</option>
+                                        <option value="PRINT" <?= (odbc_result($getResults, "ProductType") ==  "PRINT") ? ' selected="selected"' : '';?>>PRINT</option>
+                                        <option value="PROVIEW"<?= (odbc_result($getResults, "ProductType") ==  "PROVIEW") ? ' selected="selected"' : '';?>>PROVIEW</option>
+                                        <option value="SECURITIES" <?= (odbc_result($getResults, "ProductType") ==  "SECURITIES") ? ' selected="selected"' : '';?>>SECURITIES</option>
+                                        <option value="TAXPRO" <?= (odbc_result($getResults, "ProductType") ==  "TAXPRO") ? ' selected="selected"' : '';?>>TAXPRO</option>
+                                        <option value="BUDGET DOCUMENTS" <?= (odbc_result($getResults, "ProductType") ==  "BUDGET DOCUMENTS") ? ' selected="selected"' : '';?>>BUDGET DOCUMENTS</option>
+                                        <option value="CANADA BORDER MEMORANDA" <?= (odbc_result($getResults, "ProductType") ==  "CANADA BORDER MEMORANDA") ? ' selected="selected"' : '';?>>CANADA BORDER MEMORANDA</option>
+                                        <option value="CANADIAN TAX HIGHLIGHTS" <?= (odbc_result($getResults, "ProductType") ==  "CANADIAN TAX HIGHLIGHTS") ? ' selected="selected"' : '';?>>CANADIAN TAX HIGHLIGHTS</option>
+                                        <option value="COMMENTARY DOCUMENTS" <?= (odbc_result($getResults, "ProductType") ==  "COMMENTARY DOCUMENTS") ? ' selected="selected"' : '';?>>COMMENTARY DOCUMENTS</option>
+                                        <option value="CORPORATE TAX DOCUMENTS" <?= (odbc_result($getResults, "ProductType") ==  "CORPORATE TAX DOCUMENTS") ? ' selected="selected"' : '';?>>CORPORATE TAX DOCUMENTS</option>
+                                        <option value="CRA DOCUMENTS / POLICY DOCUMENTS" <?= (odbc_result($getResults, "ProductType") ==  "CRA DOCUMENTS / POLICY DOCUMENTS") ? ' selected="selected"' : '';?>>CRA DOCUMENTS / POLICY DOCUMENTS</option>
+                                        <option value="FEDERAL DEPARTMENT OF FINANCE" <?= (odbc_result($getResults, "ProductType") ==  "FEDERAL DEPARTMENT OF FINANCE") ? ' selected="selected"' : '';?>>FEDERAL DEPARTMENT OF FINANCE</option>
+                                        <option value="GST CASE NOTES" <?= (odbc_result($getResults, "ProductType") ==  "GST CASE NOTES") ? ' selected="selected"' : '';?>>GST CASE NOTES</option>
+                                        <option value="GST TIMES" <?= (odbc_result($getResults, "ProductType") ==  "GST TIMES") ? ' selected="selected"' : '';?>>GST TIMES</option>
+                                        <option value="NEWSLETTERS" <?= (odbc_result($getResults, "ProductType") ==  "NEWSLETTERS") ? ' selected="selected"' : '';?>>NEWSLETTERS</option>
+                                        <option value="POUNDS TAX CASE NOTES" <?= (odbc_result($getResults, "ProductType") ==  "POUNDS TAX CASE NOTES") ? ' selected="selected"' : '';?>>POUNDS TAX CASE NOTES</option> 
+                                        <option value="TAX HYPERION" <?= (odbc_result($getResults, "ProductType") ==  "TAX HYPERION") ? ' selected="selected"' : '';?>>TAX HYPERION</option>
+                                        <option value="TAX TIMES" <?= (odbc_result($getResults, "ProductType") ==  "TAX TIMES") ? ' selected="selected"' : '';?>>TAX TIMES</option>
+                                        <option value="TEI (Tax Executives Institute, Inc.) COMMENTARY" <?= (odbc_result($getResults, "ProductType") ==  "TEI (Tax Executives Institute, Inc.) COMMENTARY") ? ' selected="selected"' : '';?>>TEI (Tax Executives Institute, Inc.) COMMENTARY</option> 
+                                        <option value="PROVINCIAL DOCUMENTS"  <?= (odbc_result($getResults, "ProductType") ==  "PROVINCIAL DOCUMENTS") ? ' selected="selected"' : '';?>>PROVINCIAL DOCUMENTS</option>
+                                        <option value="TREATIES/CONVENTIONS" <?= (odbc_result($getResults, "ProductType") ==  "TREATIES/CONVENTIONS") ? ' selected="selected"' : '';?>>TREATIES/CONVENTIONS</option>
+                                        <option value="REMISSIONS/REMISSION ORDERS" <?= (odbc_result($getResults, "ProductType") ==  "REMISSIONS/REMISSION ORDERS") ? ' selected="selected"' : '';?>>REMISSIONS/REMISSION ORDERS</option> 
+                                        <option value="PRIVATE LETTER RULINGS" <?= (odbc_result($getResults, "ProductType") ==  "PRIVATE LETTER RULINGS") ? ' selected="selected"' : '';?>>PRIVATE LETTER RULINGS</option>
+                                        <option value="PRACTICAL INSIGHTS" <?= (odbc_result($getResults, "ProductType") ==  "PRACTICAL INSIGHTS") ? ' selected="selected"' : '';?>>PRACTICAL INSIGHTS</option>
+                                        <option value="Specs" <?= (odbc_result($getResults, "ProductType") ==  "Specs") ? ' selected="selected"' : '';?>>Specs</option>
+                                        <option value="Inventory" <?= (odbc_result($getResults, "ProductType") ==  "Inventory") ? ' selected="selected"' : '';?>>Inventory</option>                           
+                                    </select>
+                                </td>
                                 <td><textarea placeholder="INIT ID"class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][initId]"><?= odbc_result($getResults, "INITID"); ?></textarea></td>
                                 <td><textarea placeholder="TI Content"class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][tiContent]"><?= odbc_result($getResults, "TI_content"); ?></textarea></td>
                                 <td><textarea placeholder="N Content" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][nContent]"><?= odbc_result($getResults, "N_content"); ?></textarea></td>
@@ -231,10 +275,22 @@
                                 <td><textarea placeholder="FinalFileName" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][finalFileName]"><?= odbc_result($getResults, "FinalFIlename"); ?></textarea></td>
                                 <td><textarea placeholder="GraphicsFileName" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][graphicsFileName]"><?= odbc_result($getResults, "GraphicsFilename"); ?></textarea></td>
                                 <td><textarea placeholder="InlineCode" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][inlineCode]"><?= odbc_result($getResults, "InlineCode"); ?></textarea></td>
-                                <td><textarea placeholder="ProcessType" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][processType]"><?= odbc_result($getResults, "ProcessType"); ?></textarea></td>
+                                <td>
+                                    <select class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][processType]" >
+                                        <option value="New" <?= (odbc_result($getResults, "ProcessType") ==  "New") ? ' selected="selected"' : '';?>>New</option>
+                                        <option value="Updating" <?= (odbc_result($getResults, "ProcessType") ==  "Updating") ? ' selected="selected"' : '';?>>Updating</option>
+                                    </select>
+                                
+                                </td>
+                                
                                 <td><textarea placeholder="WithTIFF" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][withTiff]"><?= odbc_result($getResults, "WithTIFF"); ?></textarea></td>
                                 <td><textarea placeholder="WithImageEdit" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][withImageEdit]"><?= odbc_result($getResults, "WithImageEdit"); ?></textarea></td>
-                                <td><textarea placeholder="WithDocSegregate" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][withDocSegregate]"><?= odbc_result($getResults, "WithDocSegregate"); ?></textarea></td>
+                                <td>
+                                    <select class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][withDocSegregate]"> 
+                                        <option value="Yes" <?= (odbc_result($getResults, "WithDocSegregate") ==  "Yes") ? ' selected="selected"' : '';?>>Yes</option>
+                                        <option value="No" <?= (odbc_result($getResults, "WithDocSegregate") ==  "No") ? ' selected="selected"' : '';?>>No</option>
+                                    </select>
+                                </td>
                                 <td><textarea placeholder="FileType" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][fileType]"><?= odbc_result($getResults, "FileType"); ?></textarea></td>
                                 <td><textarea placeholder="ByteSize" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][byteSize]"><?= odbc_result($getResults, "ByteSize"); ?></textarea></td>
                                 <td><textarea placeholder="Jobname" class="form-control" name="data[<?= odbc_result($getResults, "Id"); ?>][jobName]"><?= odbc_result($getResults, "Jobname"); ?></textarea></td>
@@ -280,8 +336,6 @@
       
         <!-- /.col -->
         <div class="col-md-4">
-        
-           
             <div class="box box-primary">
               <div class="box-header with-border">
                   

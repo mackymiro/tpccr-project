@@ -14,6 +14,8 @@
         $pages =  $value['pages'];
         $numberOfPages = $value['numberOfPages'];
         $productType =  $value['productType'];
+
+       
         $initId =  $value['initId'];
         $tiContent =  $value['tiContent'];
         $nContent = $value['nContent'];
